@@ -42,7 +42,7 @@ jobs:
           retention-days: 30
           if-no-files-found: error
 
-      - name: Save report history
+      - name: Save report history and comparison state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
