@@ -1,0 +1,20 @@
+{
+  "benchmark": "^NDX",
+  "beta_min": 1.2,
+  "ema_fast": 50,
+  "ema_slow": 200,
+  "atr_period": 14,
+  "volume_average_days": 20,
+  "minimum_reward_risk": 2.0,
+  "target_atr_multiple": 2.5,
+  "stop_atr_buffer": 0.1,
+  "entry_atr_buffer": 0.05,
+  "swing_lookback_bars": 10,
+  "account_value_dkk": 20000,
+  "risk_per_trade_pct": 1.5,
+  "max_position_pct": 20.0,
+  "max_open_positions": 5,
+  "usd_dkk_ticker": "DKK=X",
+  "output_directory": "reports",
+  "state_file": "state/previous_screen.json"
+}
