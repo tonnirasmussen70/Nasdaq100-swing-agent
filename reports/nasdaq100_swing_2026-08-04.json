@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-08-04T21:47:00.155926+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "PLTR",
+      "close": 162.63,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 163.24,
+      "stop": 124.95,
+      "target": 239.8,
+      "reward_risk": 2.0,
+      "beta": 1.31,
+      "return_1w_pct": 31.68,
+      "return_1m_pct": 22.73,
+      "return_3m_pct": 11.39,
+      "relative_strength_3m_pct": 3.86,
+      "volume_ratio": 4.77,
+      "score": 56.2,
+      "position_size_shares": 1,
+      "risk_dkk": 248.16,
+      "position_value_dkk": 1058.15,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
