@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-08-05T21:43:05.931244+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "AMGN",
+      "close": 407.85,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 408.44,
+      "stop": 385.97,
+      "target": 453.38,
+      "reward_risk": 2.0,
+      "beta": 0.12,
+      "return_1w_pct": 5.21,
+      "return_1m_pct": 10.79,
+      "return_3m_pct": 24.67,
+      "relative_strength_3m_pct": 19.42,
+      "volume_ratio": 2.28,
+      "score": 82.1,
+      "position_size_shares": 1,
+      "risk_dkk": 145.36,
+      "position_value_dkk": 2642.25,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "DASH",
+      "close": 207.22,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 207.61,
+      "stop": 199.43,
+      "target": 223.96,
+      "reward_risk": 2.0,
+      "beta": 0.8,
+      "return_1w_pct": 7.1,
+      "return_1m_pct": 5.9,
+      "return_3m_pct": 24.76,
+      "relative_strength_3m_pct": 19.5,
+      "volume_ratio": 1.31,
+      "score": 68.1,
+      "position_size_shares": 2,
+      "risk_dkk": 105.77,
+      "position_value_dkk": 2686.05,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "close": 158.43,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 159.6,
+      "stop": 157.96,
+      "target": 166.82,
+      "reward_risk": 4.39,
+      "beta": 1.3,
+      "return_1w_pct": 28.8,
+      "return_1m_pct": 17.91,
+      "return_3m_pct": 16.57,
+      "relative_strength_3m_pct": 11.31,
+      "volume_ratio": 1.45,
+      "score": 63.8,
+      "position_size_shares": 3,
+      "risk_dkk": 31.88,
+      "position_value_dkk": 3097.48,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "DXCM",
+      "close": 82.67,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 83.39,
+      "stop": 82.19,
+      "target": 86.04,
+      "reward_risk": 2.21,
+      "beta": 0.3,
+      "return_1w_pct": 10.01,
+      "return_1m_pct": 12.36,
+      "return_3m_pct": 38.97,
+      "relative_strength_3m_pct": 33.71,
+      "volume_ratio": 1.08,
+      "score": 59.2,
+      "position_size_shares": 7,
+      "risk_dkk": 54.29,
+      "position_value_dkk": 3776.34,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "close": 219.2,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 222.0,
+      "stop": 210.79,
+      "target": 244.41,
+      "reward_risk": 2.0,
+      "beta": 1.28,
+      "return_1w_pct": 15.37,
+      "return_1m_pct": 11.32,
+      "return_3m_pct": 11.69,
+      "relative_strength_3m_pct": 6.44,
+      "volume_ratio": 1.21,
+      "score": 38.0,
+      "position_size_shares": 2,
+      "risk_dkk": 144.98,
+      "position_value_dkk": 2872.21,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
