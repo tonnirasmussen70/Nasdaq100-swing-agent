@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-08-07T00:57:02.671084+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "DASH",
+      "close": 213.29,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 213.62,
+      "stop": 202.81,
+      "target": 235.23,
+      "reward_risk": 2.0,
+      "beta": 0.8,
+      "return_1w_pct": 7.96,
+      "return_1m_pct": 12.63,
+      "return_3m_pct": 26.96,
+      "relative_strength_3m_pct": 24.26,
+      "volume_ratio": 2.34,
+      "score": 84.0,
+      "position_size_shares": 2,
+      "risk_dkk": 140.27,
+      "position_value_dkk": 2772.58,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "SHOP",
+      "close": 147.49,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 147.77,
+      "stop": 141.79,
+      "target": 159.74,
+      "reward_risk": 2.0,
+      "beta": 1.1,
+      "return_1w_pct": 20.46,
+      "return_1m_pct": 23.67,
+      "return_3m_pct": 39.83,
+      "relative_strength_3m_pct": 37.13,
+      "volume_ratio": 1.54,
+      "score": 80.9,
+      "position_size_shares": 4,
+      "risk_dkk": 155.31,
+      "position_value_dkk": 3836.0,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
