@@ -1,7 +1,10 @@
 {
-  "qualified": [],
+  "qualified": [
+    "PLTR"
+  ],
   "near_miss": [
-    "DASH",
-    "SHOP"
+    "RKLB",
+    "TER",
+    "TTWO"
   ]
 }
