@@ -1,10 +1,8 @@
 {
-  "qualified": [
-    "PLTR"
-  ],
+  "qualified": [],
   "near_miss": [
-    "RKLB",
-    "TER",
+    "PLTR",
+    "ROST",
     "TTWO"
   ]
 }
