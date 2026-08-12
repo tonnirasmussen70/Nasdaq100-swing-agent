@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-08-12T21:11:46.200067+00:00",
+  "qualified": [
+    {
+      "ticker": "NBIS",
+      "close": 259.14,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 259.79,
+      "stop": 188.67,
+      "target": 402.02,
+      "reward_risk": 2.0,
+      "beta": 2.79,
+      "return_1w_pct": 18.36,
+      "return_1m_pct": 33.55,
+      "return_3m_pct": 44.72,
+      "relative_strength_3m_pct": 42.38,
+      "volume_ratio": 2.6,
+      "score": 100.0,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [],
+  "changes": {
+    "new": [
+      "NBIS"
+    ],
+    "removed": []
+  },
+  "data_failures": []
+}
