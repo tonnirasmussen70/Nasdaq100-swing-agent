@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-08-13T21:12:52.407892+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "NBIS",
+      "close": 254.96,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 256.25,
+      "stop": 245.77,
+      "target": 277.21,
+      "reward_risk": 2.0,
+      "beta": 2.75,
+      "return_1w_pct": 34.32,
+      "return_1m_pct": 27.83,
+      "return_3m_pct": 23.05,
+      "relative_strength_3m_pct": 20.14,
+      "volume_ratio": 1.37,
+      "score": 85.1,
+      "position_size_shares": 2,
+      "risk_dkk": 135.92,
+      "position_value_dkk": 3323.29,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "STX",
+      "close": 921.28,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 925.98,
+      "stop": 854.71,
+      "target": 1068.53,
+      "reward_risk": 2.0,
+      "beta": 1.97,
+      "return_1w_pct": 8.02,
+      "return_1m_pct": 11.24,
+      "return_3m_pct": 12.81,
+      "relative_strength_3m_pct": 9.9,
+      "volume_ratio": 0.79,
+      "score": 50.9,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "NBIS"
+    ]
+  },
+  "data_failures": []
+}

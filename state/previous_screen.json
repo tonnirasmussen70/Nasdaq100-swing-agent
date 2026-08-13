@@ -1,6 +1,7 @@
 {
-  "qualified": [
-    "NBIS"
-  ],
-  "near_miss": []
+  "qualified": [],
+  "near_miss": [
+    "NBIS",
+    "STX"
+  ]
 }
