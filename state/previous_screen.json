@@ -1,9 +1,9 @@
 {
-  "qualified": [
-    "NBIS"
-  ],
+  "qualified": [],
   "near_miss": [
+    "LRCX",
     "SNDK",
+    "TER",
     "WDC"
   ]
 }

@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-08-17T20:52:13.400419+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "SNDK",
+      "close": 1787.96,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 1792.08,
+      "stop": 1606.65,
+      "target": 2162.96,
+      "reward_risk": 2.0,
+      "beta": 3.55,
+      "return_1w_pct": 44.34,
+      "return_1m_pct": 31.89,
+      "return_3m_pct": 26.94,
+      "relative_strength_3m_pct": 23.95,
+      "volume_ratio": 1.03,
+      "score": 80.5,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "TER",
+      "close": 443.14,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 444.52,
+      "stop": 399.83,
+      "target": 533.88,
+      "reward_risk": 2.0,
+      "beta": 2.47,
+      "return_1w_pct": 21.37,
+      "return_1m_pct": 37.47,
+      "return_3m_pct": 31.2,
+      "relative_strength_3m_pct": 28.21,
+      "volume_ratio": 0.83,
+      "score": 79.0,
+      "position_size_shares": 1,
+      "risk_dkk": 288.49,
+      "position_value_dkk": 2869.98,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "LRCX",
+      "close": 343.92,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 344.6,
+      "stop": 326.17,
+      "target": 381.46,
+      "reward_risk": 2.0,
+      "beta": 2.51,
+      "return_1w_pct": 12.22,
+      "return_1m_pct": 9.75,
+      "return_3m_pct": 20.85,
+      "relative_strength_3m_pct": 17.86,
+      "volume_ratio": 0.73,
+      "score": 68.0,
+      "position_size_shares": 1,
+      "risk_dkk": 118.99,
+      "position_value_dkk": 2224.87,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "WDC",
+      "close": 536.01,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 536.92,
+      "stop": 493.7,
+      "target": 623.36,
+      "reward_risk": 2.0,
+      "beta": 2.46,
+      "return_1w_pct": 22.28,
+      "return_1m_pct": 12.32,
+      "return_3m_pct": 11.23,
+      "relative_strength_3m_pct": 8.24,
+      "volume_ratio": 1.04,
+      "score": 51.0,
+      "position_size_shares": 1,
+      "risk_dkk": 279.05,
+      "position_value_dkk": 3466.58,
+      "failed_filters": [
+        "ema50_below_ema200"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "NBIS"
+    ]
+  },
+  "data_failures": []
+}
