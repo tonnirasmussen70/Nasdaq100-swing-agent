@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-08-18T20:47:24.735359+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "SNDK",
+      "close": 1625.0,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 1633.63,
+      "stop": 1596.0,
+      "target": 1738.71,
+      "reward_risk": 2.79,
+      "beta": 3.57,
+      "return_1w_pct": 27.91,
+      "return_1m_pct": 16.88,
+      "return_3m_pct": 21.96,
+      "relative_strength_3m_pct": 21.54,
+      "volume_ratio": 1.05,
+      "score": 70.6,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "MRVL",
+      "close": 216.03,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 216.27,
+      "stop": 210.65,
+      "target": 227.51,
+      "reward_risk": 2.0,
+      "beta": 2.55,
+      "return_1w_pct": 1.74,
+      "return_1m_pct": 10.8,
+      "return_3m_pct": 27.9,
+      "relative_strength_3m_pct": 27.47,
+      "volume_ratio": 1.18,
+      "score": 68.5,
+      "position_size_shares": 2,
+      "risk_dkk": 72.58,
+      "position_value_dkk": 2793.69,
+      "failed_filters": [
+        "close_below_ema50"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
