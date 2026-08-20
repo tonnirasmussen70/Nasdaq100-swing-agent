@@ -1,6 +1,6 @@
 {
-  "qualified": [],
-  "near_miss": [
+  "qualified": [
     "MRVL"
-  ]
+  ],
+  "near_miss": []
 }

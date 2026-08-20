@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-08-20T20:55:11.327995+00:00",
+  "qualified": [
+    {
+      "ticker": "MRVL",
+      "close": 251.16,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 251.72,
+      "stop": 230.96,
+      "target": 293.25,
+      "reward_risk": 2.0,
+      "beta": 2.53,
+      "return_1w_pct": 12.98,
+      "return_1m_pct": 18.97,
+      "return_3m_pct": 34.41,
+      "relative_strength_3m_pct": 34.1,
+      "volume_ratio": 1.24,
+      "score": 84.3,
+      "position_size_shares": 2,
+      "risk_dkk": 265.8,
+      "position_value_dkk": 3222.48,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [],
+  "changes": {
+    "new": [
+      "MRVL"
+    ],
+    "removed": []
+  },
+  "data_failures": []
+}
