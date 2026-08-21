@@ -1,6 +1,8 @@
 {
-  "qualified": [
-    "MRVL"
-  ],
-  "near_miss": []
+  "qualified": [],
+  "near_miss": [
+    "ADP",
+    "MRVL",
+    "PLTR"
+  ]
 }

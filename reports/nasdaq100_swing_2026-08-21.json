@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-08-21T20:47:52.533774+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "MRVL",
+      "close": 237.13,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 238.27,
+      "stop": 232.78,
+      "target": 250.73,
+      "reward_risk": 2.27,
+      "beta": 2.51,
+      "return_1w_pct": 6.77,
+      "return_1m_pct": 13.24,
+      "return_3m_pct": 24.34,
+      "relative_strength_3m_pct": 24.5,
+      "volume_ratio": 1.05,
+      "score": 69.3,
+      "position_size_shares": 2,
+      "risk_dkk": 70.26,
+      "position_value_dkk": 3050.71,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "close": 179.94,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 180.89,
+      "stop": 172.32,
+      "target": 198.03,
+      "reward_risk": 2.0,
+      "beta": 1.29,
+      "return_1w_pct": 3.39,
+      "return_1m_pct": 45.85,
+      "return_3m_pct": 30.95,
+      "relative_strength_3m_pct": 31.11,
+      "volume_ratio": 0.82,
+      "score": 61.0,
+      "position_size_shares": 3,
+      "risk_dkk": 164.6,
+      "position_value_dkk": 3474.14,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "ADP",
+      "close": 280.72,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 281.91,
+      "stop": 274.81,
+      "target": 296.11,
+      "reward_risk": 2.0,
+      "beta": -0.21,
+      "return_1w_pct": 2.88,
+      "return_1m_pct": 15.62,
+      "return_3m_pct": 28.56,
+      "relative_strength_3m_pct": 28.73,
+      "volume_ratio": 1.02,
+      "score": 58.2,
+      "position_size_shares": 2,
+      "risk_dkk": 90.91,
+      "position_value_dkk": 3609.43,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "MRVL"
+    ]
+  },
+  "data_failures": []
+}
