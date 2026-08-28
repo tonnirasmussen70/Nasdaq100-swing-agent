@@ -1,4 +1,9 @@
 {
-  "qualified": [],
-  "near_miss": []
+  "qualified": [
+    "NVDA"
+  ],
+  "near_miss": [
+    "CRWD",
+    "ROP"
+  ]
 }

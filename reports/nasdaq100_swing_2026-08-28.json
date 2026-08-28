@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-28T04:25:00.310037+00:00",
+  "qualified": [
+    {
+      "ticker": "NVDA",
+      "close": 228.05,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 229.12,
+      "stop": 208.94,
+      "target": 269.48,
+      "reward_risk": 2.0,
+      "beta": 1.31,
+      "return_1w_pct": 5.13,
+      "return_1m_pct": 19.98,
+      "return_3m_pct": 6.53,
+      "relative_strength_3m_pct": 8.46,
+      "volume_ratio": 2.56,
+      "score": 50.4,
+      "position_size_shares": 2,
+      "risk_dkk": 259.02,
+      "position_value_dkk": 2941.07,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [
+    {
+      "ticker": "CRWD",
+      "close": 227.95,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 229.32,
+      "stop": 187.77,
+      "target": 312.4,
+      "reward_risk": 2.0,
+      "beta": 1.17,
+      "return_1w_pct": 19.76,
+      "return_1m_pct": 27.08,
+      "return_3m_pct": 35.89,
+      "relative_strength_3m_pct": 37.82,
+      "volume_ratio": 2.92,
+      "score": 90.0,
+      "position_size_shares": 1,
+      "risk_dkk": 266.63,
+      "position_value_dkk": 1471.79,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "ROP",
+      "close": 422.66,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 424.15,
+      "stop": 412.36,
+      "target": 447.71,
+      "reward_risk": 2.0,
+      "beta": -0.18,
+      "return_1w_pct": 2.98,
+      "return_1m_pct": 3.58,
+      "return_3m_pct": 32.53,
+      "relative_strength_3m_pct": 34.45,
+      "volume_ratio": 1.26,
+      "score": 64.1,
+      "position_size_shares": 1,
+      "risk_dkk": 75.62,
+      "position_value_dkk": 2722.23,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [
+      "NVDA"
+    ],
+    "removed": []
+  },
+  "data_failures": []
+}
