@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-29T02:52:24.312782+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "PLTR",
+      "close": 186.25,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 187.35,
+      "stop": 184.17,
+      "target": 193.72,
+      "reward_risk": 2.0,
+      "beta": 1.3,
+      "return_1w_pct": 3.53,
+      "return_1m_pct": 52.37,
+      "return_3m_pct": 19.0,
+      "relative_strength_3m_pct": 21.97,
+      "volume_ratio": 0.53,
+      "score": 54.4,
+      "position_size_shares": 3,
+      "risk_dkk": 61.57,
+      "position_value_dkk": 3626.08,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "NVDA"
+    ]
+  },
+  "data_failures": []
+}
