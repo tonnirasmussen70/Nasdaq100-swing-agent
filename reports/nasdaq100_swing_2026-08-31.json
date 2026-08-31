@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-08-31T23:58:22.070634+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "PAYX",
+      "close": 127.34,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 127.9,
+      "stop": 125.49,
+      "target": 132.73,
+      "reward_risk": 2.0,
+      "beta": -0.2,
+      "return_1w_pct": 1.06,
+      "return_1m_pct": 8.99,
+      "return_3m_pct": 25.6,
+      "relative_strength_3m_pct": 29.06,
+      "volume_ratio": 1.1,
+      "score": 59.1,
+      "position_size_shares": 4,
+      "risk_dkk": 62.11,
+      "position_value_dkk": 3291.32,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "close": 914.76,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 919.62,
+      "stop": 885.31,
+      "target": 988.24,
+      "reward_risk": 2.0,
+      "beta": 2.36,
+      "return_1w_pct": 10.19,
+      "return_1m_pct": 28.13,
+      "return_3m_pct": 1.08,
+      "relative_strength_3m_pct": 4.54,
+      "volume_ratio": 0.64,
+      "score": 21.3,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
