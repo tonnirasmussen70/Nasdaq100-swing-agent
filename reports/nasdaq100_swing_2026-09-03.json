@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-09-03T22:41:50.841795+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "MSTR",
+      "close": 144.84,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 145.06,
+      "stop": 121.61,
+      "target": 191.95,
+      "reward_risk": 2.0,
+      "beta": 1.89,
+      "return_1w_pct": 5.4,
+      "return_1m_pct": 47.22,
+      "return_3m_pct": 11.94,
+      "relative_strength_3m_pct": 14.99,
+      "volume_ratio": 1.71,
+      "score": 75.5,
+      "position_size_shares": 1,
+      "risk_dkk": 150.73,
+      "position_value_dkk": 932.52,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "close": 228.4,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 229.8,
+      "stop": 223.51,
+      "target": 242.37,
+      "reward_risk": 2.0,
+      "beta": 1.32,
+      "return_1w_pct": 0.21,
+      "return_1m_pct": 4.21,
+      "return_3m_pct": 4.48,
+      "relative_strength_3m_pct": 7.52,
+      "volume_ratio": 1.06,
+      "score": 24.6,
+      "position_size_shares": 2,
+      "risk_dkk": 80.82,
+      "position_value_dkk": 2954.56,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
