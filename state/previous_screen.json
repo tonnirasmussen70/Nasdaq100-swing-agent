@@ -1,7 +1,11 @@
 {
-  "qualified": [],
+  "qualified": [
+    "SNDK"
+  ],
   "near_miss": [
-    "MSTR",
+    "ASML",
+    "GILD",
+    "MU",
     "NVDA"
   ]
 }
