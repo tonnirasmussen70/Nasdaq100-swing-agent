@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-09-07T22:56:05.872073+00:00",
+  "qualified": [
+    {
+      "ticker": "SNDK",
+      "close": 1739.81,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 1741.56,
+      "stop": 1531.45,
+      "target": 2161.77,
+      "reward_risk": 2.0,
+      "beta": 3.53,
+      "return_1w_pct": 17.17,
+      "return_1m_pct": 38.25,
+      "return_3m_pct": 11.59,
+      "relative_strength_3m_pct": 9.56,
+      "volume_ratio": 1.25,
+      "score": 59.9,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [
+    {
+      "ticker": "MU",
+      "close": 1014.95,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 1018.47,
+      "stop": 939.93,
+      "target": 1175.56,
+      "reward_risk": 2.0,
+      "beta": 2.88,
+      "return_1w_pct": 8.98,
+      "return_1m_pct": 15.33,
+      "return_3m_pct": 17.68,
+      "relative_strength_3m_pct": 15.65,
+      "volume_ratio": 1.27,
+      "score": 70.7,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "GILD",
+      "close": 151.0,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 151.09,
+      "stop": 149.14,
+      "target": 155.0,
+      "reward_risk": 2.0,
+      "beta": 0.07,
+      "return_1w_pct": 3.65,
+      "return_1m_pct": 15.39,
+      "return_3m_pct": 17.68,
+      "relative_strength_3m_pct": 15.65,
+      "volume_ratio": 1.13,
+      "score": 51.0,
+      "position_size_shares": 4,
+      "risk_dkk": 50.18,
+      "position_value_dkk": 3885.54,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "close": 230.35,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 231.2,
+      "stop": 227.19,
+      "target": 239.22,
+      "reward_risk": 2.0,
+      "beta": 1.32,
+      "return_1w_pct": 5.89,
+      "return_1m_pct": 5.19,
+      "return_3m_pct": 12.32,
+      "relative_strength_3m_pct": 10.29,
+      "volume_ratio": 1.06,
+      "score": 38.4,
+      "position_size_shares": 2,
+      "risk_dkk": 51.55,
+      "position_value_dkk": 2972.73,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "ASML",
+      "close": 1715.0,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 1718.27,
+      "stop": 1636.19,
+      "target": 1882.44,
+      "reward_risk": 2.0,
+      "beta": 1.69,
+      "return_1w_pct": 1.1,
+      "return_1m_pct": 0.62,
+      "return_3m_pct": 4.59,
+      "relative_strength_3m_pct": 2.56,
+      "volume_ratio": 1.12,
+      "score": 19.0,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "ema50_below_ema200"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
