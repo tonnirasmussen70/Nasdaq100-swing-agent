@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-09-08T22:50:32.973021+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "NBIS",
+      "close": 243.76,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 246.88,
+      "stop": 216.25,
+      "target": 308.14,
+      "reward_risk": 2.0,
+      "beta": 2.79,
+      "return_1w_pct": 18.2,
+      "return_1m_pct": 29.74,
+      "return_3m_pct": 11.87,
+      "relative_strength_3m_pct": 11.55,
+      "volume_ratio": 1.22,
+      "score": 62.8,
+      "position_size_shares": 1,
+      "risk_dkk": 196.9,
+      "position_value_dkk": 1587.11,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "close": 978.24,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 986.57,
+      "stop": 869.63,
+      "target": 1220.44,
+      "reward_risk": 2.0,
+      "beta": 2.35,
+      "return_1w_pct": 6.97,
+      "return_1m_pct": 9.93,
+      "return_3m_pct": 9.28,
+      "relative_strength_3m_pct": 8.97,
+      "volume_ratio": 1.59,
+      "score": 60.7,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "close": 225.77,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 226.0,
+      "stop": 224.66,
+      "target": 230.87,
+      "reward_risk": 3.63,
+      "beta": 1.32,
+      "return_1w_pct": 2.24,
+      "return_1m_pct": 0.79,
+      "return_3m_pct": 8.19,
+      "relative_strength_3m_pct": 7.87,
+      "volume_ratio": 0.92,
+      "score": 24.9,
+      "position_size_shares": 2,
+      "risk_dkk": 17.26,
+      "position_value_dkk": 2905.68,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "SNDK"
+    ]
+  },
+  "data_failures": []
+}
