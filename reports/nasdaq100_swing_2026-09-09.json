@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-09-09T22:40:15.158979+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "AMD",
+      "close": 521.08,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 521.46,
+      "stop": 502.55,
+      "target": 559.28,
+      "reward_risk": 2.0,
+      "beta": 2.53,
+      "return_1w_pct": 13.38,
+      "return_1m_pct": 10.98,
+      "return_3m_pct": 9.59,
+      "relative_strength_3m_pct": 8.43,
+      "volume_ratio": 1.23,
+      "score": 50.6,
+      "position_size_shares": 1,
+      "risk_dkk": 121.47,
+      "position_value_dkk": 3349.32,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
