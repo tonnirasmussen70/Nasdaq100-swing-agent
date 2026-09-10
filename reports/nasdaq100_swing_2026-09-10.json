@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-09-10T22:42:04.828776+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "FANG",
+      "close": 205.32,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 205.85,
+      "stop": 200.71,
+      "target": 216.13,
+      "reward_risk": 2.0,
+      "beta": -0.25,
+      "return_1w_pct": 0.97,
+      "return_1m_pct": 2.39,
+      "return_3m_pct": 5.07,
+      "relative_strength_3m_pct": 2.98,
+      "volume_ratio": 1.08,
+      "score": 15.1,
+      "position_size_shares": 3,
+      "risk_dkk": 99.31,
+      "position_value_dkk": 3975.49,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
