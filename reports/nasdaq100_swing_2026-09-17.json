@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-09-17T22:57:57.565964+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "WDAY",
+      "close": 199.21,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 199.57,
+      "stop": 183.34,
+      "target": 232.04,
+      "reward_risk": 2.0,
+      "beta": -0.02,
+      "return_1w_pct": 7.67,
+      "return_1m_pct": 4.53,
+      "return_3m_pct": 63.57,
+      "relative_strength_3m_pct": 64.33,
+      "volume_ratio": 1.19,
+      "score": 64.1,
+      "position_size_shares": 2,
+      "risk_dkk": 211.42,
+      "position_value_dkk": 2599.23,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "close": 176.18,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 177.28,
+      "stop": 170.75,
+      "target": 190.34,
+      "reward_risk": 2.0,
+      "beta": 1.32,
+      "return_1w_pct": 6.26,
+      "return_1m_pct": 2.74,
+      "return_3m_pct": 34.92,
+      "relative_strength_3m_pct": 35.67,
+      "volume_ratio": 0.79,
+      "score": 58.8,
+      "position_size_shares": 3,
+      "risk_dkk": 127.55,
+      "position_value_dkk": 3463.33,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "close": 544.78,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 547.12,
+      "stop": 505.3,
+      "target": 630.77,
+      "reward_risk": 2.0,
+      "beta": 2.55,
+      "return_1w_pct": 8.24,
+      "return_1m_pct": 12.53,
+      "return_3m_pct": 6.36,
+      "relative_strength_3m_pct": 7.12,
+      "volume_ratio": 1.59,
+      "score": 50.5,
+      "position_size_shares": 1,
+      "risk_dkk": 272.36,
+      "position_value_dkk": 3562.87,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
