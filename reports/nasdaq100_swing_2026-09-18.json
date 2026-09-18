@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-09-18T22:43:08.916435+00:00",
+  "qualified": [
+    {
+      "ticker": "MSTR",
+      "close": 153.91,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 154.18,
+      "stop": 131.01,
+      "target": 200.51,
+      "reward_risk": 2.0,
+      "beta": 1.93,
+      "return_1w_pct": 17.52,
+      "return_1m_pct": 47.65,
+      "return_3m_pct": 36.78,
+      "relative_strength_3m_pct": 39.29,
+      "volume_ratio": 1.98,
+      "score": 96.9,
+      "position_size_shares": 1,
+      "risk_dkk": 150.74,
+      "position_value_dkk": 1003.31,
+      "failed_filters": []
+    },
+    {
+      "ticker": "NVDA",
+      "close": 222.09,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 222.81,
+      "stop": 217.89,
+      "target": 232.64,
+      "reward_risk": 2.0,
+      "beta": 1.33,
+      "return_1w_pct": 1.82,
+      "return_1m_pct": 2.28,
+      "return_3m_pct": 5.61,
+      "relative_strength_3m_pct": 8.12,
+      "volume_ratio": 1.45,
+      "score": 33.3,
+      "position_size_shares": 2,
+      "risk_dkk": 63.97,
+      "position_value_dkk": 2899.81,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [
+    {
+      "ticker": "PANW",
+      "close": 363.57,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 364.94,
+      "stop": 355.48,
+      "target": 383.86,
+      "reward_risk": 2.0,
+      "beta": 0.88,
+      "return_1w_pct": 9.96,
+      "return_1m_pct": 1.06,
+      "return_3m_pct": 26.34,
+      "relative_strength_3m_pct": 28.85,
+      "volume_ratio": 2.09,
+      "score": 75.2,
+      "position_size_shares": 1,
+      "risk_dkk": 61.55,
+      "position_value_dkk": 2374.84,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "close": 177.52,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 177.8,
+      "stop": 171.79,
+      "target": 189.83,
+      "reward_risk": 2.0,
+      "beta": 1.32,
+      "return_1w_pct": 6.22,
+      "return_1m_pct": 1.4,
+      "return_3m_pct": 38.27,
+      "relative_strength_3m_pct": 40.78,
+      "volume_ratio": 1.39,
+      "score": 67.0,
+      "position_size_shares": 3,
+      "risk_dkk": 117.37,
+      "position_value_dkk": 3471.18,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "close": 931.22,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 943.95,
+      "stop": 884.21,
+      "target": 1063.43,
+      "reward_risk": 2.0,
+      "beta": 2.34,
+      "return_1w_pct": 0.42,
+      "return_1m_pct": 12.48,
+      "return_3m_pct": 9.52,
+      "relative_strength_3m_pct": 12.02,
+      "volume_ratio": 2.25,
+      "score": 66.3,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "close": 559.8,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 560.26,
+      "stop": 540.85,
+      "target": 599.08,
+      "reward_risk": 2.0,
+      "beta": 2.55,
+      "return_1w_pct": 8.46,
+      "return_1m_pct": 20.02,
+      "return_3m_pct": 4.18,
+      "relative_strength_3m_pct": 6.68,
+      "volume_ratio": 1.74,
+      "score": 51.8,
+      "position_size_shares": 1,
+      "risk_dkk": 126.31,
+      "position_value_dkk": 3645.87,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [
+      "MSTR",
+      "NVDA"
+    ],
+    "removed": []
+  },
+  "data_failures": []
+}
