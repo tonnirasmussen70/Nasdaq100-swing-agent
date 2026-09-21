@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-09-21T23:27:28.656255+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "MSTR",
+      "close": 168.5,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 169.32,
+      "stop": 149.5,
+      "target": 208.96,
+      "reward_risk": 2.0,
+      "beta": 1.95,
+      "return_1w_pct": 23.05,
+      "return_1m_pct": 49.92,
+      "return_3m_pct": 53.94,
+      "relative_strength_3m_pct": 53.49,
+      "volume_ratio": 1.49,
+      "score": 87.4,
+      "position_size_shares": 2,
+      "risk_dkk": 258.45,
+      "position_value_dkk": 2208.05,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "close": 615.36,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 617.11,
+      "stop": 542.37,
+      "target": 766.57,
+      "reward_risk": 2.0,
+      "beta": 2.57,
+      "return_1w_pct": 24.75,
+      "return_1m_pct": 31.11,
+      "return_3m_pct": 11.58,
+      "relative_strength_3m_pct": 11.14,
+      "volume_ratio": 2.32,
+      "score": 77.5,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "close": 183.08,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 183.25,
+      "stop": 175.08,
+      "target": 199.59,
+      "reward_risk": 2.0,
+      "beta": 1.3,
+      "return_1w_pct": 5.64,
+      "return_1m_pct": 5.25,
+      "return_3m_pct": 53.21,
+      "relative_strength_3m_pct": 52.77,
+      "volume_ratio": 0.76,
+      "score": 62.2,
+      "position_size_shares": 3,
+      "risk_dkk": 159.83,
+      "position_value_dkk": 3584.61,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "close": 954.49,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 964.33,
+      "stop": 908.22,
+      "target": 1076.55,
+      "reward_risk": 2.0,
+      "beta": 2.3,
+      "return_1w_pct": 14.31,
+      "return_1m_pct": 8.55,
+      "return_3m_pct": 6.77,
+      "relative_strength_3m_pct": 6.33,
+      "volume_ratio": 1.08,
+      "score": 36.3,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "MSTR",
+      "NVDA"
+    ]
+  },
+  "data_failures": []
+}

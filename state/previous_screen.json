@@ -1,12 +1,9 @@
 {
-  "qualified": [
-    "MSTR",
-    "NVDA"
-  ],
+  "qualified": [],
   "near_miss": [
     "AMD",
     "LITE",
-    "PANW",
+    "MSTR",
     "PLTR"
   ]
 }
