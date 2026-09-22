@@ -1,0 +1,102 @@
+//@version=6
+indicator("Asian/London Breakout · Python parity", overlay = true, max_labels_count = 500)
+
+// Signal-only parity layer for asian_breakout.py.
+// Use on standard 5-minute OHLC bars. Sessions are interpreted in Europe/London.
+// This script intentionally does not model broker fills or futures contract sizing.
+
+const string TZ = "Europe/London"
+const string ASIAN_SESSION = "0000-0730:23456"
+const string ENTRY_SESSION = "0800-1000:23456"
+
+profile = input.string("Control", "Profile", options = ["Control", "Challenger", "Custom"])
+customMaxAsianRange = input.float(2.50, "Custom max Asian range %", minval = 0.01, step = 0.05)
+customMinBodyRatio = input.float(0.60, "Custom minimum body ratio", minval = 0.0, maxval = 1.0, step = 0.05)
+customRewardRisk = input.float(2.00, "Custom reward/risk", minval = 0.1, step = 0.1)
+showRange = input.bool(true, "Show Asian range")
+showParityValues = input.bool(true, "Expose parity values in Data Window")
+
+// Machine-readable parity markers. CI checks these against config.json.
+// @parity min_asian_range_pct=0.10
+// @parity control.max_asian_range_pct=2.50
+// @parity control.min_body_ratio=0.60
+// @parity control.reward_risk=2.00
+// @parity challenger.max_asian_range_pct=1.00
+// @parity challenger.min_body_ratio=0.60
+// @parity challenger.reward_risk=2.50
+// @parity long_close_location_min=0.80
+// @parity short_close_location_max=0.20
+// @parity breakout_buffer_pct=0.02
+// @parity stop_buffer_pct=0.02
+
+float minAsianRangePct = 0.10
+float maxAsianRangePct = profile == "Control" ? 2.50 : profile == "Challenger" ? 1.00 : customMaxAsianRange
+float minBodyRatio = profile == "Control" ? 0.60 : profile == "Challenger" ? 0.60 : customMinBodyRatio
+float rewardRisk = profile == "Control" ? 2.00 : profile == "Challenger" ? 2.50 : customRewardRisk
+float longCloseLocationMin = 0.80
+float shortCloseLocationMax = 0.20
+float breakoutBufferPct = 0.02
+float stopBufferPct = 0.02
+
+bool isFiveMinute = timeframe.isminutes and timeframe.multiplier == 5
+bool inAsian = not na(time(timeframe.period, ASIAN_SESSION, TZ))
+bool inEntryWindow = not na(time(timeframe.period, ENTRY_SESSION, TZ))
+bool firstAsianBar = inAsian and (bar_index == 0 or not inAsian[1])
+
+var float asianHigh = na
+var float asianLow = na
+var bool tradedToday = false
+
+if firstAsianBar
+    asianHigh := high
+    asianLow := low
+    tradedToday := false
+else if inAsian
+    asianHigh := na(asianHigh) ? high : math.max(asianHigh, high)
+    asianLow := na(asianLow) ? low : math.min(asianLow, low)
+
+float midpoint = not na(asianHigh) and not na(asianLow) ? (asianHigh + asianLow) / 2.0 : na
+float asianRangePct = not na(midpoint) and midpoint > 0 ? (asianHigh - asianLow) / midpoint * 100.0 : na
+float candleRange = high - low
+float bodyRatio = candleRange > 0 ? math.abs(close - open) / candleRange : na
+float closeLocation = candleRange > 0 ? (close - low) / candleRange : na
+float longLevel = not na(asianHigh) ? asianHigh * (1.0 + breakoutBufferPct / 100.0) : na
+float shortLevel = not na(asianLow) ? asianLow * (1.0 - breakoutBufferPct / 100.0) : na
+
+bool rangeOk = not na(asianRangePct) and asianRangePct >= minAsianRangePct and asianRangePct <= maxAsianRangePct
+bool bodyOk = not na(bodyRatio) and bodyRatio >= minBodyRatio
+bool commonGate = isFiveMinute and barstate.isconfirmed and inEntryWindow and not inAsian and not tradedToday and rangeOk and bodyOk
+
+bool longSignal = commonGate and open > asianHigh and close > longLevel and closeLocation >= longCloseLocationMin
+bool shortSignal = commonGate and open < asianLow and close < shortLevel and closeLocation <= shortCloseLocationMax
+
+float entryRef = longSignal or shortSignal ? close : na
+float stopRef = longSignal ? low - stopBufferPct / 100.0 * close : shortSignal ? high + stopBufferPct / 100.0 * close : na
+float riskPoints = longSignal ? entryRef - stopRef : shortSignal ? stopRef - entryRef : na
+float targetRef = longSignal ? entryRef + rewardRisk * riskPoints : shortSignal ? entryRef - rewardRisk * riskPoints : na
+int signalCode = longSignal ? 1 : shortSignal ? -1 : 0
+
+if longSignal or shortSignal
+    tradedToday := true
+
+plot(showRange ? asianHigh : na, "Asian High", color = color.new(color.teal, 0), style = plot.style_stepline)
+plot(showRange ? asianLow : na, "Asian Low", color = color.new(color.orange, 0), style = plot.style_stepline)
+plotshape(longSignal, title = "LONG signal", style = shape.labelup, location = location.belowbar, text = "LONG", size = size.tiny)
+plotshape(shortSignal, title = "SHORT signal", style = shape.labeldown, location = location.abovebar, text = "SHORT", size = size.tiny)
+
+// Named series are available in TradingView chart-data exports for signal parity checks.
+plot(showParityValues ? signalCode : na, "PARITY_SIGNAL_CODE", display = display.data_window)
+plot(showParityValues ? entryRef : na, "PARITY_ENTRY", display = display.data_window)
+plot(showParityValues ? stopRef : na, "PARITY_STOP", display = display.data_window)
+plot(showParityValues ? targetRef : na, "PARITY_TARGET", display = display.data_window)
+plot(showParityValues ? asianHigh : na, "PARITY_ASIAN_HIGH", display = display.data_window)
+plot(showParityValues ? asianLow : na, "PARITY_ASIAN_LOW", display = display.data_window)
+plot(showParityValues ? asianRangePct : na, "PARITY_ASIAN_RANGE_PCT", display = display.data_window)
+plot(showParityValues ? bodyRatio : na, "PARITY_BODY_RATIO", display = display.data_window)
+plot(showParityValues ? closeLocation : na, "PARITY_CLOSE_LOCATION", display = display.data_window)
+
+alertcondition(longSignal, "Asian breakout LONG", "Asian/London breakout LONG signal")
+alertcondition(shortSignal, "Asian breakout SHORT", "Asian/London breakout SHORT signal")
+
+if barstate.islast and not isFiveMinute
+    label.new(bar_index, high, "Use a standard 5-minute chart for Python parity", style = label.style_label_down)
