@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 import argparse
-import json
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from breakout_runner import load_journal, performance
+from report_io import write_json_if_changed
 from swing_agent import load_config
 
 
@@ -118,11 +117,9 @@ def run(config_path: Path) -> Path:
         minimum,
         costs_r=costs_r,
     )
-    payload["generated_at"] = datetime.now().astimezone().isoformat()
     payload["promotion_rule"] = validation.get("promotion_rule")
     output = root / "reports" / "asian_breakout_validation_latest.json"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    write_json_if_changed(output, payload)
     return output
 
 

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -10,6 +9,7 @@ import pandas as pd
 import yfinance as yf
 
 from asian_breakout import BreakoutSignal, evaluate_breakout
+from report_io import write_json_if_changed
 from swing_agent import load_config
 
 
@@ -161,7 +161,6 @@ def run(config_path: Path) -> dict[str, Any]:
     added = append_signal(journal_path, signal) if signal else False
     rows = load_journal(journal_path)
     payload = {
-        "generated_at": datetime.now().astimezone().isoformat(),
         "ticker": ticker,
         "signal": signal.to_dict() if signal else None,
         "new_signal": added,
@@ -170,9 +169,12 @@ def run(config_path: Path) -> dict[str, Any]:
         "journal_file": str(journal_path),
     }
     report_path = config_path.parent / strategy.get("report_file", "reports/asian_breakout_latest.json")
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    return payload
+    report, _ = write_json_if_changed(
+        report_path,
+        payload,
+        volatile_keys={"generated_at", "new_signal", "resolved_trades"},
+    )
+    return report
 
 
 def _usd_dkk(cfg: dict[str, Any]) -> float:

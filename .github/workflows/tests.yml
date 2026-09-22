@@ -17,5 +17,5 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt pytest
-      - run: python -m compileall -q swing_agent.py asian_breakout.py breakout_runner.py breakout_backtest.py breakout_robustness.py breakout_compare_runner.py breakout_walkforward.py breakout_validation.py breakout_execution.py app.py
+      - run: python -m compileall -q swing_agent.py asian_breakout.py breakout_runner.py breakout_backtest.py breakout_robustness.py breakout_compare_runner.py breakout_walkforward.py breakout_validation.py breakout_execution.py report_io.py app.py
       - run: pytest -q
