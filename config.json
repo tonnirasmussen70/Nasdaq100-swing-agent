@@ -39,6 +39,7 @@
     "ticker": "NQ=F",
     "journal_file": "state/asian_breakout_journal.json",
     "report_file": "reports/asian_breakout_latest.json",
-    "sizing_mode": "normalized_r"
+    "sizing_mode": "normalized_r",
+    "backtest_period": "60d"
   }
 }
