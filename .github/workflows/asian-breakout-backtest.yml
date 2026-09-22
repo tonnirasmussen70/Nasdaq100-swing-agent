@@ -2,6 +2,10 @@ name: Asian breakout backtest
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/backtest-trigger.txt"
 
 permissions:
   contents: read
