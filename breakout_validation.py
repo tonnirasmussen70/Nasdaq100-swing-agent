@@ -10,10 +10,42 @@ from breakout_runner import load_journal, performance
 from swing_agent import load_config
 
 
+def _cost_adjusted_rows(rows: list[dict[str, Any]], cost_r: float) -> list[dict[str, Any]]:
+    adjusted: list[dict[str, Any]] = []
+    for row in rows:
+        copy = dict(row)
+        if copy.get("status") == "CLOSED" and copy.get("result_r") is not None:
+            copy["result_r"] = float(copy["result_r"]) - float(cost_r)
+        adjusted.append(copy)
+    return adjusted
+
+
+def cost_sensitivity(
+    control_rows: list[dict[str, Any]],
+    challenger_rows: list[dict[str, Any]],
+    costs_r: list[float],
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for cost_r in costs_r:
+        control = performance(_cost_adjusted_rows(control_rows, cost_r))
+        challenger = performance(_cost_adjusted_rows(challenger_rows, cost_r))
+        rows.append(
+            {
+                "cost_r_per_trade": float(cost_r),
+                "control": control,
+                "challenger": challenger,
+                "challenger_positive": (challenger.get("expectancy_r") or 0) > 0
+                and (challenger.get("profit_factor") or 0) > 1,
+            }
+        )
+    return rows
+
+
 def validation_status(
     control_rows: list[dict[str, Any]],
     challenger_rows: list[dict[str, Any]],
     minimum_closed_trades: int,
+    costs_r: list[float] | None = None,
 ) -> dict[str, Any]:
     control = performance(control_rows)
     challenger = performance(challenger_rows)
@@ -44,12 +76,17 @@ def validation_status(
             or challenger["max_drawdown_r"] <= control["max_drawdown_r"]
         )
     )
+
+    stress = cost_sensitivity(control_rows, challenger_rows, costs_r or [0.0])
+    positive_scenarios = [row["cost_r_per_trade"] for row in stress if row["challenger_positive"]]
+    max_positive_cost_r = max(positive_scenarios) if positive_scenarios else None
+
     status = "REVIEW_REQUIRED" if quantitative_gate else "COLLECTING_DATA"
     return {
         "status": status,
         "quantitative_gate_passed": quantitative_gate,
         "automatic_promotion": False,
-        "costs_included": False,
+        "costs_included_in_gate": False,
         "minimum_closed_trades": minimum_closed_trades,
         "challenger_closed_trades": challenger_closed,
         "control_closed_trades": control_closed,
@@ -57,7 +94,13 @@ def validation_status(
         "reasons": reasons,
         "control": control,
         "challenger": challenger,
-        "note": "REVIEW_REQUIRED is not an automatic promotion. Trading costs/slippage and a human review are still required before any strategy change.",
+        "cost_sensitivity": stress,
+        "max_tested_cost_r_with_positive_challenger": max_positive_cost_r,
+        "note": (
+            "REVIEW_REQUIRED is not an automatic promotion. Cost scenarios are stress tests in R, "
+            "not broker-specific fee estimates. Realistic MNQ fees/slippage and a human review are "
+            "still required before any strategy change."
+        ),
     }
 
 
@@ -65,10 +108,16 @@ def run(config_path: Path) -> Path:
     cfg = load_config(config_path)
     validation = cfg["asian_breakout"].get("validation", {})
     minimum = int(validation.get("minimum_prospective_closed_trades", 30))
+    costs_r = [float(value) for value in validation.get("cost_stress_r_per_trade", [0.0])]
     root = config_path.parent
     control_path = root / "state" / "asian_breakout_control_journal.json"
     challenger_path = root / "state" / "asian_breakout_challenger_journal.json"
-    payload = validation_status(load_journal(control_path), load_journal(challenger_path), minimum)
+    payload = validation_status(
+        load_journal(control_path),
+        load_journal(challenger_path),
+        minimum,
+        costs_r=costs_r,
+    )
     payload["generated_at"] = datetime.now().astimezone().isoformat()
     payload["promotion_rule"] = validation.get("promotion_rule")
     output = root / "reports" / "asian_breakout_validation_latest.json"
