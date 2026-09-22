@@ -1,0 +1,31 @@
+{
+  "snapshot_id": "tradingview-parity-reference-2026-09-22",
+  "source_workflow_run_id": 35777892543,
+  "source_artifact_id": 10717400073,
+  "source_commit": "e7a5eae36c7ae9124035b772198302d9a9dd7eb8",
+  "generated_at_utc": "2026-09-22T20:05:21.299447+00:00",
+  "ticker": "NQ=F",
+  "period": "60d",
+  "interval": "5m",
+  "timezone": "Europe/London",
+  "profiles": {
+    "control": {
+      "max_asian_range_pct": 2.5,
+      "min_body_ratio": 0.6,
+      "reward_risk": 2.0,
+      "signal_count": 19
+    },
+    "challenger": {
+      "max_asian_range_pct": 1.0,
+      "min_body_ratio": 0.6,
+      "reward_risk": 2.5,
+      "signal_count": 15
+    }
+  },
+  "signal_count": 34,
+  "unique_signal_dates": 19,
+  "csv_sha256": "2883ce7d95ee6172d38de394c416309307723199d60cf4cf37169f851e98578d",
+  "source_manifest_sha256": "a9266216d4f59c041f53c382481d07be6426723039f73bdc42e84bd27ede4bf3",
+  "purpose": "Frozen signal-parity baseline for the first TradingView comparison.",
+  "warning": "This snapshot is derived from Yahoo/yfinance 5-minute NQ=F data. It freezes Python signal output for implementation-parity testing; it is not independent market-data validation or evidence of strategy edge."
+}
