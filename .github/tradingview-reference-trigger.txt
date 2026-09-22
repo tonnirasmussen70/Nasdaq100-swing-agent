@@ -1,2 +1,2 @@
 # Update this file on main to trigger a fresh TradingView parity reference artifact.
-trigger: ready
+trigger: 2026-09-22T21:47+02:00
