@@ -60,6 +60,12 @@ python tradingview_parity_compare.py \
 
 Run the same command with `--profile challenger` for the Challenger export.
 
+### Streamlit validation page
+
+The repository also includes `pages/TradingView_Validation.py`. When the Streamlit app is running, open the **TradingView Validation** page, select Control or Challenger, and upload the corresponding TradingView chart-data CSV. The page runs the same comparator directly against the frozen baseline and shows timestamp match, LONG/SHORT match, numeric tolerance match, missing/extra signals, and the maximum observed price/metric deltas. A JSON comparison report can be downloaded from the page.
+
+The dashboard does not change strategy parameters, promote the Challenger, or send broker orders. It is only a validation interface.
+
 The comparator reports timestamp overlap, side agreement, missing/extra signals and numeric deltas for entry, stop, target and session statistics. Default numeric tolerances are intentionally explicit and configurable (`--price-tolerance` and `--metric-tolerance`).
 
 Compare **signal timestamps first**, then side, entry, stop, target and session statistics. Do not move to performance comparison until signal parity is understood. Different market-data feeds can legitimately produce OHLC differences, so timestamp/side parity and price parity are reported separately.
