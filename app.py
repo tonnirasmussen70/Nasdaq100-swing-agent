@@ -166,7 +166,7 @@ overview[2].metric("Udgået", len(changes.get("removed", [])))
 overview[3].metric("Near-miss", len(near_miss))
 overview[4].metric("Datamangler", len(failures))
 
-tabs = st.tabs(["Kandidater", "Ændringer", "Near-miss", "Historik", "Datakvalitet"])
+tabs = st.tabs(["Kandidater", "Asian Breakout", "Ændringer", "Near-miss", "Historik", "Datakvalitet"])
 
 with tabs[0]:
     st.subheader("Kvalificerede setups")
@@ -192,6 +192,31 @@ with tabs[0]:
             render_candidate_detail(next(item for item in filtered if item["ticker"] == ticker))
 
 with tabs[1]:
+    st.subheader("Asian / London Breakout · paper trading")
+    breakout_path = ROOT / "reports" / "asian_breakout_latest.json"
+    journal_path = ROOT / "state" / "asian_breakout_journal.json"
+    if not breakout_path.exists():
+        st.info("Ingen breakout-rapport endnu. Kør breakout_runner.py i London-vinduet.")
+    else:
+        breakout = json.loads(breakout_path.read_text(encoding="utf-8"))
+        perf = breakout.get("performance", {})
+        metrics = st.columns(5)
+        metrics[0].metric("Lukkede handler", perf.get("closed_trades", 0))
+        metrics[1].metric("Win-rate", "—" if perf.get("win_rate_pct") is None else f"{perf['win_rate_pct']:.1f}%")
+        metrics[2].metric("Expectancy", "—" if perf.get("expectancy_r") is None else f"{perf['expectancy_r']:.2f}R")
+        metrics[3].metric("Profit factor", "—" if perf.get("profit_factor") is None else f"{perf['profit_factor']:.2f}")
+        metrics[4].metric("Max drawdown", "—" if perf.get("max_drawdown_r") is None else f"{perf['max_drawdown_r']:.2f}R")
+        signal = breakout.get("signal")
+        if signal:
+            st.success(f"{signal['side']} signal · {signal['ticker']} · entry ${signal['entry']:.2f} · stop ${signal['stop']:.2f} · target ${signal['target']:.2f}")
+        else:
+            st.caption("Seneste kørsel gav intet nyt breakout-signal.")
+        if journal_path.exists():
+            journal = json.loads(journal_path.read_text(encoding="utf-8"))
+            if journal:
+                st.dataframe(pd.DataFrame(journal), use_container_width=True, hide_index=True)
+
+with tabs[2]:
     st.subheader("Ændringer siden seneste screening")
     new = changes.get("new", [])
     removed = changes.get("removed", [])
@@ -199,7 +224,7 @@ with tabs[1]:
     col1.success("Nye kandidater: " + (", ".join(new) if new else "Ingen"))
     col2.warning("Udgåede kandidater: " + (", ".join(removed) if removed else "Ingen"))
 
-with tabs[2]:
+with tabs[3]:
     st.subheader("Near-miss · præcis ét manglende filter")
     if not near_miss:
         st.info("Ingen near-miss-kandidater i denne screening.")
@@ -211,11 +236,11 @@ with tabs[2]:
         visible = ["Ticker", "Manglende kriterium", "1H-mønster", "Type", "Score", "Beta", "1W %", "1M %", "3M %", "RS 3M %", "Volumen/20D"]
         st.dataframe(near_frame[[col for col in visible if col in near_frame]], use_container_width=True, hide_index=True)
 
-with tabs[3]:
+with tabs[4]:
     st.subheader("Screeninghistorik")
     render_history(files)
 
-with tabs[4]:
+with tabs[5]:
     st.subheader("Datakvalitet")
     if failures:
         st.error(f"Manglende eller utilstrækkelige data for {len(failures)} symboler: {', '.join(sorted(failures))}")
