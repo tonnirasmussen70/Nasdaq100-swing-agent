@@ -114,12 +114,21 @@ def evaluate_breakout(
     rr = float(cfg["reward_risk"])
     target = entry + rr * risk_per_share if side == "LONG" else entry - rr * risk_per_share
     risk_budget = cfg["account_value_dkk"] * cfg["risk_per_trade_pct"] / 100
-    position_cap = cfg["account_value_dkk"] * cfg["max_position_pct"] / 100
-    shares_by_risk = math.floor(risk_budget / (risk_per_share * usd_dkk))
-    shares_by_cap = math.floor(position_cap / (entry * usd_dkk))
-    shares = max(0, min(shares_by_risk, shares_by_cap))
-    if shares == 0:
-        return None
+    if cfg.get("sizing_mode") == "normalized_r":
+        # Research/paper mode: measure the strategy in R without pretending that
+        # Yahoo's NQ=F quote has the economics of a cash share position.
+        shares = 1
+        actual_risk_dkk = risk_budget
+        position_value_dkk = 0.0
+    else:
+        position_cap = cfg["account_value_dkk"] * cfg["max_position_pct"] / 100
+        shares_by_risk = math.floor(risk_budget / (risk_per_share * usd_dkk))
+        shares_by_cap = math.floor(position_cap / (entry * usd_dkk))
+        shares = max(0, min(shares_by_risk, shares_by_cap))
+        if shares == 0:
+            return None
+        actual_risk_dkk = shares * risk_per_share * usd_dkk
+        position_value_dkk = shares * entry * usd_dkk
 
     return BreakoutSignal(
         ticker=ticker,
@@ -135,6 +144,6 @@ def evaluate_breakout(
         body_ratio=round(body_ratio, 3),
         close_location=round(close_location, 3),
         position_size_shares=shares,
-        position_value_dkk=round(shares * entry * usd_dkk, 2),
-        risk_dkk=round(shares * risk_per_share * usd_dkk, 2),
+        position_value_dkk=round(position_value_dkk, 2),
+        risk_dkk=round(actual_risk_dkk, 2),
     )
