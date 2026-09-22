@@ -17,6 +17,17 @@ En deterministisk long-only scanner baseret på 1H-trend/candlesticks og dagligt
 - Positionsstørrelse begrænses af både 300 kr. tabsrisiko og 4.000 kr. maksimal positionsværdi.
 - Højst fem samtidige positioner; agenten åbner ikke handler og kan derfor ikke selv tælle eksisterende positioner.
 
+## Asian / London Breakout research
+
+Repoet indeholder også en separat paper-strategi for Nasdaq-100 futures omkring London-open. Den aktive control ændres ikke automatisk; en challenger valideres prospektivt side om side med control, og promotion kræver manuel review.
+
+Execution-feasibility beregnes separat fra den normaliserede R-backtest. `NQ=F` bruges som signal- og point-distance proxy, mens de konfigurerede kontraktmodeller er:
+
+- `MNQ` Micro E-mini Nasdaq-100: $2 pr. indekspoint, tick 0,25 point ($0,50 pr. tick).
+- `NNQ` E-nano Nasdaq-100: $0,20 pr. indekspoint, tick 0,50 point ($0,10 pr. tick). NNQ er markeret research-only indtil broker/data-adgang er verificeret.
+
+`breakout_execution.py` beregner, om mindst én kontrakt kan holdes inden for breakout-risikobudgettet ud fra entry-stop-afstanden og USD/DKK. Rapporten er bevidst pre-cost: brokerkommission, margin, slippage og faktisk target-contract execution-feed skal verificeres før live handel.
+
 ## Installation og kørsel
 
 ```bash
