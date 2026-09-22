@@ -41,6 +41,27 @@
     "report_file": "reports/asian_breakout_latest.json",
     "sizing_mode": "normalized_r",
     "backtest_period": "60d",
+    "execution": {
+      "risk_budget_pct": 1.0,
+      "spec_verified_date": "2026-09-22",
+      "contracts": {
+        "MNQ": {
+          "enabled": true,
+          "label": "Micro E-mini Nasdaq-100",
+          "point_value_usd": 2.0,
+          "tick_size": 0.25,
+          "source": "CME Group"
+        },
+        "NNQ": {
+          "enabled": true,
+          "label": "E-nano Nasdaq-100",
+          "point_value_usd": 0.2,
+          "tick_size": 0.5,
+          "source": "CME Group",
+          "research_only": true
+        }
+      }
+    },
     "robustness": {
       "period": "60d",
       "max_asian_range_pct": [0.4, 0.5, 0.6, 0.75, 1.0, 2.5],
