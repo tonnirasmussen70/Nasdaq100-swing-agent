@@ -51,6 +51,7 @@
       "period": "60d",
       "development_fraction": 0.5,
       "minimum_prospective_closed_trades": 30,
+      "cost_stress_r_per_trade": [0.0, 0.02, 0.05, 0.1],
       "promotion_rule": "Keep the active control unchanged until the challenger has at least 30 prospective closed trades, positive expectancy, profit factor above 1, and no worse max drawdown than control after realistic costs.",
       "profiles": {
         "control": {

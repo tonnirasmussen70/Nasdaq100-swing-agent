@@ -3,9 +3,10 @@ name: Asian breakout paper monitor
 on:
   workflow_dispatch:
   schedule:
-    # 07:55-09:55 UTC covers both UK winter and summer London windows.
-    # The DST-aware strategy gate accepts only 08:00-10:00 Europe/London.
-    - cron: "55,0,5,10,15,20,25,30,35,40,45,50 7-9 * * 1-5"
+    # Run every five minutes from 07:00-09:55 UTC on weekdays.
+    # This fully covers 08:00-10:00 Europe/London in both BST and GMT;
+    # the strategy's timezone-aware gate ignores calls outside the local window.
+    - cron: "*/5 7-9 * * 1-5"
 
 permissions:
   contents: write
