@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import json
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from asian_breakout import evaluate_breakout
 from breakout_runner import append_signal, download_intraday, load_journal, performance, resolve_open_trades
+from report_io import write_json_if_changed
 from swing_agent import load_config
 
 
@@ -61,7 +60,6 @@ def run(config_path: Path) -> Path:
         results[name] = run_profile(name, frame, strategy, cfg["account_value_dkk"], config_path.parent)
 
     payload = {
-        "generated_at": datetime.now().astimezone().isoformat(),
         "ticker": base["ticker"],
         "mode": "prospective_paper_comparison",
         "promotion_rule": validation.get(
@@ -71,8 +69,11 @@ def run(config_path: Path) -> Path:
         "profiles": results,
     }
     output = config_path.parent / "reports" / "asian_breakout_profiles_latest.json"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    write_json_if_changed(
+        output,
+        payload,
+        volatile_keys={"generated_at", "new_signal", "resolved_trades"},
+    )
     return output
 
 
