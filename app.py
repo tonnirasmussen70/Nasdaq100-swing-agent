@@ -46,6 +46,15 @@ def load_config() -> dict[str, Any]:
     return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 
 
+def load_optional_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
 def format_timestamp(value: str | None) -> str:
     if not value:
         return "Ukendt"
@@ -54,6 +63,15 @@ def format_timestamp(value: str | None) -> str:
         return stamp.astimezone().strftime("%d-%m-%Y kl. %H:%M %Z")
     except ValueError:
         return value
+
+
+def format_number(value: Any, suffix: str = "", digits: int = 2) -> str:
+    if value is None:
+        return "—"
+    try:
+        return f"{float(value):.{digits}f}{suffix}"
+    except (TypeError, ValueError):
+        return str(value)
 
 
 def candidate_frame(items: list[dict[str, Any]]) -> pd.DataFrame:
@@ -122,6 +140,30 @@ def render_history(files: list[Path]) -> None:
         st.info("Historikken vises, når der er flere gyldige rapporter.")
 
 
+def render_profile(name: str, profile: dict[str, Any]) -> None:
+    settings = profile.get("settings", {})
+    perf = profile.get("performance", {})
+    st.markdown(f"#### {name.title()}")
+    st.caption(
+        f"Asian range ≤ {settings.get('max_asian_range_pct', '—')}% · "
+        f"body ≥ {float(settings.get('min_body_ratio', 0)) * 100:.0f}% · "
+        f"target {settings.get('reward_risk', '—')}R"
+    )
+    cols = st.columns(4)
+    cols[0].metric("Lukkede", perf.get("closed_trades", 0))
+    cols[1].metric("Expectancy", format_number(perf.get("expectancy_r"), "R"))
+    cols[2].metric("Profit factor", format_number(perf.get("profit_factor")))
+    cols[3].metric("Max DD", format_number(perf.get("max_drawdown_r"), "R"))
+    signal = profile.get("signal")
+    if signal:
+        st.success(
+            f"{signal['side']} · entry ${signal['entry']:.2f} · "
+            f"stop ${signal['stop']:.2f} · target ${signal['target']:.2f}"
+        )
+    else:
+        st.caption("Intet nyt signal i seneste kørsel.")
+
+
 st.set_page_config(page_title="Nasdaq-100 Swing Agent", page_icon="📈", layout="wide")
 st.markdown(
     """
@@ -134,19 +176,19 @@ st.markdown(
 )
 
 st.title("Nasdaq-100 Swing Agent")
-st.caption("Regelbaseret long-screening · 1H teknisk analyse · ikke en købs- eller salgsanbefaling")
+st.caption("Regelbaseret screening og paper-validering · ingen automatisk live execution")
 
-files = report_files()
-if not files:
-    st.warning("Ingen JSON-rapporter fundet i mappen `reports`. Kør GitHub Action-workflowet først.")
-    st.stop()
-    raise SystemExit(0)
-
-labels = {path.name: path for path in files}
-selected_name = st.sidebar.selectbox("Rapport", list(labels), index=0)
-selected_path = labels[selected_name]
-report = load_report(selected_path)
 config = load_config()
+files = report_files()
+selected_path: Path | None = None
+report: dict[str, Any] = {}
+if files:
+    labels = {path.name: path for path in files}
+    selected_name = st.sidebar.selectbox("Rapport", list(labels), index=0)
+    selected_path = labels[selected_name]
+    report = load_report(selected_path)
+else:
+    st.sidebar.info("Ingen swing-rapport endnu. Breakout-valideringen kan stadig vises.")
 
 qualified = report.get("qualified", [])
 near_miss = report.get("near_miss", [])
@@ -155,9 +197,10 @@ failures = report.get("data_failures", [])
 
 st.sidebar.markdown("### Strategiramme")
 st.sidebar.write(f"Kapital: **{config.get('account_value_dkk', 0):,.0f} kr.**")
-st.sidebar.write(f"Risiko pr. handel: **{config.get('risk_per_trade_pct', 0):.1f}%**")
+st.sidebar.write(f"Risiko pr. swing-handel: **{config.get('risk_per_trade_pct', 0):.1f}%**")
 st.sidebar.write(f"Maks. positioner: **{config.get('max_open_positions', 0)}**")
-st.sidebar.caption(f"Genereret: {format_timestamp(report.get('generated_at'))}")
+if report:
+    st.sidebar.caption(f"Swing-rapport: {format_timestamp(report.get('generated_at'))}")
 
 overview = st.columns(5)
 overview[0].metric("Kvalificerede", len(qualified))
@@ -171,7 +214,7 @@ tabs = st.tabs(["Kandidater", "Asian Breakout", "Ændringer", "Near-miss", "Hist
 with tabs[0]:
     st.subheader("Kvalificerede setups")
     if not qualified:
-        st.info("Ingen aktier opfyldte alle filtre i denne screening.")
+        st.info("Ingen aktier opfyldte alle filtre i denne screening, eller der er endnu ingen swing-rapport.")
     else:
         max_score = max(float(item.get("score", 0)) for item in qualified)
         min_score = st.slider("Minimum score", 0.0, max(100.0, max_score), 0.0, 1.0)
@@ -195,25 +238,53 @@ with tabs[1]:
     st.subheader("Asian / London Breakout · paper trading")
     breakout_path = ROOT / "reports" / "asian_breakout_latest.json"
     journal_path = ROOT / "state" / "asian_breakout_journal.json"
-    if not breakout_path.exists():
-        st.info("Ingen breakout-rapport endnu. Kør breakout_runner.py i London-vinduet.")
+    breakout = load_optional_json(breakout_path)
+    if not breakout:
+        st.info("Ingen aktiv breakout-rapport endnu. Monitoren opretter den ved næste gyldige kørsel.")
     else:
-        breakout = json.loads(breakout_path.read_text(encoding="utf-8"))
         perf = breakout.get("performance", {})
         metrics = st.columns(5)
         metrics[0].metric("Lukkede handler", perf.get("closed_trades", 0))
-        metrics[1].metric("Win-rate", "—" if perf.get("win_rate_pct") is None else f"{perf['win_rate_pct']:.1f}%")
-        metrics[2].metric("Expectancy", "—" if perf.get("expectancy_r") is None else f"{perf['expectancy_r']:.2f}R")
-        metrics[3].metric("Profit factor", "—" if perf.get("profit_factor") is None else f"{perf['profit_factor']:.2f}")
-        metrics[4].metric("Max drawdown", "—" if perf.get("max_drawdown_r") is None else f"{perf['max_drawdown_r']:.2f}R")
+        metrics[1].metric("Win-rate", format_number(perf.get("win_rate_pct"), "%", 1))
+        metrics[2].metric("Expectancy", format_number(perf.get("expectancy_r"), "R"))
+        metrics[3].metric("Profit factor", format_number(perf.get("profit_factor")))
+        metrics[4].metric("Max drawdown", format_number(perf.get("max_drawdown_r"), "R"))
         signal = breakout.get("signal")
         if signal:
             st.success(f"{signal['side']} signal · {signal['ticker']} · entry ${signal['entry']:.2f} · stop ${signal['stop']:.2f} · target ${signal['target']:.2f}")
         else:
             st.caption("Seneste kørsel gav intet nyt breakout-signal.")
-        if journal_path.exists():
-            journal = json.loads(journal_path.read_text(encoding="utf-8"))
-            if journal:
+
+    st.divider()
+    st.markdown("### Prospective control vs. challenger")
+    profiles = load_optional_json(ROOT / "reports" / "asian_breakout_profiles_latest.json")
+    validation = load_optional_json(ROOT / "reports" / "asian_breakout_validation_latest.json")
+    if not profiles:
+        st.info("Prospective journaler starter ved næste paper-monitor kørsel på main.")
+    else:
+        left, right = st.columns(2)
+        with left:
+            render_profile("control", profiles.get("profiles", {}).get("control", {}))
+        with right:
+            render_profile("challenger", profiles.get("profiles", {}).get("challenger", {}))
+
+    if validation:
+        st.markdown("#### Promotion gate")
+        gate_cols = st.columns(4)
+        gate_cols[0].metric("Status", validation.get("status", "COLLECTING_DATA"))
+        gate_cols[1].metric("Challenger handler", f"{validation.get('challenger_closed_trades', 0)}/{validation.get('minimum_closed_trades', 30)}")
+        gate_cols[2].metric("Progress", f"{validation.get('progress_pct', 0):.1f}%")
+        gate_cols[3].metric("Automatisk promotion", "Nej")
+        st.progress(min(1.0, max(0.0, float(validation.get("progress_pct", 0)) / 100)))
+        reasons = validation.get("reasons", [])
+        if reasons:
+            st.caption(" · ".join(reasons))
+        st.warning("Gate-status kan kun udløse REVIEW_REQUIRED. Strategien ændres ikke automatisk, og costs/slippage skal vurderes før en eventuel promotion.")
+
+    if journal_path.exists():
+        journal = load_optional_json(journal_path)
+        if isinstance(journal, list) and journal:
+            with st.expander("Aktiv paper-journal"):
                 st.dataframe(pd.DataFrame(journal), use_container_width=True, hide_index=True)
 
 with tabs[2]:
@@ -242,10 +313,13 @@ with tabs[4]:
 
 with tabs[5]:
     st.subheader("Datakvalitet")
-    if failures:
+    if not selected_path:
+        st.info("Ingen swing-rapport er tilgængelig endnu.")
+    elif failures:
         st.error(f"Manglende eller utilstrækkelige data for {len(failures)} symboler: {', '.join(sorted(failures))}")
         st.caption("Datamangler må ikke fortolkes som, at aktien ikke har et signal.")
     else:
         st.success("Ingen registrerede datamangler i denne rapport.")
-    st.write("Rapportfil:", selected_path.name)
-    st.write("Genereret:", format_timestamp(report.get("generated_at")))
+    if selected_path:
+        st.write("Rapportfil:", selected_path.name)
+        st.write("Genereret:", format_timestamp(report.get("generated_at")))
