@@ -2,11 +2,17 @@ from pathlib import Path
 
 import pandas as pd
 
-from tradingview_parity_compare import compare, load_python_reference, load_tradingview_export
+from tradingview_parity_compare import (
+    compare,
+    load_python_reference,
+    load_tradingview_export,
+    normalize_tradingview_export,
+    prepare_python_reference,
+)
 
 
-def _write_python(path: Path) -> None:
-    pd.DataFrame(
+def _python_frame() -> pd.DataFrame:
+    return pd.DataFrame(
         [
             {
                 "profile": "control",
@@ -37,11 +43,11 @@ def _write_python(path: Path) -> None:
                 "close_location": 0.10,
             },
         ]
-    ).to_csv(path, index=False)
+    )
 
 
-def _write_tv(path: Path, second_time: str = "2026-09-22T07:20:00Z") -> None:
-    pd.DataFrame(
+def _tv_frame(second_time: str = "2026-09-22T07:20:00Z") -> pd.DataFrame:
+    return pd.DataFrame(
         [
             {
                 "time": "2026-09-21T07:10:00Z",
@@ -68,7 +74,15 @@ def _write_tv(path: Path, second_time: str = "2026-09-22T07:20:00Z") -> None:
                 "PARITY_CLOSE_LOCATION": 0.101,
             },
         ]
-    ).to_csv(path, index=False)
+    )
+
+
+def _write_python(path: Path) -> None:
+    _python_frame().to_csv(path, index=False)
+
+
+def _write_tv(path: Path, second_time: str = "2026-09-22T07:20:00Z") -> None:
+    _tv_frame(second_time).to_csv(path, index=False)
 
 
 def test_compare_exact_signal_timestamps_with_tolerances(tmp_path: Path):
@@ -104,3 +118,14 @@ def test_compare_reports_missing_and_extra_signals(tmp_path: Path):
     assert len(result["missing_in_tradingview"]) == 1
     assert len(result["extra_in_tradingview"]) == 1
     assert result["timestamp_match_rate_pct"] < 100.0
+
+
+def test_dataframe_helpers_support_streamlit_upload_flow():
+    py = prepare_python_reference(_python_frame(), "control")
+    tv = normalize_tradingview_export(_tv_frame())
+    result = compare(py, tv, price_tolerance=0.25, metric_tolerance=0.002)
+
+    assert len(py) == 2
+    assert len(tv) == 2
+    assert result["timestamp_match_rate_pct"] == 100.0
+    assert result["side_match_rate_pct"] == 100.0
