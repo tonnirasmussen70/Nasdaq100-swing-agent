@@ -4,11 +4,11 @@ import argparse
 import json
 import math
 from dataclasses import asdict, dataclass
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from breakout_runner import _usd_dkk, load_journal
+from report_io import write_json_if_changed
 from swing_agent import load_config
 
 
@@ -152,7 +152,6 @@ def run(config_path: Path) -> Path:
         }
 
     payload = {
-        "generated_at": datetime.now().astimezone().isoformat(),
         "mode": "pre_cost_execution_feasibility",
         "source_signal": strategy.get("ticker", "NQ=F"),
         "usd_dkk": round(usd_dkk, 4),
@@ -168,8 +167,7 @@ def run(config_path: Path) -> Path:
         ),
     }
     output = root / "reports" / "asian_breakout_execution_latest.json"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    write_json_if_changed(output, payload)
     return output
 
 
