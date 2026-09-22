@@ -24,7 +24,8 @@
   },
   "signal_count": 34,
   "unique_signal_dates": 19,
-  "csv_sha256": "2883ce7d95ee6172d38de394c416309307723199d60cf4cf37169f851e98578d",
+  "csv_sha256": "4401e13b40b3c4242d071c2bffba5ca38363272773222e5fb1f48a0325ca17cc",
+  "source_artifact_csv_sha256": "2883ce7d95ee6172d38de394c416309307723199d60cf4cf37169f851e98578d",
   "source_manifest_sha256": "a9266216d4f59c041f53c382481d07be6426723039f73bdc42e84bd27ede4bf3",
   "purpose": "Frozen signal-parity baseline for the first TradingView comparison.",
   "warning": "This snapshot is derived from Yahoo/yfinance 5-minute NQ=F data. It freezes Python signal output for implementation-parity testing; it is not independent market-data validation or evidence of strategy edge."
