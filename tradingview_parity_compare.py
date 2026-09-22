@@ -48,16 +48,22 @@ def _find_time_column(columns: list[str]) -> str:
     raise KeyError("Could not identify TradingView timestamp column")
 
 
-def load_python_reference(path: Path, profile: str) -> pd.DataFrame:
-    frame = pd.read_csv(path)
+def prepare_python_reference(frame: pd.DataFrame, profile: str) -> pd.DataFrame:
+    required = {"profile", "signal_time_london", "side"}
+    missing = required - set(frame.columns)
+    if missing:
+        raise KeyError(f"Python reference is missing required columns: {sorted(missing)}")
     selected = frame[frame["profile"].astype(str).str.lower() == profile.strip().lower()].copy()
     selected["timestamp"] = pd.to_datetime(selected["signal_time_london"], utc=True).dt.tz_convert("Europe/London")
     selected["side_code"] = selected["side"].map({"LONG": 1, "SHORT": -1})
     return selected.sort_values("timestamp").reset_index(drop=True)
 
 
-def load_tradingview_export(path: Path) -> pd.DataFrame:
-    raw = pd.read_csv(path)
+def load_python_reference(path: Path, profile: str) -> pd.DataFrame:
+    return prepare_python_reference(pd.read_csv(path), profile)
+
+
+def normalize_tradingview_export(raw: pd.DataFrame) -> pd.DataFrame:
     columns = list(raw.columns)
     time_col = _find_time_column(columns)
     signal_col = _find_column(columns, "PARITY_SIGNAL_CODE")
@@ -75,6 +81,10 @@ def load_tradingview_export(path: Path) -> pd.DataFrame:
     for field in list(PRICE_FIELDS) + list(METRIC_FIELDS):
         frame[field] = pd.to_numeric(frame[field], errors="coerce")
     return frame.sort_values("timestamp").reset_index(drop=True)
+
+
+def load_tradingview_export(path: Path) -> pd.DataFrame:
+    return normalize_tradingview_export(pd.read_csv(path))
 
 
 def compare(
