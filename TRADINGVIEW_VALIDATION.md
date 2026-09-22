@@ -27,13 +27,21 @@ Challenger differs only in:
 
 Shared breakout rules remain identical to `asian_breakout.py`: 0.02% breakout buffer, 0.02% stop buffer, long close-location >= 0.80, short close-location <= 0.20, and at most one signal per London trading day.
 
+## Frozen first parity baseline
+
+The first 60-day Python parity export is frozen in `validation/tradingview/reference_2026-09-22.csv`, with provenance and checksum in `validation/tradingview/reference_2026-09-22.json`.
+
+It contains 34 profile-signals across 19 London trading dates: 19 Control signals and 15 Challenger signals. The frozen CSV is protected by a SHA-256 integrity test so later Yahoo revisions or a fresh export cannot silently change the baseline used for the first TradingView comparison.
+
+This snapshot is an implementation-parity fixture only. It is derived from Yahoo/yfinance NQ=F 5-minute data and must not be interpreted as independent market-data validation or evidence of strategy edge.
+
 ## Phase 1 — signal parity
 
 1. Open a standard 5-minute Nasdaq futures chart in TradingView.
 2. Paste `asian_breakout_signal_v6.pine` into Pine Editor and add it to the chart.
 3. Run once with `Profile = Control` and once with `Profile = Challenger`.
 4. Export chart data from TradingView. The indicator exposes `PARITY_SIGNAL_CODE`, `PARITY_ENTRY`, `PARITY_STOP`, `PARITY_TARGET`, `PARITY_ASIAN_HIGH`, `PARITY_ASIAN_LOW`, `PARITY_ASIAN_RANGE_PCT`, `PARITY_BODY_RATIO`, and `PARITY_CLOSE_LOCATION`.
-5. Generate the Python reference with:
+5. Generate a fresh Python reference, when needed, with:
 
 ```bash
 python breakout_tradingview_reference.py --period 60d
@@ -41,10 +49,11 @@ python breakout_tradingview_reference.py --period 60d
 
 This creates `reports/tradingview_parity_reference.csv` plus a JSON manifest. The same export can also be produced as a GitHub Actions artifact by updating `.github/tradingview-reference-trigger.txt` on `main`.
 
-6. Compare a TradingView chart-data export against the Python reference with:
+For the first parity test, use the frozen baseline explicitly:
 
 ```bash
 python tradingview_parity_compare.py \
+  --python-reference validation/tradingview/reference_2026-09-22.csv \
   --tradingview-export path/to/tradingview.csv \
   --profile control
 ```
