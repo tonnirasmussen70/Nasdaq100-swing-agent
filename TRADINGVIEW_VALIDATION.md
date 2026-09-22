@@ -39,9 +39,21 @@ Shared breakout rules remain identical to `asian_breakout.py`: 0.02% breakout bu
 python breakout_tradingview_reference.py --period 60d
 ```
 
-This creates `reports/tradingview_parity_reference.csv` plus a JSON manifest.
+This creates `reports/tradingview_parity_reference.csv` plus a JSON manifest. The same export can also be produced as a GitHub Actions artifact by updating `.github/tradingview-reference-trigger.txt` on `main`.
 
-6. Compare **signal timestamps first**, then side, entry, stop, target and session statistics. Do not move to performance comparison until signal parity is understood.
+6. Compare a TradingView chart-data export against the Python reference with:
+
+```bash
+python tradingview_parity_compare.py \
+  --tradingview-export path/to/tradingview.csv \
+  --profile control
+```
+
+Run the same command with `--profile challenger` for the Challenger export.
+
+The comparator reports timestamp overlap, side agreement, missing/extra signals and numeric deltas for entry, stop, target and session statistics. Default numeric tolerances are intentionally explicit and configurable (`--price-tolerance` and `--metric-tolerance`).
+
+Compare **signal timestamps first**, then side, entry, stop, target and session statistics. Do not move to performance comparison until signal parity is understood. Different market-data feeds can legitimately produce OHLC differences, so timestamp/side parity and price parity are reported separately.
 
 Important: the Python reference still uses Yahoo/yfinance. Matching TradingView against it proves implementation parity, not independent market-data correctness.
 
