@@ -2,6 +2,10 @@ name: Asian breakout robustness
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/robustness-trigger.txt"
 
 permissions:
   contents: read
