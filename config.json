@@ -36,8 +36,9 @@
     "risk_per_trade_pct": 1,
     "max_position_pct": 20,
     "max_trades_per_day": 1,
-    "ticker": "QQQ",
+    "ticker": "NQ=F",
     "journal_file": "state/asian_breakout_journal.json",
-    "report_file": "reports/asian_breakout_latest.json"
+    "report_file": "reports/asian_breakout_latest.json",
+    "sizing_mode": "normalized_r"
   }
 }
