@@ -1,1 +1,2 @@
-trigger: placeholder
+# Update this file on main to trigger a fresh TradingView parity reference artifact.
+trigger: ready
