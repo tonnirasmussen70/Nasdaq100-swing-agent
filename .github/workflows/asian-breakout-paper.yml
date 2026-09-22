@@ -31,11 +31,13 @@ jobs:
         run: python breakout_runner.py
       - name: Run prospective control vs challenger comparison
         run: python breakout_compare_runner.py
+      - name: Assess MNQ and NNQ execution feasibility
+        run: python breakout_execution.py
       - name: Evaluate prospective validation gate
         run: python breakout_validation.py
       - name: Persist paper journals and latest reports
         run: |
-          PATHS="state/asian_breakout_journal.json reports/asian_breakout_latest.json state/asian_breakout_control_journal.json state/asian_breakout_challenger_journal.json reports/asian_breakout_profiles_latest.json reports/asian_breakout_validation_latest.json"
+          PATHS="state/asian_breakout_journal.json reports/asian_breakout_latest.json state/asian_breakout_control_journal.json state/asian_breakout_challenger_journal.json reports/asian_breakout_profiles_latest.json reports/asian_breakout_execution_latest.json reports/asian_breakout_validation_latest.json"
           if git status --porcelain $PATHS | grep -q .; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
