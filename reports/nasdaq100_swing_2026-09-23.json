@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-09-23T23:02:09.879053+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "PLTR",
+      "close": 191.77,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 192.27,
+      "stop": 182.72,
+      "target": 211.37,
+      "reward_risk": 2.0,
+      "beta": 1.3,
+      "return_1w_pct": 10.01,
+      "return_1m_pct": 9.04,
+      "return_3m_pct": 68.98,
+      "relative_strength_3m_pct": 65.15,
+      "volume_ratio": 1.28,
+      "score": 70.4,
+      "position_size_shares": 3,
+      "risk_dkk": 188.11,
+      "position_value_dkk": 3787.31,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "CRWD",
+      "close": 262.5,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 263.17,
+      "stop": 247.76,
+      "target": 293.99,
+      "reward_risk": 2.0,
+      "beta": 1.12,
+      "return_1w_pct": 8.25,
+      "return_1m_pct": 36.75,
+      "return_3m_pct": 54.2,
+      "relative_strength_3m_pct": 50.37,
+      "volume_ratio": 1.02,
+      "score": 66.3,
+      "position_size_shares": 2,
+      "risk_dkk": 202.35,
+      "position_value_dkk": 3455.86,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "WBD",
+      "close": 30.75,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 30.77,
+      "stop": 30.67,
+      "target": 31.06,
+      "reward_risk": 3.03,
+      "beta": 0.28,
+      "return_1w_pct": 9.74,
+      "return_1m_pct": 7.74,
+      "return_3m_pct": 14.43,
+      "relative_strength_3m_pct": 10.61,
+      "volume_ratio": 3.72,
+      "score": 60.8,
+      "position_size_shares": 19,
+      "risk_dkk": 12.2,
+      "position_value_dkk": 3838.08,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
