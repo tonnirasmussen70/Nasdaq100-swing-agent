@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-09-24T23:17:14.942509+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "AMD",
+      "close": 629.02,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 631.18,
+      "stop": 603.57,
+      "target": 686.42,
+      "reward_risk": 2.0,
+      "beta": 2.58,
+      "return_1w_pct": 15.44,
+      "return_1m_pct": 31.32,
+      "return_3m_pct": 18.16,
+      "relative_strength_3m_pct": 13.85,
+      "volume_ratio": 1.2,
+      "score": 69.8,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "close": 224.54,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 224.98,
+      "stop": 220.94,
+      "target": 233.05,
+      "reward_risk": 2.0,
+      "beta": 1.31,
+      "return_1w_pct": 2.39,
+      "return_1m_pct": 5.53,
+      "return_3m_pct": 14.86,
+      "relative_strength_3m_pct": 10.55,
+      "volume_ratio": 0.58,
+      "score": 37.5,
+      "position_size_shares": 2,
+      "risk_dkk": 53.06,
+      "position_value_dkk": 2956.22,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "STX"
+  ]
+}
