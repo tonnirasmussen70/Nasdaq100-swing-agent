@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-09-25T23:22:57.112428+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "NVDA",
+      "close": 225.08,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 225.61,
+      "stop": 222.97,
+      "target": 230.89,
+      "reward_risk": 2.0,
+      "beta": 1.31,
+      "return_1w_pct": 1.26,
+      "return_1m_pct": 7.47,
+      "return_3m_pct": 17.03,
+      "relative_strength_3m_pct": 11.92,
+      "volume_ratio": 0.7,
+      "score": 42.4,
+      "position_size_shares": 2,
+      "risk_dkk": 34.63,
+      "position_value_dkk": 2961.05,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "QCOM",
+      "close": 201.95,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 203.38,
+      "stop": 192.6,
+      "target": 224.93,
+      "reward_risk": 2.0,
+      "beta": 1.51,
+      "return_1w_pct": 13.65,
+      "return_1m_pct": 24.03,
+      "return_3m_pct": 7.22,
+      "relative_strength_3m_pct": 2.11,
+      "volume_ratio": 1.23,
+      "score": 26.3,
+      "position_size_shares": 2,
+      "risk_dkk": 141.43,
+      "position_value_dkk": 2669.22,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
