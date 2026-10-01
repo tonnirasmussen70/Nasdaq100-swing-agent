@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-01T00:01:14.465251+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "LITE",
+      "close": 971.46,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 976.09,
+      "stop": 938.5,
+      "target": 1051.28,
+      "reward_risk": 2.0,
+      "beta": 2.31,
+      "return_1w_pct": 2.94,
+      "return_1m_pct": 8.77,
+      "return_3m_pct": 13.45,
+      "relative_strength_3m_pct": 11.44,
+      "volume_ratio": 1.36,
+      "score": 56.9,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "LITE"
+    ]
+  },
+  "data_failures": []
+}
