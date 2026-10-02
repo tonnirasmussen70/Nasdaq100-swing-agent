@@ -1,6 +1,10 @@
 {
-  "qualified": [],
+  "qualified": [
+    "MSTR"
+  ],
   "near_miss": [
-    "NVDA"
+    "NVDA",
+    "SNPS",
+    "TER"
   ]
 }
