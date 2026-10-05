@@ -1,0 +1,29 @@
+name: Strategy PR checks
+on:
+  pull_request:
+    paths:
+      - "app.py"
+      - "daily_strategies.py"
+      - ".github/workflows/daily-strategies.yml"
+      - ".github/workflows/strategy-pr-checks.yml"
+      - "tests/test_daily_strategy_tabs.py"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Python syntax
+        run: python -m py_compile app.py daily_strategies.py tests/test_daily_strategy_tabs.py
+      - name: Verify strategy tabs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          src=Path("app.py").read_text(encoding="utf-8")
+          expected={0:"Kvalificerede setups",1:"Trend + Momentum Pullback",2:"Volatility Breakout + Relative Strength",3:"Asian / London Breakout · paper trading",4:"Ændringer siden seneste screening",5:"Near-miss · præcis ét manglende filter",6:"Screeninghistorik",7:"Datakvalitet"}
+          for i,title in expected.items():
+              assert f'with tabs[{i}]:\\n    st.subheader("{title}")' in src, (i,title)
+          print("tab mapping OK")
+          PY
