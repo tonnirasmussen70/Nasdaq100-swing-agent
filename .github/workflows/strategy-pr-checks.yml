@@ -4,7 +4,7 @@ on:
     paths:
       - "app.py"
       - "daily_strategies.py"
-      - ".github/workflows/daily-strategies.yml"
+      - ".github/workflows/daily-strategies.yml"\n      - ".github/workflows/strategy-pr-checks.yml"
 jobs:
   validate:
     runs-on: ubuntu-latest
