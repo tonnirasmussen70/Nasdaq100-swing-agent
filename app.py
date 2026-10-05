@@ -307,7 +307,7 @@ with tabs[3]:
             with st.expander("Aktiv paper-journal"):
                 st.dataframe(pd.DataFrame(journal), use_container_width=True, hide_index=True)
 
-with tabs[6]:
+with tabs[4]:
     st.subheader("Ændringer siden seneste screening")
     new = changes.get("new", [])
     removed = changes.get("removed", [])
@@ -315,7 +315,7 @@ with tabs[6]:
     col1.success("Nye kandidater: " + (", ".join(new) if new else "Ingen"))
     col2.warning("Udgåede kandidater: " + (", ".join(removed) if removed else "Ingen"))
 
-with tabs[7]:
+with tabs[5]:
     st.subheader("Near-miss · præcis ét manglende filter")
     if not near_miss:
         st.info("Ingen near-miss-kandidater i denne screening.")
@@ -327,11 +327,11 @@ with tabs[7]:
         visible = ["Ticker", "Manglende kriterium", "1H-mønster", "Type", "Score", "Beta", "1W %", "1M %", "3M %", "RS 3M %", "Volumen/20D"]
         st.dataframe(near_frame[[col for col in visible if col in near_frame]], use_container_width=True, hide_index=True)
 
-with tabs[4]:
+with tabs[6]:
     st.subheader("Screeninghistorik")
     render_history(files)
 
-with tabs[5]:
+with tabs[7]:
     st.subheader("Datakvalitet")
     if not selected_path:
         st.info("Ingen swing-rapport er tilgængelig endnu.")
