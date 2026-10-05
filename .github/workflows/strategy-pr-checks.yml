@@ -18,4 +18,12 @@ jobs:
       - name: Python syntax
         run: python -m py_compile app.py daily_strategies.py tests/test_daily_strategy_tabs.py
       - name: Verify strategy tabs
-        run: python -m pytest -q tests/test_daily_strategy_tabs.py
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          src=Path("app.py").read_text(encoding="utf-8")
+          expected={0:"Kvalificerede setups",1:"Trend + Momentum Pullback",2:"Volatility Breakout + Relative Strength",3:"Asian / London Breakout · paper trading",4:"Ændringer siden seneste screening",5:"Near-miss · præcis ét manglende filter",6:"Screeninghistorik",7:"Datakvalitet"}
+          for i,title in expected.items():
+              assert f'with tabs[{i}]:\\n    st.subheader("{title}")' in src, (i,title)
+          print("tab mapping OK")
+          PY
