@@ -255,26 +255,6 @@ with tabs[2]:
         st.info("Ingen kvalificerede breakout-signaler i seneste scanning, eller første daglige scanning er endnu ikke kørt.")
 
 with tabs[3]:
-    st.subheader("Trend + Momentum Pullback")
-    st.caption("Paper/observation · stærk langsigtet trend + kontrolleret pullback mod EMA20/SMA50 + RSI-vending.")
-    daily = load_optional_json(ROOT / "reports" / "daily_strategies_latest.json")
-    pullbacks = daily.get("pullback", [])
-    if pullbacks:
-        st.dataframe(pd.DataFrame(pullbacks), use_container_width=True, hide_index=True)
-    else:
-        st.info("Ingen kvalificerede pullback-signaler i seneste scanning, eller første daglige scanning er endnu ikke kørt.")
-
-with tabs[4]:
-    st.subheader("Volatility Breakout + Relative Strength")
-    st.caption("Paper/observation · stigende trend + 20-dages breakout + relativ styrke mod Nasdaq-100 + volumenbekræftelse.")
-    daily = load_optional_json(ROOT / "reports" / "daily_strategies_latest.json")
-    breakouts = daily.get("breakout", [])
-    if breakouts:
-        st.dataframe(pd.DataFrame(breakouts), use_container_width=True, hide_index=True)
-    else:
-        st.info("Ingen kvalificerede breakout-signaler i seneste scanning, eller første daglige scanning er endnu ikke kørt.")
-
-with tabs[5]:
     st.subheader("Asian / London Breakout · paper trading")
     breakout_path = ROOT / "reports" / "asian_breakout_latest.json"
     journal_path = ROOT / "state" / "asian_breakout_journal.json"
@@ -327,7 +307,8 @@ with tabs[5]:
             with st.expander("Aktiv paper-journal"):
                 st.dataframe(pd.DataFrame(journal), use_container_width=True, hide_index=True)
 
-with tabs[6]:
+
+with tabs[4]:
     st.subheader("Ændringer siden seneste screening")
     new = changes.get("new", [])
     removed = changes.get("removed", [])
@@ -335,7 +316,8 @@ with tabs[6]:
     col1.success("Nye kandidater: " + (", ".join(new) if new else "Ingen"))
     col2.warning("Udgåede kandidater: " + (", ".join(removed) if removed else "Ingen"))
 
-with tabs[7]:
+
+with tabs[5]:
     st.subheader("Near-miss · præcis ét manglende filter")
     if not near_miss:
         st.info("Ingen near-miss-kandidater i denne screening.")
@@ -347,9 +329,11 @@ with tabs[7]:
         visible = ["Ticker", "Manglende kriterium", "1H-mønster", "Type", "Score", "Beta", "1W %", "1M %", "3M %", "RS 3M %", "Volumen/20D"]
         st.dataframe(near_frame[[col for col in visible if col in near_frame]], use_container_width=True, hide_index=True)
 
+
 with tabs[6]:
     st.subheader("Screeninghistorik")
     render_history(files)
+
 
 with tabs[7]:
     st.subheader("Datakvalitet")
