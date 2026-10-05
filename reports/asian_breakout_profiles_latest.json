@@ -1,0 +1,46 @@
+{
+  "ticker": "NQ=F",
+  "mode": "prospective_paper_comparison",
+  "promotion_rule": "Keep the active control unchanged until the challenger has at least 30 prospective closed trades, positive expectancy, profit factor above 1, and no worse max drawdown than control after realistic costs.",
+  "profiles": {
+    "control": {
+      "profile": "control",
+      "settings": {
+        "max_asian_range_pct": 2.5,
+        "min_body_ratio": 0.6,
+        "reward_risk": 2.0
+      },
+      "signal": null,
+      "new_signal": false,
+      "resolved_trades": 0,
+      "performance": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "journal_file": "/home/runner/work/Nasdaq100-swing-agent/Nasdaq100-swing-agent/state/asian_breakout_control_journal.json"
+    },
+    "challenger": {
+      "profile": "challenger",
+      "settings": {
+        "max_asian_range_pct": 1.0,
+        "min_body_ratio": 0.6,
+        "reward_risk": 2.5
+      },
+      "signal": null,
+      "new_signal": false,
+      "resolved_trades": 0,
+      "performance": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "journal_file": "/home/runner/work/Nasdaq100-swing-agent/Nasdaq100-swing-agent/state/asian_breakout_challenger_journal.json"
+    }
+  },
+  "generated_at": "2026-10-05T18:32:11.051602+00:00"
+}

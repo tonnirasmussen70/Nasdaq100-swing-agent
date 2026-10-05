@@ -1,0 +1,15 @@
+{
+  "ticker": "NQ=F",
+  "signal": null,
+  "new_signal": false,
+  "resolved_trades": 0,
+  "performance": {
+    "closed_trades": 0,
+    "win_rate_pct": null,
+    "expectancy_r": null,
+    "profit_factor": null,
+    "max_drawdown_r": null
+  },
+  "journal_file": "/home/runner/work/Nasdaq100-swing-agent/Nasdaq100-swing-agent/state/asian_breakout_journal.json",
+  "generated_at": "2026-10-05T18:32:10.263182+00:00"
+}

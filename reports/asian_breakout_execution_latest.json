@@ -1,0 +1,60 @@
+{
+  "mode": "pre_cost_execution_feasibility",
+  "source_signal": "NQ=F",
+  "usd_dkk": 6.664,
+  "risk_budget_dkk": 200.0,
+  "risk_budget_pct": 1.0,
+  "contracts": {
+    "MNQ": {
+      "code": "MNQ",
+      "label": "Micro E-mini Nasdaq-100",
+      "point_value_usd": 2.0,
+      "tick_size": 0.25,
+      "tick_value_usd": 0.5
+    },
+    "NNQ": {
+      "code": "NNQ",
+      "label": "E-nano Nasdaq-100",
+      "point_value_usd": 0.2,
+      "tick_size": 0.5,
+      "tick_value_usd": 0.1
+    }
+  },
+  "profiles": {
+    "control": {
+      "MNQ": {
+        "signals": 0,
+        "feasible_signals": 0,
+        "feasibility_pct": null,
+        "median_risk_per_contract_dkk": null,
+        "latest": null
+      },
+      "NNQ": {
+        "signals": 0,
+        "feasible_signals": 0,
+        "feasibility_pct": null,
+        "median_risk_per_contract_dkk": null,
+        "latest": null
+      }
+    },
+    "challenger": {
+      "MNQ": {
+        "signals": 0,
+        "feasible_signals": 0,
+        "feasibility_pct": null,
+        "median_risk_per_contract_dkk": null,
+        "latest": null
+      },
+      "NNQ": {
+        "signals": 0,
+        "feasible_signals": 0,
+        "feasibility_pct": null,
+        "median_risk_per_contract_dkk": null,
+        "latest": null
+      }
+    }
+  },
+  "latest_signals": {},
+  "warning": "This is a distance-based pre-cost feasibility model. It uses NQ=F signal point distances and does not assume broker availability, margin approval, commissions, slippage, or identical executable prices in MNQ/NNQ. Use an actual target-contract feed and broker cost schedule before live trading.",
+  "generated_at": "2026-10-05T18:32:11.789503+00:00"
+}

@@ -1,0 +1,105 @@
+{
+  "status": "COLLECTING_DATA",
+  "quantitative_gate_passed": false,
+  "automatic_promotion": false,
+  "costs_included_in_gate": false,
+  "minimum_closed_trades": 30,
+  "challenger_closed_trades": 0,
+  "control_closed_trades": 0,
+  "progress_pct": 0.0,
+  "reasons": [
+    "Need 30 more closed challenger trades"
+  ],
+  "control": {
+    "closed_trades": 0,
+    "win_rate_pct": null,
+    "expectancy_r": null,
+    "profit_factor": null,
+    "max_drawdown_r": null
+  },
+  "challenger": {
+    "closed_trades": 0,
+    "win_rate_pct": null,
+    "expectancy_r": null,
+    "profit_factor": null,
+    "max_drawdown_r": null
+  },
+  "cost_sensitivity": [
+    {
+      "cost_r_per_trade": 0.0,
+      "control": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger_positive": false
+    },
+    {
+      "cost_r_per_trade": 0.02,
+      "control": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger_positive": false
+    },
+    {
+      "cost_r_per_trade": 0.05,
+      "control": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger_positive": false
+    },
+    {
+      "cost_r_per_trade": 0.1,
+      "control": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger": {
+        "closed_trades": 0,
+        "win_rate_pct": null,
+        "expectancy_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": null
+      },
+      "challenger_positive": false
+    }
+  ],
+  "max_tested_cost_r_with_positive_challenger": null,
+  "note": "REVIEW_REQUIRED is not an automatic promotion. Cost scenarios are stress tests in R, not broker-specific fee estimates. Realistic MNQ fees/slippage and a human review are still required before any strategy change.",
+  "promotion_rule": "Keep the active control unchanged until the challenger has at least 30 prospective closed trades, positive expectancy, profit factor above 1, and no worse max drawdown than control after realistic costs.",
+  "generated_at": "2026-10-05T18:32:12.301285+00:00"
+}
