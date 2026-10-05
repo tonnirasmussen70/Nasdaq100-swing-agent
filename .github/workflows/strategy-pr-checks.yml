@@ -4,7 +4,9 @@ on:
     paths:
       - "app.py"
       - "daily_strategies.py"
-      - ".github/workflows/daily-strategies.yml"\n      - ".github/workflows/strategy-pr-checks.yml"
+      - ".github/workflows/daily-strategies.yml"
+      - ".github/workflows/strategy-pr-checks.yml"
+      - "tests/test_daily_strategy_tabs.py"
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -14,14 +16,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Python syntax
-        run: python -m py_compile app.py daily_strategies.py
+        run: python -m py_compile app.py daily_strategies.py tests/test_daily_strategy_tabs.py
       - name: Verify strategy tabs
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          s=Path("app.py").read_text()
-          expected={0:"Kvalificerede setups",1:"Trend + Momentum Pullback",2:"Volatility Breakout + Relative Strength",3:"Asian / London Breakout",4:"Ændringer siden seneste screening",5:"Near-miss",6:"Screeninghistorik",7:"Datakvalitet"}
-          for i,title in expected.items():
-              assert f"with tabs[{i}]:" in s and title in s, (i,title)
-          print("tab mapping OK")
-          PY
+        run: python -m pytest -q tests/test_daily_strategy_tabs.py
