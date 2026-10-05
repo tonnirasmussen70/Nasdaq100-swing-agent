@@ -209,7 +209,7 @@ overview[2].metric("Udgået", len(changes.get("removed", [])))
 overview[3].metric("Near-miss", len(near_miss))
 overview[4].metric("Datamangler", len(failures))
 
-tabs = st.tabs(["Kandidater", "Asian Breakout", "Ændringer", "Near-miss", "Historik", "Datakvalitet"])
+tabs = st.tabs(["Kandidater", "Trend + Momentum Pullback", "Volatility Breakout + RS", "Asian Breakout", "Ændringer", "Near-miss", "Historik", "Datakvalitet"])
 
 with tabs[0]:
     st.subheader("Kvalificerede setups")
