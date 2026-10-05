@@ -43,7 +43,7 @@ def one(ticker:str, ndx_ret_63:float):
     av=float(a.iloc[-1]); px=float(c.iloc[-1])
     base={"ticker":ticker,"close":round(px,2),"rsi14":round(float(rr.iloc[-1]),1),"atr14":round(av,2),"return_3m_pct":round(ret63*100,1),"rs_vs_ndx_3m_pct":round((ret63-ndx_ret_63)*100,1),"volume_ratio":round(volratio,2)}
     p=dict(base); p.update({"entry":round(px,2),"stop":round(px-1.75*av,2),"target_2r":round(px+3.5*av,2)})
-    b=dict(base); b.update({"entry":round(px,2),"stop":round(max(float(prev20.iloc[-1])-0.5*av,px-1.75*av),2),"target_2r":round(px+3.5*av,2)})
+    b=dict(base); breakout_stop=max(float(prev20.iloc[-1])-0.5*av,px-1.75*av); b.update({"entry":round(px,2),"stop":round(breakout_stop,2),"target_2r":round(px+2*(px-breakout_stop),2)})
     return p if pullback else None,b if breakout else None
 
 def main():
