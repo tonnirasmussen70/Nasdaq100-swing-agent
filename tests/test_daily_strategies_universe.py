@@ -26,8 +26,18 @@ def test_universe_uses_bundled_symbols_without_http(monkeypatch):
 
 
 def test_main_writes_report_with_strategy_signals(monkeypatch, tmp_path):
-    pullback_signal = {"ticker": "AAPL", "entry": 200.0}
-    breakout_signal = {"ticker": "MSFT", "entry": 400.0}
+    pullback_signal = {
+        "ticker": "AAPL",
+        "entry": 200.0,
+        "return_3m_pct": 5.0,
+        "rsi14": 60.0,
+    }
+    breakout_signal = {
+        "ticker": "MSFT",
+        "entry": 400.0,
+        "rs_vs_ndx_3m_pct": 4.0,
+        "volume_ratio": 2.0,
+    }
     monkeypatch.setattr(daily_strategies, "universe", lambda: ["AAPL", "MSFT"])
     monkeypatch.setattr(
         daily_strategies,
