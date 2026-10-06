@@ -1,7 +1,11 @@
 {
   "qualified": [],
   "near_miss": [
-    "ASML",
-    "NVDA"
+    "AMD",
+    "FTNT",
+    "MRVL",
+    "NBIS",
+    "SNPS",
+    "TER"
   ]
 }
