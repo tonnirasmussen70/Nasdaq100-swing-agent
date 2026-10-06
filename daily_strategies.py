@@ -21,12 +21,15 @@ def atr(df: pd.DataFrame,n:int=14)->pd.Series:
     return tr.rolling(n).mean()
 
 def universe()->list[str]:
-    tables=pd.read_html("https://en.wikipedia.org/wiki/Nasdaq-100")
-    for x in tables:
-        for c in x.columns:
-            if str(c).lower() in {"ticker","symbol"}:
-                return x[c].astype(str).str.replace(".","-",regex=False).tolist()
-    raise RuntimeError("Nasdaq-100 universe not found")
+    symbols_file = ROOT / "nasdaq100_symbols.txt"
+    symbols = [
+        line.strip()
+        for line in symbols_file.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    if not symbols:
+        raise RuntimeError(f"Nasdaq-100 universe is empty: {symbols_file}")
+    return symbols
 
 def one(ticker:str, ndx_ret_63:float):
     d=yf.download(ticker,period="1y",interval="1d",auto_adjust=True,progress=False)
