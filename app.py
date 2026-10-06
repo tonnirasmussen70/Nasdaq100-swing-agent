@@ -213,6 +213,16 @@ tabs = st.tabs(["Kandidater", "Trend + Momentum Pullback", "Volatility Breakout 
 
 with tabs[0]:
     st.subheader("Kvalificerede setups")
+    with st.expander("Core 1H Swing · sådan læses strategien", expanded=False):
+        st.markdown("""
+**Idé:** Find stærke Nasdaq-100-aktier og brug et bekræftet bullish 1H-mønster til at time entry.
+
+**Filtre:** Kurs > EMA50 > EMA200, positivt 1W/1M/3M momentum, 3M-outperformance mod Nasdaq-100, volumen over 20-dages gennemsnit og beta > 1,2. Godkendte 1H-mønstre er bl.a. Morning Star, Bullish Engulfing, Hammer, Inside Bar Breakout og Bull Flag Breakout.
+
+**Handel:** Entry sættes over seneste 1H-high + 0,05 × ATR14. Stop placeres under laveste low fra de seneste 10 1H-bars − 0,10 × ATR14. Target er mindst **2R** eller **2,5 × ATR14**, hvis dette giver et højere target.
+
+**Eksempel:** Entry $190,20 og stop $183,60 giver $6,60 risiko pr. aktie og mindst **$203,40 som 2R-target**.
+""")
     if not qualified:
         st.info("Ingen aktier opfyldte alle filtre i denne screening, eller der er endnu ingen swing-rapport.")
     else:
