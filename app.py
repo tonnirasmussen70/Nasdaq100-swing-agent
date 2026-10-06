@@ -237,6 +237,18 @@ with tabs[0]:
 with tabs[1]:
     st.subheader("Trend + Momentum Pullback")
     st.caption("Paper/observation · stærk langsigtet trend + kontrolleret pullback mod EMA20/SMA50 + RSI-vending.")
+    with st.expander("Sådan læses strategien · eksempel", expanded=False):
+        st.markdown("""
+**Idé:** Køb styrke på en midlertidig tilbagegang – ikke en aktie i en faldende hovedtrend.
+
+**Eksempel:** En Nasdaq-100-aktie handler i **$100**, ligger over SMA200, og SMA50 ligger over SMA200 og stiger. Aktien har været oppe omkring **$106**, men trækker tilbage mod EMA20/SMA50. RSI vender samtidig op. Det er den type situation, strategien leder efter.
+
+Hvis signalet udløses ved **$100** og ATR14 er **$4**, giver den nuværende risikomodel cirka **$93 stop** (1,75 × ATR under entry) og **$114 som 2R-target**. Risikoen er dermed $7 pr. aktie og den mulige gevinst til target $14.
+
+**Læs signalet sådan:** Trendfilteret fortæller, at den langsigtede retning stadig er op. Pullbacket giver en bedre entry end at købe efter en kraftig kursstigning, mens RSI-vendingen bruges som tegn på, at køberne igen begynder at tage kontrol.
+
+Det er et **paper/observation-signal**, ikke en automatisk købsordre.
+""")
     daily = load_optional_json(ROOT / "reports" / "daily_strategies_latest.json")
     pullbacks = daily.get("pullback", [])
     if pullbacks:
@@ -247,6 +259,18 @@ with tabs[1]:
 with tabs[2]:
     st.subheader("Volatility Breakout + Relative Strength")
     st.caption("Paper/observation · stigende trend + 20-dages breakout + relativ styrke mod Nasdaq-100 + volumenbekræftelse.")
+    with st.expander("Sådan læses strategien · eksempel", expanded=False):
+        st.markdown("""
+**Idé:** Køb et bekræftet brud op gennem modstand, når aktien allerede er stærkere end Nasdaq-100.
+
+**Eksempel:** En Nasdaq-100-aktie har de seneste 20 handelsdage haft modstand omkring **$100**. Den lukker nu i **$103**, ligger over SMA200 med stigende SMA50, har slået Nasdaq-100 over tre måneder og dagens volumen er mindst **1,5 × 20-dages gennemsnittet**. Det er den type breakout, strategien leder efter.
+
+Antag ATR14 på **$4**. Hvis den beregnede stopplacering bliver **$98**, er risikoen $5 pr. aktie. Et ægte **2R-target** bliver derfor **$113**: $103 + 2 × ($103 − $98).
+
+**Læs signalet sådan:** 20-dages bruddet viser ny kursstyrke, relativ styrke reducerer fokus på aktier der blot følger markedet, og den høje volumen bruges som bekræftelse på, at bruddet har deltagelse.
+
+Det er et **paper/observation-signal**, ikke en automatisk købsordre.
+""")
     daily = load_optional_json(ROOT / "reports" / "daily_strategies_latest.json")
     breakouts = daily.get("breakout", [])
     if breakouts:
