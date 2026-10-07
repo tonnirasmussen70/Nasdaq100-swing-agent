@@ -1,56 +1,68 @@
 {
-  "generated_at": "2026-10-06T18:51:24.617238+00:00",
+  "generated_at": "2026-10-07T01:33:04.180798+00:00",
   "mode": "paper_observation",
   "pullback": [
     {
       "ticker": "AAPL",
-      "close": 333.24,
-      "rsi14": 54.2,
+      "close": 333.63,
+      "rsi14": 54.6,
       "atr14": 6.42,
-      "return_3m_pct": 6.4,
-      "rs_vs_ndx_3m_pct": -0.5,
-      "volume_ratio": 0.37,
-      "entry": 333.24,
-      "stop": 322.01,
-      "target_2r": 355.7
+      "return_3m_pct": 6.6,
+      "rs_vs_ndx_3m_pct": -0.2,
+      "volume_ratio": 0.73,
+      "entry": 333.63,
+      "stop": 322.4,
+      "target_2r": 356.09
     },
     {
       "ticker": "KDP",
-      "close": 31.17,
-      "rsi14": 50.6,
+      "close": 31.13,
+      "rsi14": 50.2,
       "atr14": 0.85,
-      "return_3m_pct": 1.4,
+      "return_3m_pct": 1.2,
       "rs_vs_ndx_3m_pct": -5.5,
-      "volume_ratio": 0.32,
-      "entry": 31.17,
-      "stop": 29.69,
-      "target_2r": 34.14
+      "volume_ratio": 0.77,
+      "entry": 31.13,
+      "stop": 29.65,
+      "target_2r": 34.09
     },
     {
       "ticker": "QCOM",
-      "close": 182.65,
-      "rsi14": 50.7,
+      "close": 181.03,
+      "rsi14": 49.3,
       "atr14": 8.6,
-      "return_3m_pct": -1.6,
-      "rs_vs_ndx_3m_pct": -8.5,
-      "volume_ratio": 0.33,
-      "entry": 182.65,
-      "stop": 167.6,
-      "target_2r": 212.75
+      "return_3m_pct": -2.4,
+      "rs_vs_ndx_3m_pct": -9.2,
+      "volume_ratio": 0.57,
+      "entry": 181.03,
+      "stop": 165.98,
+      "target_2r": 211.13
+    },
+    {
+      "ticker": "GOOGL",
+      "close": 347.68,
+      "rsi14": 53.4,
+      "atr14": 8.86,
+      "return_3m_pct": -3.9,
+      "rs_vs_ndx_3m_pct": -10.6,
+      "volume_ratio": 0.67,
+      "entry": 347.68,
+      "stop": 332.17,
+      "target_2r": 378.71
     }
   ],
   "breakout": [
     {
       "ticker": "MRVL",
-      "close": 286.11,
-      "rsi14": 69.6,
+      "close": 287.01,
+      "rsi14": 69.9,
       "atr14": 13.54,
-      "return_3m_pct": 23.5,
-      "rs_vs_ndx_3m_pct": 16.6,
-      "volume_ratio": 2.36,
-      "entry": 286.11,
+      "return_3m_pct": 23.9,
+      "rs_vs_ndx_3m_pct": 17.2,
+      "volume_ratio": 2.72,
+      "entry": 287.01,
       "stop": 265.52,
-      "target_2r": 327.3
+      "target_2r": 329.99
     }
   ],
   "data_failures": [
