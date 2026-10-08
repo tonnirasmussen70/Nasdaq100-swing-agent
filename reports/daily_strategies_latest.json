@@ -1,73 +1,97 @@
 {
-  "generated_at": "2026-10-07T01:33:04.180798+00:00",
+  "generated_at": "2026-10-08T01:56:35.385693+00:00",
   "mode": "paper_observation",
   "pullback": [
     {
-      "ticker": "AAPL",
-      "close": 333.63,
-      "rsi14": 54.6,
-      "atr14": 6.42,
-      "return_3m_pct": 6.6,
-      "rs_vs_ndx_3m_pct": -0.2,
-      "volume_ratio": 0.73,
-      "entry": 333.63,
-      "stop": 322.4,
-      "target_2r": 356.09
+      "ticker": "AMGN",
+      "close": 413.08,
+      "rsi14": 54.2,
+      "atr14": 10.49,
+      "return_3m_pct": 14.3,
+      "rs_vs_ndx_3m_pct": 9.4,
+      "volume_ratio": 0.72,
+      "entry": 413.08,
+      "stop": 394.72,
+      "target_2r": 449.81
     },
     {
-      "ticker": "KDP",
-      "close": 31.13,
+      "ticker": "TRI",
+      "close": 99.28,
       "rsi14": 50.2,
-      "atr14": 0.85,
-      "return_3m_pct": 1.2,
-      "rs_vs_ndx_3m_pct": -5.5,
-      "volume_ratio": 0.77,
-      "entry": 31.13,
-      "stop": 29.65,
-      "target_2r": 34.09
+      "atr14": 3.39,
+      "return_3m_pct": 12.5,
+      "rs_vs_ndx_3m_pct": 7.7,
+      "volume_ratio": 0.71,
+      "entry": 99.28,
+      "stop": 93.34,
+      "target_2r": 111.16
     },
     {
-      "ticker": "QCOM",
-      "close": 181.03,
-      "rsi14": 49.3,
-      "atr14": 8.6,
-      "return_3m_pct": -2.4,
-      "rs_vs_ndx_3m_pct": -9.2,
-      "volume_ratio": 0.57,
-      "entry": 181.03,
-      "stop": 165.98,
-      "target_2r": 211.13
+      "ticker": "ADP",
+      "close": 264.0,
+      "rsi14": 47.2,
+      "atr14": 5.56,
+      "return_3m_pct": 10.1,
+      "rs_vs_ndx_3m_pct": 5.3,
+      "volume_ratio": 0.66,
+      "entry": 264.0,
+      "stop": 254.28,
+      "target_2r": 283.45
     },
     {
-      "ticker": "GOOGL",
-      "close": 347.68,
-      "rsi14": 53.4,
-      "atr14": 8.86,
-      "return_3m_pct": -3.9,
-      "rs_vs_ndx_3m_pct": -10.6,
-      "volume_ratio": 0.67,
-      "entry": 347.68,
-      "stop": 332.17,
-      "target_2r": 378.71
-    }
-  ],
-  "breakout": [
+      "ticker": "GILD",
+      "close": 146.85,
+      "rsi14": 50.2,
+      "atr14": 3.48,
+      "return_3m_pct": 9.5,
+      "rs_vs_ndx_3m_pct": 4.7,
+      "volume_ratio": 0.87,
+      "entry": 146.85,
+      "stop": 140.77,
+      "target_2r": 159.02
+    },
     {
-      "ticker": "MRVL",
-      "close": 287.01,
-      "rsi14": 69.9,
-      "atr14": 13.54,
-      "return_3m_pct": 23.9,
-      "rs_vs_ndx_3m_pct": 17.2,
-      "volume_ratio": 2.72,
-      "entry": 287.01,
-      "stop": 265.52,
-      "target_2r": 329.99
+      "ticker": "VRTX",
+      "close": 505.64,
+      "rsi14": 40.8,
+      "atr14": 11.87,
+      "return_3m_pct": 1.8,
+      "rs_vs_ndx_3m_pct": -3.0,
+      "volume_ratio": 0.81,
+      "entry": 505.64,
+      "stop": 484.87,
+      "target_2r": 547.19
+    },
+    {
+      "ticker": "INTC",
+      "close": 113.12,
+      "rsi14": 52.7,
+      "atr14": 6.1,
+      "return_3m_pct": 0.5,
+      "rs_vs_ndx_3m_pct": -4.3,
+      "volume_ratio": 0.76,
+      "entry": 113.12,
+      "stop": 102.45,
+      "target_2r": 134.47
+    },
+    {
+      "ticker": "SNDK",
+      "close": 1692.42,
+      "rsi14": 50.9,
+      "atr14": 94.09,
+      "return_3m_pct": -8.9,
+      "rs_vs_ndx_3m_pct": -13.7,
+      "volume_ratio": 1.05,
+      "entry": 1692.42,
+      "stop": 1527.77,
+      "target_2r": 2021.72
     }
   ],
+  "breakout": [],
   "data_failures": [
     "EA",
     "HONA",
-    "SPCX"
+    "SPCX",
+    "WBD"
   ]
 }
