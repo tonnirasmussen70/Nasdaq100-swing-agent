@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-10-10T00:10:00.750525+00:00",
+  "qualified": [
+    {
+      "ticker": "MRVL",
+      "close": 275.33,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 275.95,
+      "stop": 265.99,
+      "target": 295.86,
+      "reward_risk": 2.0,
+      "beta": 2.49,
+      "return_1w_pct": 2.45,
+      "return_1m_pct": 16.87,
+      "return_3m_pct": 16.48,
+      "relative_strength_3m_pct": 10.94,
+      "volume_ratio": 1.54,
+      "score": 59.7,
+      "position_size_shares": 2,
+      "risk_dkk": 132.85,
+      "position_value_dkk": 3682.55,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [
+    {
+      "ticker": "PLTR",
+      "close": 209.07,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 209.43,
+      "stop": 195.47,
+      "target": 237.35,
+      "reward_risk": 2.0,
+      "beta": 1.26,
+      "return_1w_pct": 4.6,
+      "return_1m_pct": 17.25,
+      "return_3m_pct": 56.78,
+      "relative_strength_3m_pct": 51.25,
+      "volume_ratio": 1.91,
+      "score": 84.1,
+      "position_size_shares": 2,
+      "risk_dkk": 186.29,
+      "position_value_dkk": 2794.8,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "LITE",
+      "close": 1103.2,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 1117.51,
+      "stop": 1026.83,
+      "target": 1298.88,
+      "reward_risk": 2.0,
+      "beta": 2.33,
+      "return_1w_pct": 0.27,
+      "return_1m_pct": 6.03,
+      "return_3m_pct": 30.75,
+      "relative_strength_3m_pct": 25.21,
+      "volume_ratio": 1.05,
+      "score": 70.1,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [
+      "MRVL"
+    ],
+    "removed": []
+  },
+  "data_failures": []
+}
