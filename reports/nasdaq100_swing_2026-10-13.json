@@ -1,59 +1,10 @@
 {
-  "generated_at": "2026-10-13T02:10:03.855076+00:00",
+  "generated_at": "2026-10-13T23:47:53.984443+00:00",
   "qualified": [],
-  "near_miss": [
-    {
-      "ticker": "PLTR",
-      "close": 209.01,
-      "pattern": "None",
-      "setup_type": "None",
-      "entry": 209.22,
-      "stop": 205.29,
-      "target": 217.1,
-      "reward_risk": 2.0,
-      "beta": 1.27,
-      "return_1w_pct": 10.35,
-      "return_1m_pct": 24.98,
-      "return_3m_pct": 56.3,
-      "relative_strength_3m_pct": 52.65,
-      "volume_ratio": 1.01,
-      "score": 63.7,
-      "position_size_shares": 2,
-      "risk_dkk": 52.68,
-      "position_value_dkk": 2799.82,
-      "failed_filters": [
-        "no_confirmed_1h_pattern"
-      ]
-    },
-    {
-      "ticker": "KDP",
-      "close": 32.76,
-      "pattern": "Inside bar breakout",
-      "setup_type": "Continuation",
-      "entry": 32.79,
-      "stop": 31.28,
-      "target": 35.83,
-      "reward_risk": 2.0,
-      "beta": -0.07,
-      "return_1w_pct": 6.02,
-      "return_1m_pct": 5.09,
-      "return_3m_pct": 9.01,
-      "relative_strength_3m_pct": 5.37,
-      "volume_ratio": 1.12,
-      "score": 28.5,
-      "position_size_shares": 18,
-      "risk_dkk": 182.73,
-      "position_value_dkk": 3949.46,
-      "failed_filters": [
-        "beta_below_threshold"
-      ]
-    }
-  ],
+  "near_miss": [],
   "changes": {
     "new": [],
-    "removed": [
-      "MRVL"
-    ]
+    "removed": []
   },
   "data_failures": []
 }
