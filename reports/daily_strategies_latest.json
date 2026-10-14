@@ -1,44 +1,7 @@
 {
-  "generated_at": "2026-10-13T03:03:54.471024+00:00",
+  "generated_at": "2026-10-14T01:14:22.627764+00:00",
   "mode": "paper_observation",
-  "pullback": [
-    {
-      "ticker": "WDAY",
-      "close": 188.25,
-      "rsi14": 50.0,
-      "atr14": 6.27,
-      "return_3m_pct": 34.6,
-      "rs_vs_ndx_3m_pct": 31.0,
-      "volume_ratio": 0.91,
-      "entry": 188.25,
-      "stop": 177.28,
-      "target_2r": 210.18
-    },
-    {
-      "ticker": "DXCM",
-      "close": 85.92,
-      "rsi14": 49.5,
-      "atr14": 2.07,
-      "return_3m_pct": 15.9,
-      "rs_vs_ndx_3m_pct": 12.3,
-      "volume_ratio": 0.75,
-      "entry": 85.92,
-      "stop": 82.3,
-      "target_2r": 93.15
-    },
-    {
-      "ticker": "ADI",
-      "close": 406.25,
-      "rsi14": 60.6,
-      "atr14": 10.73,
-      "return_3m_pct": 3.8,
-      "rs_vs_ndx_3m_pct": 0.1,
-      "volume_ratio": 0.87,
-      "entry": 406.25,
-      "stop": 387.48,
-      "target_2r": 443.79
-    }
-  ],
+  "pullback": [],
   "breakout": [],
   "data_failures": [
     "EA",
