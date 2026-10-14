@@ -26,8 +26,8 @@ Separat swingstrategi for Ivanhoe Mines (Yahoo Finance: `IVN.TO`, Toronto Stock 
 - Handel kun ved dokumenteret likviditet; indregn spread, kurtage, valutakurs og slippage.
 - Ingen automatisk averaging down eller ordreafgivelse.
 
-## UI: separat fane 'IVN Swing'
-Vis pris og as-of dato, trend 1D/1W, RSI14, MACD, MA20/50, ATR14, støtte/modstand, entry/stop/targets, R/R, status BUY/HOLD/SELL/WAIT, begrundelse, signalhistorik og datakvalitet. Position/entry må kun vises som faktiske, når brugeren har registreret en position; ellers WATCHLIST/WAIT.
+## UI: fælles fane 'Other strategies'
+Fanen skal kunne rumme flere selvstændige aktiestrategier, begyndende med IVN.TO. Hver aktie skal have sin egen konfiguration, signalhistorik, risikostyring og separat status; eksisterende Nasdaq-100-strategier må ikke påvirkes. Brug en aktievælger og vis pris og as-of dato, trend 1D/1W, RSI14, MACD, MA20/50, ATR14, støtte/modstand, entry/stop/targets, R/R, status BUY/HOLD/SELL/WAIT, begrundelse, signalhistorik og datakvalitet. Position/entry må kun vises som faktiske, når brugeren har registreret en position; ellers WATCHLIST/WAIT.
 
 ## Kvalitetsgate inden merge
 1. Enhedstest af indikatorer, signalregler, stops, valutakonvertering og manglende data.
