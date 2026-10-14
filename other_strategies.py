@@ -16,6 +16,8 @@ def indicators(prices: pd.DataFrame) -> pd.DataFrame:
     for col in required:
         d[col] = pd.to_numeric(d[col], errors="coerce")
     d = d.dropna(subset=list(required))
+    if ((d["High"] < d[["Open", "Close", "Low"]].max(axis=1)) | (d["Low"] > d[["Open", "Close", "High"]].min(axis=1)) | (d["Low"] <= 0) | (d["Volume"] < 0)).any():
+        raise ValueError("Inconsistent OHLCV data")
     if len(d) < 65:
         raise ValueError("At least 65 completed daily bars required")
     close = d["Close"]
@@ -50,6 +52,8 @@ def screen(prices: pd.DataFrame, ticker: str = "IVN.TO", has_position: bool = Fa
     stop = max(0.01, stop - 0.25 * atr)
     risk = close - stop
     target = close + 2 * risk
+    if risk <= 0 or not math.isfinite(risk):
+        raise ValueError("Invalid stop distance")
     rsi_turn = float(prev["RSI14"]) < 35 and float(last["RSI14"]) > float(prev["RSI14"]) and float(last["RSI14"]) >= 30
     price_turn = close > float(prev["High"]) and close > float(prev["Close"])
     confirmation = (close > float(last["MA20"]) and float(prev["Close"]) <= float(prev["MA20"])) or (float(last["MACD"]) > float(last["MACD_SIGNAL"]) and float(prev["MACD"]) <= float(prev["MACD_SIGNAL"]))
