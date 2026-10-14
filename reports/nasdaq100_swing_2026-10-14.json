@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-10-14T23:20:50.625480+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "PLTR",
+      "close": 201.06,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 201.17,
+      "stop": 199.53,
+      "target": 206.38,
+      "reward_risk": 3.17,
+      "beta": 1.27,
+      "return_1w_pct": 3.53,
+      "return_1m_pct": 16.46,
+      "return_3m_pct": 49.49,
+      "relative_strength_3m_pct": 46.3,
+      "volume_ratio": 1.04,
+      "score": 56.5,
+      "position_size_shares": 2,
+      "risk_dkk": 21.97,
+      "position_value_dkk": 2690.52,
+      "failed_filters": [
+        "close_below_ema50"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
