@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-10-15T23:09:32.847353+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "TRI",
+      "close": 107.91,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 108.06,
+      "stop": 103.29,
+      "target": 117.61,
+      "reward_risk": 2.0,
+      "beta": -0.12,
+      "return_1w_pct": 6.24,
+      "return_1m_pct": 6.49,
+      "return_3m_pct": 12.88,
+      "relative_strength_3m_pct": 8.19,
+      "volume_ratio": 1.67,
+      "score": 48.6,
+      "position_size_shares": 5,
+      "risk_dkk": 159.12,
+      "position_value_dkk": 3601.25,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "ADSK",
+      "close": 245.21,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 246.13,
+      "stop": 229.09,
+      "target": 280.19,
+      "reward_risk": 2.0,
+      "beta": 0.1,
+      "return_1w_pct": 4.95,
+      "return_1m_pct": 11.28,
+      "return_3m_pct": 12.28,
+      "relative_strength_3m_pct": 7.58,
+      "volume_ratio": 1.19,
+      "score": 39.0,
+      "position_size_shares": 2,
+      "risk_dkk": 227.05,
+      "position_value_dkk": 3280.87,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
