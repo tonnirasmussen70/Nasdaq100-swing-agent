@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-10-20T23:16:48.129581+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "WDAY",
+      "close": 204.04,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 204.41,
+      "stop": 193.67,
+      "target": 225.9,
+      "reward_risk": 2.0,
+      "beta": -0.07,
+      "return_1w_pct": 9.65,
+      "return_1m_pct": 6.28,
+      "return_3m_pct": 54.04,
+      "relative_strength_3m_pct": 52.34,
+      "volume_ratio": 1.16,
+      "score": 66.3,
+      "position_size_shares": 2,
+      "risk_dkk": 142.99,
+      "position_value_dkk": 2721.22,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "GILD",
+      "close": 156.54,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 156.61,
+      "stop": 152.79,
+      "target": 164.25,
+      "reward_risk": 2.0,
+      "beta": 0.05,
+      "return_1w_pct": 5.81,
+      "return_1m_pct": 3.95,
+      "return_3m_pct": 20.75,
+      "relative_strength_3m_pct": 19.06,
+      "volume_ratio": 1.03,
+      "score": 53.2,
+      "position_size_shares": 3,
+      "risk_dkk": 76.26,
+      "position_value_dkk": 3127.32,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "MAR",
+      "close": 397.44,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 397.56,
+      "stop": 389.39,
+      "target": 413.9,
+      "reward_risk": 2.0,
+      "beta": 0.18,
+      "return_1w_pct": 6.95,
+      "return_1m_pct": 15.95,
+      "return_3m_pct": 7.66,
+      "relative_strength_3m_pct": 5.96,
+      "volume_ratio": 1.16,
+      "score": 27.8,
+      "position_size_shares": 1,
+      "risk_dkk": 54.39,
+      "position_value_dkk": 2646.23,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
