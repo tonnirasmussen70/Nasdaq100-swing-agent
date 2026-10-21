@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-10-21T23:29:43.172745+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "TSLA",
+      "close": 386.55,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 387.27,
+      "stop": 372.29,
+      "target": 417.23,
+      "reward_risk": 2.0,
+      "beta": 1.5,
+      "return_1w_pct": 5.26,
+      "return_1m_pct": 2.0,
+      "return_3m_pct": 20.89,
+      "relative_strength_3m_pct": 16.08,
+      "volume_ratio": 1.29,
+      "score": 64.2,
+      "position_size_shares": 1,
+      "risk_dkk": 99.67,
+      "position_value_dkk": 2576.82,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "close": 201.64,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 202.67,
+      "stop": 189.65,
+      "target": 228.71,
+      "reward_risk": 2.0,
+      "beta": 1.32,
+      "return_1w_pct": 0.37,
+      "return_1m_pct": 9.04,
+      "return_3m_pct": 63.51,
+      "relative_strength_3m_pct": 58.7,
+      "volume_ratio": 0.93,
+      "score": 59.7,
+      "position_size_shares": 2,
+      "risk_dkk": 173.26,
+      "position_value_dkk": 2697.02,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "CTAS",
+      "close": 220.08,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 220.7,
+      "stop": 214.67,
+      "target": 232.78,
+      "reward_risk": 2.0,
+      "beta": -0.16,
+      "return_1w_pct": 5.52,
+      "return_1m_pct": 10.74,
+      "return_3m_pct": 8.6,
+      "relative_strength_3m_pct": 3.79,
+      "volume_ratio": 1.34,
+      "score": 28.9,
+      "position_size_shares": 2,
+      "risk_dkk": 80.34,
+      "position_value_dkk": 2937.06,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "CSCO"
+  ]
+}
