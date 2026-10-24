@@ -209,7 +209,7 @@ overview[2].metric("Udgået", len(changes.get("removed", [])))
 overview[3].metric("Near-miss", len(near_miss))
 overview[4].metric("Datamangler", len(failures))
 
-tabs = st.tabs(["Core 1H Momentum", "Trend + Momentum Pullback", "Volatility Breakout + RS", "Asian Breakout", "Ændringer", "Near-miss", "Historik", "Datakvalitet"])
+tabs = st.tabs(["Core 1H Momentum", "Trend + Momentum Pullback", "Volatility Breakout + RS", "Asian Breakout", "Ændringer", "Near-miss", "Historik", "Datakvalitet", "Other strategies"])
 
 with tabs[0]:
     st.subheader("Kvalificerede setups")
@@ -381,3 +381,39 @@ with tabs[7]:
     if selected_path:
         st.write("Rapportfil:", selected_path.name)
         st.write("Genereret:", format_timestamp(report.get("generated_at")))
+
+
+
+with tabs[8]:
+    st.subheader("Other strategies")
+    st.caption("Enkeltaktier uden for Nasdaq-100 · 1D swing · 2–12 uger · research/paper only")
+    symbol = st.selectbox("Aktie", ["IVN.TO"], key="other_symbol")
+    owned = st.checkbox("Jeg har en åben position", key="other_owned")
+    cost = st.number_input("Gennemsnitlig entry (CAD)", min_value=0.01, value=10.75, step=0.05, disabled=not owned)
+    if st.button("Opdater IVN-analyse", key="other_refresh"):
+        try:
+            from other_strategies import download_and_screen
+            with st.spinner("Henter afsluttede dagskurser..."):
+                st.session_state["other_result"] = download_and_screen(symbol, owned, cost if owned else None)
+        except Exception as exc:
+            st.error(f"Kunne ikke hente eller analysere data: {exc}")
+    data = st.session_state.get("other_result")
+    if data and data.get("ticker") == symbol:
+        st.caption(f"Seneste afsluttede handelsdag: {data['as_of']} · CAD")
+        st.metric("Signal", data["status"])
+        st.info(data["reason"])
+        a, b, c, d = st.columns(4)
+        a.metric("Kurs", data["close"])
+        b.metric("RSI14", data["rsi14"])
+        c.metric("ATR14", data["atr14"])
+        d.metric("Volumen / median", data["volume_ratio"])
+        st.dataframe(pd.DataFrame([{
+            "Entry CAD": data["entry"], "Stop CAD": data["stop"],
+            "Target CAD": data["target"], "R/R": data["reward_risk"],
+            "MA20": data["ma20"], "MA50": data["ma50"],
+            "MACD": data["macd"], "MACD signal": data["macd_signal"],
+            "Støtte": data["support"], "Modstand": data["resistance"]
+        }]), hide_index=True, use_container_width=True)
+        st.warning("Signal er et teknisk screeningsresultat, ikke en handelsordre. Stops kan overskrides ved kursgab.")
+    else:
+        st.info("Klik 'Opdater IVN-analyse' for at hente data og beregne signal.")
