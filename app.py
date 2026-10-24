@@ -283,10 +283,19 @@ Det er et **paper/observation-signal**, ikke en automatisk købsordre.
 """)
     daily = load_optional_json(ROOT / "reports" / "daily_strategies_latest.json")
     breakouts = daily.get("breakout", [])
+    if daily.get("bollinger_filter"):
+        st.caption("Valgfrit Bollinger Squeeze-filter er aktivt i denne rapport.")
     if breakouts:
         st.dataframe(pd.DataFrame(breakouts), use_container_width=True, hide_index=True)
     else:
         st.info("Ingen kvalificerede breakout-signaler i seneste scanning, eller første daglige scanning er endnu ikke kørt.")
+    if "watch" in daily:
+        st.markdown("**WATCH · tidlig observation**")
+        st.caption("Bollinger squeeze + trend + relativ styrke. Afventer bekræftet breakout; WATCH udløser ingen handel.")
+        if daily["watch"]:
+            st.dataframe(pd.DataFrame(daily["watch"]), use_container_width=True, hide_index=True)
+        else:
+            st.info("Ingen WATCH-signaler i seneste scanning.")
 
 with tabs[3]:
     st.subheader("Asian / London Breakout · paper trading")
