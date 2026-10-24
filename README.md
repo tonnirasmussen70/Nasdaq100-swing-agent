@@ -54,3 +54,8 @@ Standardopsætningen bruger 20.000 kr. kapital, 1,5 % maksimal tabsrisiko pr. ha
 - Signalet bruger kun afsluttede ordinære market-hours bars.
 - Et månedligt resultatmål indgår ikke i signalreglerne. Evaluer strategien på forventningsværdi, drawdown og out-of-sample-resultater før rigtig handel.
 - Output er screening, ikke finansiel rådgivning eller en ordre om køb/salg.
+## Optional Bollinger Squeeze research
+
+The daily Volatility Breakout + RS scan supports `python daily_strategies.py --bollinger-filter --watch`. Both options default off. WATCH is a separate
+early observation list, not a trade. Run `python bollinger_backtest.py` for
+the cost-adjusted A/B/C comparison; see [rules, audit and data limitations](docs/BOLLINGER_COMPARISON.md).

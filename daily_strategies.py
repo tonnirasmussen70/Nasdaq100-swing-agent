@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import yfinance as yf
+from bollinger import features as bollinger_features
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "reports" / "daily_strategies_latest.json"
@@ -31,9 +32,10 @@ def universe()->list[str]:
         raise RuntimeError(f"Nasdaq-100 universe is empty: {symbols_file}")
     return symbols
 
-def one(ticker:str, ndx_ret_63:float):
+def one(ticker:str, ndx_ret_63:float, *, bollinger_filter:bool=False, include_watch:bool=False):
     d=yf.download(ticker,period="1y",interval="1d",auto_adjust=True,progress=False)
-    if d.empty or len(d)<210:return None
+    if d.empty or len(d)<210:
+        return (None, None, None) if include_watch else None
     if isinstance(d.columns,pd.MultiIndex): d.columns=d.columns.get_level_values(0)
     c=d["Close"]; v=d["Volume"]; a=atr(d); rr=rsi(c)
     sma50=c.rolling(50).mean(); sma200=c.rolling(200).mean(); ema20=c.ewm(span=20,adjust=False).mean()
@@ -47,23 +49,46 @@ def one(ticker:str, ndx_ret_63:float):
     base={"ticker":ticker,"close":round(px,2),"rsi14":round(float(rr.iloc[-1]),1),"atr14":round(av,2),"return_3m_pct":round(ret63*100,1),"rs_vs_ndx_3m_pct":round((ret63-ndx_ret_63)*100,1),"volume_ratio":round(volratio,2)}
     p=dict(base); p.update({"entry":round(px,2),"stop":round(px-1.75*av,2),"target_2r":round(px+3.5*av,2)})
     b=dict(base); breakout_stop=max(float(prev20.iloc[-1])-0.5*av,px-1.75*av); b.update({"entry":round(px,2),"stop":round(breakout_stop,2),"target_2r":round(px+2*(px-breakout_stop),2)})
-    return p if pullback else None,b if breakout else None
+    watch = None
+    if bollinger_filter or include_watch:
+        bb = bollinger_features(c).iloc[-1]
+        if include_watch and trend and ret63>ndx_ret_63 and bool(bb['squeeze']) and not breakout and px<=bb['bb_upper']:
+            watch = dict(base, status="WATCH", reason="Bollinger squeeze + trend + RS; await breakout")
+        if bollinger_filter:
+            breakout = breakout and bool(bb['recent_squeeze'])
+    result = (p if pullback else None,b if breakout else None)
+    return (*result, watch) if include_watch else result
 
-def main():
+def main(*, bollinger_filter:bool=False, include_watch:bool=False):
     ndx=yf.download("^NDX",period="6mo",interval="1d",auto_adjust=True,progress=False)
     if isinstance(ndx.columns,pd.MultiIndex):ndx.columns=ndx.columns.get_level_values(0)
     nr=float(ndx["Close"].iloc[-1]/ndx["Close"].iloc[-64]-1)
-    pull=[]; br=[]; failures=[]
+    pull=[]; br=[]; failures=[]; watches=[]
     for ticker in universe():
         try:
-            p,b=one(ticker,nr)
+            if bollinger_filter or include_watch:
+                result=one(ticker,nr,bollinger_filter=bollinger_filter,include_watch=include_watch)
+                p,b=result[:2]
+                if include_watch and result[2]: watches.append(result[2])
+            else:
+                p,b=one(ticker,nr)
             if p:pull.append(p)
             if b:br.append(b)
         except Exception: failures.append(ticker)
     pull.sort(key=lambda x:(x["return_3m_pct"],-x["rsi14"]),reverse=True)
     br.sort(key=lambda x:(x["rs_vs_ndx_3m_pct"],x["volume_ratio"]),reverse=True)
     payload={"generated_at":datetime.now(timezone.utc).isoformat(),"mode":"paper_observation","pullback":pull,"breakout":br,"data_failures":failures}
+    if bollinger_filter or include_watch:
+        payload['bollinger_filter']=bollinger_filter
+    if include_watch:
+        payload['watch']=sorted(watches,key=lambda x:x['rs_vs_ndx_3m_pct'],reverse=True)
     OUT.parent.mkdir(exist_ok=True); OUT.write_text(json.dumps(payload,indent=2),encoding="utf-8")
     print(f"pullback={len(pull)} breakout={len(br)} failures={len(failures)}")
 
-if __name__=="__main__": main()
+if __name__=="__main__":
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--bollinger-filter',action='store_true')
+    parser.add_argument('--watch',action='store_true')
+    args=parser.parse_args()
+    main(bollinger_filter=args.bollinger_filter,include_watch=args.watch)

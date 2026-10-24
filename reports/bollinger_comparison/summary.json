@@ -1,0 +1,968 @@
+{
+  "source": "Yahoo Finance via yfinance; adjusted daily OHLCV",
+  "generated_at": "2026-10-24T16:05:24.749319+00:00",
+  "offline": true,
+  "versions": {
+    "python": "3.12.14",
+    "pandas": "2.3.3",
+    "numpy": "2.5.4",
+    "yfinance": "0.2.66"
+  },
+  "implementation_sha256": {
+    "bollinger.py": "3b30d6493c97ae2d5e446fc9748cace6e51bf109ff844e783da308aacba8e9c9",
+    "bollinger_backtest.py": "6c512e403eb3b7c39783dba2fed2361bfc7825945f813f8318a7959efc30a141",
+    "daily_strategies.py": "076b35abe7b414b1c8b96ec43c128efce81fb9e605ba98223b70d2b9b2524984"
+  },
+  "start": "2016-01-01",
+  "end_exclusive": "2026-10-24",
+  "actual_last": "2026-10-23",
+  "requested_symbols": [
+    "ADBE",
+    "AMD",
+    "ABNB",
+    "ALNY",
+    "GOOGL",
+    "GOOG",
+    "AMZN",
+    "AEP",
+    "AMGN",
+    "ADI",
+    "AAPL",
+    "AMAT",
+    "APP",
+    "ARM",
+    "ASML",
+    "ALAB",
+    "ADSK",
+    "ADP",
+    "AXON",
+    "BKR",
+    "BKNG",
+    "AVGO",
+    "CDNS",
+    "CTAS",
+    "CSCO",
+    "CCEP",
+    "CMCSA",
+    "CEG",
+    "CPRT",
+    "CRWV",
+    "COST",
+    "CRWD",
+    "CSX",
+    "DDOG",
+    "DXCM",
+    "FANG",
+    "DASH",
+    "EA",
+    "EXC",
+    "FAST",
+    "FER",
+    "FTNT",
+    "GEHC",
+    "GILD",
+    "HONA",
+    "HON",
+    "IDXX",
+    "INTC",
+    "INTU",
+    "ISRG",
+    "KDP",
+    "KLAC",
+    "KHC",
+    "LRCX",
+    "LIN",
+    "LITE",
+    "MAR",
+    "MRVL",
+    "MELI",
+    "META",
+    "MCHP",
+    "MU",
+    "MSFT",
+    "MSTR",
+    "MDLZ",
+    "MPWR",
+    "MNST",
+    "NBIS",
+    "NFLX",
+    "NVDA",
+    "NXPI",
+    "ORLY",
+    "ODFL",
+    "PCAR",
+    "PLTR",
+    "PANW",
+    "PAYX",
+    "PYPL",
+    "PDD",
+    "PEP",
+    "QCOM",
+    "REGN",
+    "RKLB",
+    "ROP",
+    "ROST",
+    "SNDK",
+    "STX",
+    "SHOP",
+    "SPCX",
+    "SBUX",
+    "SNPS",
+    "TMUS",
+    "TTWO",
+    "TER",
+    "TSLA",
+    "TXN",
+    "TRI",
+    "VRTX",
+    "WMT",
+    "WBD",
+    "WDC",
+    "WDAY",
+    "XEL"
+  ],
+  "accepted_symbols": [
+    "ADBE",
+    "AMD",
+    "ABNB",
+    "ALNY",
+    "GOOGL",
+    "GOOG",
+    "AMZN",
+    "AEP",
+    "AMGN",
+    "ADI",
+    "AAPL",
+    "AMAT",
+    "APP",
+    "ARM",
+    "ASML",
+    "ALAB",
+    "ADSK",
+    "ADP",
+    "AXON",
+    "BKR",
+    "BKNG",
+    "AVGO",
+    "CDNS",
+    "CTAS",
+    "CSCO",
+    "CCEP",
+    "CMCSA",
+    "CEG",
+    "CPRT",
+    "CRWV",
+    "COST",
+    "CRWD",
+    "CSX",
+    "DDOG",
+    "DXCM",
+    "FANG",
+    "DASH",
+    "EXC",
+    "FAST",
+    "FER",
+    "FTNT",
+    "GEHC",
+    "GILD",
+    "HON",
+    "IDXX",
+    "INTC",
+    "INTU",
+    "ISRG",
+    "KDP",
+    "KLAC",
+    "KHC",
+    "LRCX",
+    "LIN",
+    "LITE",
+    "MAR",
+    "MRVL",
+    "MELI",
+    "META",
+    "MCHP",
+    "MU",
+    "MSFT",
+    "MSTR",
+    "MDLZ",
+    "MPWR",
+    "MNST",
+    "NBIS",
+    "NFLX",
+    "NVDA",
+    "NXPI",
+    "ORLY",
+    "ODFL",
+    "PCAR",
+    "PLTR",
+    "PANW",
+    "PAYX",
+    "PYPL",
+    "PDD",
+    "PEP",
+    "QCOM",
+    "REGN",
+    "RKLB",
+    "ROP",
+    "ROST",
+    "SNDK",
+    "STX",
+    "SHOP",
+    "SBUX",
+    "SNPS",
+    "TMUS",
+    "TTWO",
+    "TER",
+    "TSLA",
+    "TXN",
+    "TRI",
+    "VRTX",
+    "WMT",
+    "WDC",
+    "WDAY",
+    "XEL"
+  ],
+  "failures": {
+    "EA": "Insufficient history",
+    "HONA": "Insufficient history",
+    "SPCX": "Insufficient history",
+    "WBD": "Invalid OHLCV"
+  },
+  "provenance": {
+    "^NDX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "6f5e597595d7c929b81553649eb9438da86bb261a8f28e7d2c4d3714a1eba684",
+      "cache_modified_at_utc": "2026-10-24T16:00:54.926886559+00:00"
+    },
+    "ADBE": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "e3975c3c1b0fb8118d20e4dff85ed9939bd447cc6e5593a373db1add562c4702",
+      "cache_modified_at_utc": "2026-10-24T16:00:55.319462061+00:00"
+    },
+    "AMD": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "085b696eeb2402be7f17db2fbac863c01bd334579b55f0818edb6cd20f7f2997",
+      "cache_modified_at_utc": "2026-10-24T16:00:55.754408121+00:00"
+    },
+    "ABNB": {
+      "rows": 1474,
+      "first": "2020-12-10",
+      "last": "2026-10-23",
+      "sha256": "e8d42027e6b13dae767a58b44e3baf137dfe4dfcfcf5cd35556a925e4303e651",
+      "cache_modified_at_utc": "2026-10-24T16:00:56.146910906+00:00"
+    },
+    "ALNY": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "7c1a7e92008e8b0cc431f716f1871772b3be4c5271b583cca404a8519482d30d",
+      "cache_modified_at_utc": "2026-10-24T16:00:56.519564151+00:00"
+    },
+    "GOOGL": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "6cd94ddaadad1f65968e7ff17ba0827eda0c4c14570376d5097d2eed3e6b7363",
+      "cache_modified_at_utc": "2026-10-24T16:00:56.967864275+00:00"
+    },
+    "GOOG": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "4f5130a6f81952104b385c83ef1b7152fe1199ca9bd0f43b803e76e3e2dd32c9",
+      "cache_modified_at_utc": "2026-10-24T16:00:57.386566401+00:00"
+    },
+    "AMZN": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "c3425db667270832f46e1460a41de774c1efa6b5e2f3ef0a48036ccc28ba8542",
+      "cache_modified_at_utc": "2026-10-24T16:00:57.781054735+00:00"
+    },
+    "AEP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "1e6a7808032e5163fcbc6f48b9006a7ea684cc871cde216e576041f527c34a50",
+      "cache_modified_at_utc": "2026-10-24T16:00:58.382692099+00:00"
+    },
+    "AMGN": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "e95edb16f7abe29540e6f6b8a9f20d5592bd4a147b75a88d87afeae1fa1c9d96",
+      "cache_modified_at_utc": "2026-10-24T16:00:58.871262550+00:00"
+    },
+    "ADI": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "e4550a56cd057dd307b4b0ea0ed3df077aec815fab87e9772fa16c30b422ce53",
+      "cache_modified_at_utc": "2026-10-24T16:00:59.391314983+00:00"
+    },
+    "AAPL": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "27d928c13bfb931fb0d780f13b05fb8f6cfb6510c7825992bb148c9aaaadd7cb",
+      "cache_modified_at_utc": "2026-10-24T16:00:59.895549059+00:00"
+    },
+    "AMAT": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "544cb04e7e18097d981ad288594d8ee9d15744eea127cc3732446424ab7ca7ac",
+      "cache_modified_at_utc": "2026-10-24T16:01:00.328999758+00:00"
+    },
+    "APP": {
+      "rows": 1389,
+      "first": "2021-04-15",
+      "last": "2026-10-23",
+      "sha256": "fc60dec4c00f83991227dba726a863c3bec1fac5d8ec41678fab7edbff58121c",
+      "cache_modified_at_utc": "2026-10-24T16:01:00.712985754+00:00"
+    },
+    "ARM": {
+      "rows": 781,
+      "first": "2023-09-14",
+      "last": "2026-10-23",
+      "sha256": "339384cf9d0951dd21549bf21de6b6a7483bdcc86b5c66ef80088abe4cb538d1",
+      "cache_modified_at_utc": "2026-10-24T16:01:01.017191172+00:00"
+    },
+    "ASML": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "70388387c5d88bdd0fbb5dba306f0a04f3becf52c1219f5ad385b8f216d1d5fd",
+      "cache_modified_at_utc": "2026-10-24T16:01:01.486572504+00:00"
+    },
+    "ALAB": {
+      "rows": 652,
+      "first": "2024-03-20",
+      "last": "2026-10-23",
+      "sha256": "fbcb974a34bc07df79d549d3cde42b1814b7d3867f93a25d2f0dc693b87b29df",
+      "cache_modified_at_utc": "2026-10-24T16:01:01.905212402+00:00"
+    },
+    "ADSK": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "1bc4c7fbec04ee4707c49723a5583e7a486dbce44d8470fd0f673022180dacab",
+      "cache_modified_at_utc": "2026-10-24T16:01:02.268510818+00:00"
+    },
+    "ADP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "9aea316be15bdadff97301250b729bdffdd503959aa1caac548c32967b18c407",
+      "cache_modified_at_utc": "2026-10-24T16:01:02.776196003+00:00"
+    },
+    "AXON": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "713151a988dac31ed14551e45ed99cf6e7bb3da04324547423abbc290cd2f228",
+      "cache_modified_at_utc": "2026-10-24T16:01:03.186649799+00:00"
+    },
+    "BKR": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "e9e79375417a8e199d7dae154d298cbfb32b36edaa29b6f3afec256e3f7818c3",
+      "cache_modified_at_utc": "2026-10-24T16:01:03.681440592+00:00"
+    },
+    "BKNG": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "cad82c030b9159691bd764592b1660ae39fc311426060f20cacfa3930937cf2f",
+      "cache_modified_at_utc": "2026-10-24T16:01:04.161603212+00:00"
+    },
+    "AVGO": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "ed070228a2c50c249d7585039b3b62f71096daab7b1b8e457cbea8ddb2cdc9d7",
+      "cache_modified_at_utc": "2026-10-24T16:01:04.669161081+00:00"
+    },
+    "CDNS": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "023c8215b7be2731e277005ec5fc34b69a09f54a3ec3a2277ed062afbc170e5f",
+      "cache_modified_at_utc": "2026-10-24T16:01:05.063842057+00:00"
+    },
+    "CTAS": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "c9abb5a0c7113eec78cd9f947b6a1e3f750acb8f872cd5102f0b60b508f02342",
+      "cache_modified_at_utc": "2026-10-24T16:01:05.559833050+00:00"
+    },
+    "CSCO": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "4be6c843967255cbe8bcf5d66bb8723219e66c18093c3d340932e3ab9375df29",
+      "cache_modified_at_utc": "2026-10-24T16:01:06.020509005+00:00"
+    },
+    "CCEP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "775eb5329063e89d5910691ea6af1880f9c131c37241710801a51b9c7af3550a",
+      "cache_modified_at_utc": "2026-10-24T16:01:06.459434986+00:00"
+    },
+    "CMCSA": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "c87a43ca72b30805454625ee93d7a54bdf5dfc53b23fd030db2bd7958820e276",
+      "cache_modified_at_utc": "2026-10-24T16:01:06.945310116+00:00"
+    },
+    "CEG": {
+      "rows": 1196,
+      "first": "2022-01-19",
+      "last": "2026-10-23",
+      "sha256": "85404918289b1d4ad225a40ba2305663728ecebe87e63b79bfbd2f25717f0ac8",
+      "cache_modified_at_utc": "2026-10-24T16:01:07.309530497+00:00"
+    },
+    "CPRT": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "be22f66d9984393d6ba8ee1f9491e1404a91141a1333f41e36f7879c748adbba",
+      "cache_modified_at_utc": "2026-10-24T16:01:07.813360453+00:00"
+    },
+    "CRWV": {
+      "rows": 396,
+      "first": "2025-03-28",
+      "last": "2026-10-23",
+      "sha256": "d4b3171eef8131e79c2a58b5d25a1303f5e81f81f9bcfca2f30fe96550683c50",
+      "cache_modified_at_utc": "2026-10-24T16:01:08.106746912+00:00"
+    },
+    "COST": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "7e0fc8cf3feb17e8f2f269eb676c5d2c697ba6e1636ad162cecfb424ad734293",
+      "cache_modified_at_utc": "2026-10-24T16:01:08.579163074+00:00"
+    },
+    "CRWD": {
+      "rows": 1853,
+      "first": "2019-06-12",
+      "last": "2026-10-23",
+      "sha256": "0ffbda387850aacee5ee94b01b59aa07e65bb515af7c25a0ad03f39d9cc65257",
+      "cache_modified_at_utc": "2026-10-24T16:01:08.938119650+00:00"
+    },
+    "CSX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "ec47a8e705f9454d345fc575d4234c30be2d49ccf7d1b1aa8a40fbcc04c6d4cf",
+      "cache_modified_at_utc": "2026-10-24T16:01:09.434000969+00:00"
+    },
+    "DDOG": {
+      "rows": 1784,
+      "first": "2019-09-19",
+      "last": "2026-10-23",
+      "sha256": "95e1668a0e29bfedfd1fa6b380ec43eafb0f0e84b66973e04d065ca7c76709fe",
+      "cache_modified_at_utc": "2026-10-24T16:01:09.913746119+00:00"
+    },
+    "DXCM": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "89a97ee7c7736da8ca3f8e35eba4b8df5b553f5c363613e5a10155037142fe8f",
+      "cache_modified_at_utc": "2026-10-24T16:01:10.335351706+00:00"
+    },
+    "FANG": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "f9bd25af9348d9f4b0a19161d08a5c84276219b738d9ceb20523a8f59cf6597b",
+      "cache_modified_at_utc": "2026-10-24T16:01:10.742638111+00:00"
+    },
+    "DASH": {
+      "rows": 1475,
+      "first": "2020-12-09",
+      "last": "2026-10-23",
+      "sha256": "89cc6632730ab8532ec84efa7478681de3a44c3ee5cb9f64fd3d870dd4158dd6",
+      "cache_modified_at_utc": "2026-10-24T16:01:11.082966805+00:00"
+    },
+    "EXC": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "b6781add435105d0245c588e6c76c346fcf3edbc3a46375ecd268cd819915037",
+      "cache_modified_at_utc": "2026-10-24T16:01:11.845496655+00:00"
+    },
+    "FAST": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "31d3a8d55ba551bb68536b9a74158c2c6bbde75631115147df7864401a0f8365",
+      "cache_modified_at_utc": "2026-10-24T16:01:12.351605654+00:00"
+    },
+    "FER": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "bf9d36bf5d8854cdbfa37cfe66c80765d95474a25242d42e80414c78f040b4c8",
+      "cache_modified_at_utc": "2026-10-24T16:01:12.820421696+00:00"
+    },
+    "FTNT": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "41c0d46f408fd52978cdcffee98eb49c294c74fdf40d855b2f93b7ff1d1fdd24",
+      "cache_modified_at_utc": "2026-10-24T16:01:13.339721203+00:00"
+    },
+    "GEHC": {
+      "rows": 967,
+      "first": "2022-12-15",
+      "last": "2026-10-23",
+      "sha256": "4c42413f05debce6cda55ac4f5a4755535114ffff1e77a9831d7a6403c6fdc58",
+      "cache_modified_at_utc": "2026-10-24T16:01:13.687766552+00:00"
+    },
+    "GILD": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "d02ef7a0e8841318af6b7167bd32f222e5882bda21550e6af6580700cbfc3a37",
+      "cache_modified_at_utc": "2026-10-24T16:01:14.127355814+00:00"
+    },
+    "HON": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "50e50f035c7500f802bafbcd357680ed2aa04a1ba1b1f74378481c451686ed65",
+      "cache_modified_at_utc": "2026-10-24T16:01:14.960885763+00:00"
+    },
+    "IDXX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "4117c6814254c31eb7130d82ff841df89c24b0253dd6ee663dc8850c605e65bd",
+      "cache_modified_at_utc": "2026-10-24T16:01:15.362367392+00:00"
+    },
+    "INTC": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "73e8c36286ccaedfecd9b08556678b505db50dd2318924d1d4d097b4328fa0ee",
+      "cache_modified_at_utc": "2026-10-24T16:01:15.934150696+00:00"
+    },
+    "INTU": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "3f44c32a79b51827c2139841d1ddcfc75137e5c91be1d94a07f7ff63d88aeb5a",
+      "cache_modified_at_utc": "2026-10-24T16:01:16.420124292+00:00"
+    },
+    "ISRG": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "496419a13aa6d6c9ad47a7b696038f81312b22001cff3120ab29aaa34a1e8ce5",
+      "cache_modified_at_utc": "2026-10-24T16:01:16.786202431+00:00"
+    },
+    "KDP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "17c83750cf8d3bec7f0f2ee2cfbf4412adab8e83984dcbd5c3beccd9412d1c15",
+      "cache_modified_at_utc": "2026-10-24T16:01:17.210644960+00:00"
+    },
+    "KLAC": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "b38d74c3743e347d01ca084bfbf0cf29a92b7d9544150f20b47c324b5c2d7499",
+      "cache_modified_at_utc": "2026-10-24T16:01:17.654541731+00:00"
+    },
+    "KHC": {
+      "rows": 2844,
+      "first": "2015-07-06",
+      "last": "2026-10-23",
+      "sha256": "ff877f00c1663d81044eed544731cf9ddb867491d36c7f4de19f750180820321",
+      "cache_modified_at_utc": "2026-10-24T16:01:18.013734102+00:00"
+    },
+    "LRCX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "088d7322b5f51018cab784c43503ad557b65261b95ebaf01fd080fae81cbf16e",
+      "cache_modified_at_utc": "2026-10-24T16:01:18.443616629+00:00"
+    },
+    "LIN": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "f860c01c6f7fdbe17ce5563e3812b9963d817274d7eb4ac73fbab446c224e064",
+      "cache_modified_at_utc": "2026-10-24T16:01:18.944976330+00:00"
+    },
+    "LITE": {
+      "rows": 2831,
+      "first": "2015-07-23",
+      "last": "2026-10-23",
+      "sha256": "d60000f0708fcaf737b75e7f2aa3b7e63f72228ef33789a165ba946de4ef81b2",
+      "cache_modified_at_utc": "2026-10-24T16:01:19.307836294+00:00"
+    },
+    "MAR": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "268f0032148ed8ecf80307a68981907436738c97b00ae74064a7cec6d5e894ab",
+      "cache_modified_at_utc": "2026-10-24T16:01:19.723683119+00:00"
+    },
+    "MRVL": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "ff73606661b13305e609c99c231b1ffbfa00b86e51fdf48bdd2b18916e9f3d39",
+      "cache_modified_at_utc": "2026-10-24T16:01:20.140993595+00:00"
+    },
+    "MELI": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "1e2896cc79684f3e6be35e98b3a3523b8a6658a07d3f19bac4090e9ff0b31803",
+      "cache_modified_at_utc": "2026-10-24T16:01:20.844738245+00:00"
+    },
+    "META": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "bff00e4f6e3ed42539c33a95828450e79458271d9631cbbc31b1add94748698a",
+      "cache_modified_at_utc": "2026-10-24T16:01:21.398914814+00:00"
+    },
+    "MCHP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "b0848f4e8a0e8b165a0dc5ffdeeb0333f0575075acce16033cb2bef03412a5e7",
+      "cache_modified_at_utc": "2026-10-24T16:01:21.961464167+00:00"
+    },
+    "MU": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "c42c0d697c7cb23764375fa9b794201d36bd9d93c08b05b1d94e0c79452f577b",
+      "cache_modified_at_utc": "2026-10-24T16:01:22.492056847+00:00"
+    },
+    "MSFT": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "e16a736de536838d10443562bab3fbc6f03bb68fd1982fe394f1bf8c9fc61656",
+      "cache_modified_at_utc": "2026-10-24T16:01:23.098290205+00:00"
+    },
+    "MSTR": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "48a819e5d1db93299ee40dfd6eea2c528bf2c328067a891e50d672901dc14a11",
+      "cache_modified_at_utc": "2026-10-24T16:01:23.633705616+00:00"
+    },
+    "MDLZ": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "ce0ade3b4ce2f3cf67911b72019089524af8b6baaa3629747185c0ade355e826",
+      "cache_modified_at_utc": "2026-10-24T16:01:24.221166611+00:00"
+    },
+    "MPWR": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "959574defcd24c299bf947504c18ba6be3fdbb504d5aff81199f0d9b9d26843a",
+      "cache_modified_at_utc": "2026-10-24T16:01:24.802410603+00:00"
+    },
+    "MNST": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "3a231a8164face218e1ee6c336502ed99adfce05a6d04ff6b9e072ba8eb63a73",
+      "cache_modified_at_utc": "2026-10-24T16:01:25.313396454+00:00"
+    },
+    "NBIS": {
+      "rows": 504,
+      "first": "2024-10-21",
+      "last": "2026-10-23",
+      "sha256": "48dae528ef4266e378236dac43a369e4f96aebfe1666c839fd4d0a49c1ab7379",
+      "cache_modified_at_utc": "2026-10-24T16:01:25.629170895+00:00"
+    },
+    "NFLX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "38464a2088b7b4d7176148bb28e52aa31ca15238db7f72a2f897120f9c5eed36",
+      "cache_modified_at_utc": "2026-10-24T16:01:26.032307386+00:00"
+    },
+    "NVDA": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "0d8f1180b0ada4d50dfe45e16a57fa9896ed3f5813676ec514907d6f951fea03",
+      "cache_modified_at_utc": "2026-10-24T16:01:26.468629599+00:00"
+    },
+    "NXPI": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "db6ecec909456dda03c8253da86eb7f9be540e2d2cbcfb038f9125fb67ddea9b",
+      "cache_modified_at_utc": "2026-10-24T16:01:26.870544910+00:00"
+    },
+    "ORLY": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "f2384aafc961001aaaa6e14a10e7a9ce86aeddb91ad778972b5248b9c53cf658",
+      "cache_modified_at_utc": "2026-10-24T16:01:27.318137407+00:00"
+    },
+    "ODFL": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "f27bc56924943da01de6a9b745554c9c0c15fca1498b48b22e61425e467caf2e",
+      "cache_modified_at_utc": "2026-10-24T16:01:27.711208105+00:00"
+    },
+    "PCAR": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "0946de51881b394f9cb8e6aa5d27860c9847e3a846a41cc661ea6ed8943ee391",
+      "cache_modified_at_utc": "2026-10-24T16:01:28.214722157+00:00"
+    },
+    "PLTR": {
+      "rows": 1524,
+      "first": "2020-09-30",
+      "last": "2026-10-23",
+      "sha256": "c70b3b058ff50d916481ccd02049210e07b6c247c3ff712a6eec3c0e06a9c411",
+      "cache_modified_at_utc": "2026-10-24T16:01:28.500805140+00:00"
+    },
+    "PANW": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "9a619e08ad4323e4d0110f92cc49db001e65cb612b6f7c12dd6c739b0ff7c943",
+      "cache_modified_at_utc": "2026-10-24T16:01:28.900018692+00:00"
+    },
+    "PAYX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "1e577d6842d36f4047b000780cc7e6cad41d7026ded38aeebef4dbcd2bfee739",
+      "cache_modified_at_utc": "2026-10-24T16:01:29.396594763+00:00"
+    },
+    "PYPL": {
+      "rows": 2844,
+      "first": "2015-07-06",
+      "last": "2026-10-23",
+      "sha256": "2f4a83257f0ae2bb6c371f6313a5cecd21ab77a7949861e39d58a2a39da65662",
+      "cache_modified_at_utc": "2026-10-24T16:01:29.927618980+00:00"
+    },
+    "PDD": {
+      "rows": 2073,
+      "first": "2018-07-26",
+      "last": "2026-10-23",
+      "sha256": "12df0e09504a12df848295b9a66c4cc4c4bc5a7234a446576e235d770c1d1966",
+      "cache_modified_at_utc": "2026-10-24T16:01:30.279559851+00:00"
+    },
+    "PEP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "6682b834f42095a70f5bb840c52e3ff7b13bcd6f0900b8ebeb17f1f0d51809e9",
+      "cache_modified_at_utc": "2026-10-24T16:01:30.824120522+00:00"
+    },
+    "QCOM": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "a25ec7672ab37a2efd7227a8c7427490bc2f9a06115a9eb9776f3aeebbf429be",
+      "cache_modified_at_utc": "2026-10-24T16:01:31.300238848+00:00"
+    },
+    "REGN": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "7113bc7d59bf17eef033983802d35236777bfa09d708397d699d952085102817",
+      "cache_modified_at_utc": "2026-10-24T16:01:31.709099293+00:00"
+    },
+    "RKLB": {
+      "rows": 1485,
+      "first": "2020-11-24",
+      "last": "2026-10-23",
+      "sha256": "680a44b5603065f9cd8ffde4b05510409f6d06c6cc506ad925dc88a95bd841de",
+      "cache_modified_at_utc": "2026-10-24T16:01:32.020136833+00:00"
+    },
+    "ROP": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "84af3f732ee324b2cd20d607ef0290d663269b5d479cfc8b1f97821ea3ff9a02",
+      "cache_modified_at_utc": "2026-10-24T16:01:32.470600367+00:00"
+    },
+    "ROST": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "40bd3d1f19d49446b5106cc38f77ee69a737ca7393ae975f3f45c1c356fe88ae",
+      "cache_modified_at_utc": "2026-10-24T16:01:32.978867054+00:00"
+    },
+    "SNDK": {
+      "rows": 426,
+      "first": "2025-02-13",
+      "last": "2026-10-23",
+      "sha256": "5d6b22ecfa44bdba29e928d52e4dbf3fbdf3a84e3231868ef322ccbc290e6c1f",
+      "cache_modified_at_utc": "2026-10-24T16:01:33.255825996+00:00"
+    },
+    "STX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "e21bdffee19e8424126ccf1f1345bce2e9e85340f17e3aa48c827730fba93b29",
+      "cache_modified_at_utc": "2026-10-24T16:01:33.701701880+00:00"
+    },
+    "SHOP": {
+      "rows": 2875,
+      "first": "2015-05-20",
+      "last": "2026-10-23",
+      "sha256": "ca3a143ea9cd573d72b18a576bccb6b940ec0125b4662ec3598205ccc7ec8693",
+      "cache_modified_at_utc": "2026-10-24T16:01:34.077789545+00:00"
+    },
+    "SBUX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "a765937a945ebb98d3f201249e69914a302e34aa2cc8da4b6eb9a668c770b8d6",
+      "cache_modified_at_utc": "2026-10-24T16:01:34.832782507+00:00"
+    },
+    "SNPS": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "a0ab0a68d90be1a6d68d1c2751b1daed1812fc112336a8f7780698f495ab57d3",
+      "cache_modified_at_utc": "2026-10-24T16:01:35.251955270+00:00"
+    },
+    "TMUS": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "106d6392fe1c5fe67d7c11a739cf437db943ae6076051abe768eab0060653b87",
+      "cache_modified_at_utc": "2026-10-24T16:01:35.715495110+00:00"
+    },
+    "TTWO": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "1f420782dd779d67805ac4651ab75b1079e1a708b592ae9ab69f3b1917c145b6",
+      "cache_modified_at_utc": "2026-10-24T16:01:36.117214680+00:00"
+    },
+    "TER": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "38306f1a3182d39d71e24dfabc03de289a6298a353e45c70bda1dbd067035c18",
+      "cache_modified_at_utc": "2026-10-24T16:01:36.548886061+00:00"
+    },
+    "TSLA": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "5634901e76eaf47879df517803d7cdc1e734f23b1f3865f9cdae4ef448a88555",
+      "cache_modified_at_utc": "2026-10-24T16:01:36.952890873+00:00"
+    },
+    "TXN": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "b96982ae6074be6edcbe61314c086a254e7fd3c9b72dd0c5c748e9f800c7ddf6",
+      "cache_modified_at_utc": "2026-10-24T16:01:37.501499891+00:00"
+    },
+    "TRI": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "7348c423901b522e00fe84e6c460efd044877c616d020170a1205e0aa1a3187e",
+      "cache_modified_at_utc": "2026-10-24T16:01:38.095283270+00:00"
+    },
+    "VRTX": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "97da63d87044c9c8867be1b425e91fb3e0f0982f9af348dedf51611ccc6ad623",
+      "cache_modified_at_utc": "2026-10-24T16:01:38.591752768+00:00"
+    },
+    "WMT": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "eeeb311f7101e2814731fd386025f969f303906f33ec1196b103ce78135ac998",
+      "cache_modified_at_utc": "2026-10-24T16:01:39.193086863+00:00"
+    },
+    "WDC": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "3486696880ff118688ae0b3a3a7921c2ba637a61b16c531441131bd09969c0cd",
+      "cache_modified_at_utc": "2026-10-24T16:01:40.449365854+00:00"
+    },
+    "WDAY": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "fbacce23d3f6cc4591ddcdf9b93b6f315b191d096347f2b90aeb0138013ad216",
+      "cache_modified_at_utc": "2026-10-24T16:01:40.870154858+00:00"
+    },
+    "XEL": {
+      "rows": 2970,
+      "first": "2015-01-02",
+      "last": "2026-10-23",
+      "sha256": "a2f12c2354edac7a93f4b61489336d052e3218efdfa5eccc003a60215baee267",
+      "cache_modified_at_utc": "2026-10-24T16:01:41.403340816+00:00"
+    }
+  },
+  "execution": {
+    "fee_bps_per_side": 5,
+    "slippage_bps_per_side": 5,
+    "max_hold_sessions": 20,
+    "allocation": "Equal initial capital sleeves, no rebalancing or leverage"
+  },
+  "metrics": {
+    "A": {
+      "net_return_pct": 14.616629401610727,
+      "profit_factor": 1.2579546638064967,
+      "max_drawdown_pct": -2.241278800119517,
+      "trades": 2160,
+      "expectancy_pct": 0.5120296051008211,
+      "expectancy_r": 0.03712306118935247,
+      "skipped_gap_entries": 82
+    },
+    "B": {
+      "net_return_pct": 5.717210773117509,
+      "profit_factor": 1.274875354235794,
+      "max_drawdown_pct": -1.5490944833395082,
+      "trades": 919,
+      "expectancy_pct": 0.6154583788601448,
+      "expectancy_r": 0.08387497558673923,
+      "skipped_gap_entries": 31
+    },
+    "C": {
+      "net_return_pct": 4.930354477484755,
+      "profit_factor": 1.3377673506863301,
+      "max_drawdown_pct": -0.8846440695329472,
+      "trades": 658,
+      "expectancy_pct": 0.7531010583350581,
+      "expectancy_r": 0.14752727437084887,
+      "skipped_gap_entries": 21
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# Frozen market-data snapshots are verified by byte hash on every platform.
+*.csv text eol=lf
