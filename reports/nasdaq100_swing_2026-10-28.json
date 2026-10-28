@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-10-28T00:37:24.191990+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "TSLA",
+      "close": 407.46,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 408.67,
+      "stop": 390.05,
+      "target": 445.91,
+      "reward_risk": 2.0,
+      "beta": 1.5,
+      "return_1w_pct": 6.4,
+      "return_1m_pct": 5.24,
+      "return_3m_pct": 27.38,
+      "relative_strength_3m_pct": 18.34,
+      "volume_ratio": 1.46,
+      "score": 75.8,
+      "position_size_shares": 1,
+      "risk_dkk": 125.05,
+      "position_value_dkk": 2744.62,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": []
+}
