@@ -1,7 +1,68 @@
 {
-  "generated_at": "2026-10-28T01:23:04.727648+00:00",
+  "generated_at": "2026-10-29T01:48:50.000657+00:00",
   "mode": "paper_observation",
-  "pullback": [],
+  "pullback": [
+    {
+      "ticker": "MSTR",
+      "close": 145.16,
+      "rsi14": 49.5,
+      "atr14": 9.48,
+      "return_3m_pct": 48.5,
+      "rs_vs_ndx_3m_pct": 42.4,
+      "volume_ratio": 0.65,
+      "entry": 145.16,
+      "stop": 128.58,
+      "target_2r": 178.33
+    },
+    {
+      "ticker": "SHOP",
+      "close": 168.22,
+      "rsi14": 56.6,
+      "atr14": 7.78,
+      "return_3m_pct": 37.4,
+      "rs_vs_ndx_3m_pct": 31.4,
+      "volume_ratio": 0.73,
+      "entry": 168.22,
+      "stop": 154.6,
+      "target_2r": 195.46
+    },
+    {
+      "ticker": "MRVL",
+      "close": 251.65,
+      "rsi14": 52.4,
+      "atr14": 16.48,
+      "return_3m_pct": 37.3,
+      "rs_vs_ndx_3m_pct": 31.2,
+      "volume_ratio": 0.76,
+      "entry": 251.65,
+      "stop": 222.82,
+      "target_2r": 309.32
+    },
+    {
+      "ticker": "AMD",
+      "close": 578.44,
+      "rsi14": 53.6,
+      "atr14": 28.68,
+      "return_3m_pct": 19.2,
+      "rs_vs_ndx_3m_pct": 13.1,
+      "volume_ratio": 0.96,
+      "entry": 578.44,
+      "stop": 528.24,
+      "target_2r": 678.83
+    },
+    {
+      "ticker": "CCEP",
+      "close": 111.12,
+      "rsi14": 58.2,
+      "atr14": 2.25,
+      "return_3m_pct": -0.5,
+      "rs_vs_ndx_3m_pct": -6.6,
+      "volume_ratio": 0.68,
+      "entry": 111.12,
+      "stop": 107.19,
+      "target_2r": 118.98
+    }
+  ],
   "breakout": [],
   "data_failures": [
     "EA",
