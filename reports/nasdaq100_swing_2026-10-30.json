@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-30T01:12:28.568263+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "MCHP",
+      "close": 81.13,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 81.27,
+      "stop": 78.44,
+      "target": 86.93,
+      "reward_risk": 2.0,
+      "beta": 1.53,
+      "return_1w_pct": 3.21,
+      "return_1m_pct": 1.08,
+      "return_3m_pct": 6.8,
+      "relative_strength_3m_pct": 2.81,
+      "volume_ratio": 0.96,
+      "score": 22.7,
+      "position_size_shares": 7,
+      "risk_dkk": 132.0,
+      "position_value_dkk": 3791.7,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
