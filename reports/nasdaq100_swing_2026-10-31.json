@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-10-31T00:55:24.776128+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "NXPI",
+      "close": 259.82,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 260.12,
+      "stop": 250.59,
+      "target": 279.19,
+      "reward_risk": 2.0,
+      "beta": 1.25,
+      "return_1w_pct": 11.86,
+      "return_1m_pct": 11.99,
+      "return_3m_pct": 16.6,
+      "relative_strength_3m_pct": 17.96,
+      "volume_ratio": 1.57,
+      "score": 62.7,
+      "position_size_shares": 2,
+      "risk_dkk": 127.42,
+      "position_value_dkk": 3476.68,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "GEHC",
+      "close": 76.57,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 76.71,
+      "stop": 76.12,
+      "target": 78.59,
+      "reward_risk": 3.19,
+      "beta": 0.16,
+      "return_1w_pct": 7.06,
+      "return_1m_pct": 16.97,
+      "return_3m_pct": 12.41,
+      "relative_strength_3m_pct": 13.77,
+      "volume_ratio": 1.23,
+      "score": 47.6,
+      "position_size_shares": 7,
+      "risk_dkk": 27.49,
+      "position_value_dkk": 3588.59,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "CSX",
+      "close": 51.98,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 52.27,
+      "stop": 51.28,
+      "target": 54.25,
+      "reward_risk": 2.0,
+      "beta": 0.1,
+      "return_1w_pct": 1.1,
+      "return_1m_pct": 12.32,
+      "return_3m_pct": 3.93,
+      "relative_strength_3m_pct": 5.3,
+      "volume_ratio": 1.26,
+      "score": 20.9,
+      "position_size_shares": 11,
+      "risk_dkk": 72.72,
+      "position_value_dkk": 3842.38,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
