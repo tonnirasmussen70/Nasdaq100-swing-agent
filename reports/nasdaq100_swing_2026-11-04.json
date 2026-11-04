@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-11-04T01:32:03.127044+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "REGN",
+      "close": 974.25,
+      "pattern": "Hammer",
+      "setup_type": "Reversal",
+      "entry": 975.28,
+      "stop": 951.9,
+      "target": 1022.05,
+      "reward_risk": 2.0,
+      "beta": -0.02,
+      "return_1w_pct": 19.02,
+      "return_1m_pct": 30.75,
+      "return_3m_pct": 26.52,
+      "relative_strength_3m_pct": 30.95,
+      "volume_ratio": 2.23,
+      "score": 88.7,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "close": 398.22,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 400.2,
+      "stop": 396.15,
+      "target": 410.0,
+      "reward_risk": 2.42,
+      "beta": 1.44,
+      "return_1w_pct": 3.12,
+      "return_1m_pct": 8.97,
+      "return_3m_pct": 23.36,
+      "relative_strength_3m_pct": 27.79,
+      "volume_ratio": 1.19,
+      "score": 59.3,
+      "position_size_shares": 1,
+      "risk_dkk": 26.9,
+      "position_value_dkk": 2659.23,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    },
+    {
+      "ticker": "GEHC",
+      "close": 80.63,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 80.71,
+      "stop": 78.88,
+      "target": 84.39,
+      "reward_risk": 2.0,
+      "beta": 0.13,
+      "return_1w_pct": 10.52,
+      "return_1m_pct": 23.81,
+      "return_3m_pct": 13.29,
+      "relative_strength_3m_pct": 17.72,
+      "volume_ratio": 1.23,
+      "score": 53.4,
+      "position_size_shares": 7,
+      "risk_dkk": 85.46,
+      "position_value_dkk": 3754.32,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "NXPI",
+      "close": 262.97,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 264.95,
+      "stop": 256.24,
+      "target": 282.38,
+      "reward_risk": 2.0,
+      "beta": 1.24,
+      "return_1w_pct": 4.64,
+      "return_1m_pct": 5.57,
+      "return_3m_pct": 8.75,
+      "relative_strength_3m_pct": 13.19,
+      "volume_ratio": 1.17,
+      "score": 40.8,
+      "position_size_shares": 2,
+      "risk_dkk": 115.82,
+      "position_value_dkk": 3521.16,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "CRWV",
+    "EA"
+  ]
+}
