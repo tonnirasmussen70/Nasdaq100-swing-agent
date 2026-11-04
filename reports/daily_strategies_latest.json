@@ -1,58 +1,8 @@
 {
-  "generated_at": "2026-11-03T03:28:47.215989+00:00",
+  "generated_at": "2026-11-04T02:21:16.989354+00:00",
   "mode": "paper_observation",
-  "pullback": [
-    {
-      "ticker": "WDAY",
-      "close": 198.13,
-      "rsi14": 51.9,
-      "atr14": 7.43,
-      "return_3m_pct": 15.7,
-      "rs_vs_ndx_3m_pct": 21.5,
-      "volume_ratio": 0.82,
-      "entry": 198.13,
-      "stop": 185.13,
-      "target_2r": 224.13
-    }
-  ],
-  "breakout": [
-    {
-      "ticker": "REGN",
-      "close": 961.26,
-      "rsi14": 81.9,
-      "atr14": 29.43,
-      "return_3m_pct": 26.5,
-      "rs_vs_ndx_3m_pct": 32.4,
-      "volume_ratio": 2.09,
-      "entry": 961.26,
-      "stop": 913.18,
-      "target_2r": 1057.43
-    },
-    {
-      "ticker": "MAR",
-      "close": 416.3,
-      "rsi14": 75.4,
-      "atr14": 10.58,
-      "return_3m_pct": 20.8,
-      "rs_vs_ndx_3m_pct": 26.7,
-      "volume_ratio": 1.74,
-      "entry": 416.3,
-      "stop": 398.71,
-      "target_2r": 451.48
-    },
-    {
-      "ticker": "KDP",
-      "close": 36.82,
-      "rsi14": 76.0,
-      "atr14": 0.8,
-      "return_3m_pct": 19.3,
-      "rs_vs_ndx_3m_pct": 25.1,
-      "volume_ratio": 2.12,
-      "entry": 36.82,
-      "stop": 35.44,
-      "target_2r": 39.58
-    }
-  ],
+  "pullback": [],
+  "breakout": [],
   "data_failures": [
     "EA",
     "HONA",
