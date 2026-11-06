@@ -1,4 +1,12 @@
 {
   "qualified": [],
-  "near_miss": []
+  "near_miss": [
+    "EXC",
+    "IDXX",
+    "ISRG",
+    "KHC",
+    "LIN",
+    "VRTX",
+    "XEL"
+  ]
 }
