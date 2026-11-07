@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-11-07T01:00:44.002977+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "CPRT",
+      "close": 31.94,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 32.01,
+      "stop": 31.21,
+      "target": 33.62,
+      "reward_risk": 2.0,
+      "beta": -0.17,
+      "return_1w_pct": 9.92,
+      "return_1m_pct": 22.01,
+      "return_3m_pct": 9.51,
+      "relative_strength_3m_pct": 18.39,
+      "volume_ratio": 1.46,
+      "score": 48.9,
+      "position_size_shares": 18,
+      "risk_dkk": 97.15,
+      "position_value_dkk": 3865.2,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "PEP",
+      "close": 141.32,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 141.47,
+      "stop": 138.19,
+      "target": 148.03,
+      "reward_risk": 2.0,
+      "beta": -0.3,
+      "return_1w_pct": 6.67,
+      "return_1m_pct": 15.34,
+      "return_3m_pct": 3.75,
+      "relative_strength_3m_pct": 12.64,
+      "volume_ratio": 1.27,
+      "score": 32.6,
+      "position_size_shares": 4,
+      "risk_dkk": 88.05,
+      "position_value_dkk": 3795.85,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA",
+    "PLTR"
+  ]
+}
