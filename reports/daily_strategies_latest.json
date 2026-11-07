@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-11-06T02:27:30.563449+00:00",
+  "generated_at": "2026-11-07T01:56:15.065250+00:00",
   "mode": "paper_observation",
-  "pullback": [],
+  "pullback": [
+    {
+      "ticker": "AMGN",
+      "close": 460.42,
+      "rsi14": 60.5,
+      "atr14": 13.23,
+      "return_3m_pct": 11.0,
+      "rs_vs_ndx_3m_pct": 19.9,
+      "volume_ratio": 0.91,
+      "entry": 460.42,
+      "stop": 437.27,
+      "target_2r": 506.72
+    }
+  ],
   "breakout": [],
   "data_failures": [
     "EA",
