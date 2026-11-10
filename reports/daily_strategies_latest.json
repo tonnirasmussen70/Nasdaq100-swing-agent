@@ -1,18 +1,66 @@
 {
-  "generated_at": "2026-11-07T01:56:15.065250+00:00",
+  "generated_at": "2026-11-10T04:07:42.624755+00:00",
   "mode": "paper_observation",
   "pullback": [
     {
-      "ticker": "AMGN",
-      "close": 460.42,
-      "rsi14": 60.5,
-      "atr14": 13.23,
-      "return_3m_pct": 11.0,
-      "rs_vs_ndx_3m_pct": 19.9,
-      "volume_ratio": 0.91,
-      "entry": 460.42,
-      "stop": 437.27,
-      "target_2r": 506.72
+      "ticker": "SNPS",
+      "close": 466.97,
+      "rsi14": 53.1,
+      "atr14": 20.24,
+      "return_3m_pct": 13.6,
+      "rs_vs_ndx_3m_pct": 19.1,
+      "volume_ratio": 0.79,
+      "entry": 466.97,
+      "stop": 431.56,
+      "target_2r": 537.8
+    },
+    {
+      "ticker": "CTAS",
+      "close": 223.16,
+      "rsi14": 59.6,
+      "atr14": 6.17,
+      "return_3m_pct": 9.0,
+      "rs_vs_ndx_3m_pct": 14.5,
+      "volume_ratio": 1.12,
+      "entry": 223.16,
+      "stop": 212.35,
+      "target_2r": 244.77
+    },
+    {
+      "ticker": "TXN",
+      "close": 295.73,
+      "rsi14": 53.2,
+      "atr14": 13.77,
+      "return_3m_pct": 5.7,
+      "rs_vs_ndx_3m_pct": 11.1,
+      "volume_ratio": 1.09,
+      "entry": 295.73,
+      "stop": 271.63,
+      "target_2r": 343.93
+    },
+    {
+      "ticker": "ADI",
+      "close": 394.66,
+      "rsi14": 48.4,
+      "atr14": 21.39,
+      "return_3m_pct": 2.7,
+      "rs_vs_ndx_3m_pct": 8.2,
+      "volume_ratio": 1.31,
+      "entry": 394.66,
+      "stop": 357.22,
+      "target_2r": 469.53
+    },
+    {
+      "ticker": "ROST",
+      "close": 237.0,
+      "rsi14": 53.7,
+      "atr14": 7.63,
+      "return_3m_pct": -5.7,
+      "rs_vs_ndx_3m_pct": -0.2,
+      "volume_ratio": 0.93,
+      "entry": 237.0,
+      "stop": 223.65,
+      "target_2r": 263.69
     }
   ],
   "breakout": [],
