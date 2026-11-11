@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-11-11T01:21:31.123543+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "MAR",
+      "close": 428.33,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 429.28,
+      "stop": 416.54,
+      "target": 454.75,
+      "reward_risk": 2.0,
+      "beta": 0.2,
+      "return_1w_pct": 0.21,
+      "return_1m_pct": 14.02,
+      "return_3m_pct": 19.61,
+      "relative_strength_3m_pct": 26.34,
+      "volume_ratio": 1.38,
+      "score": 60.2,
+      "position_size_shares": 1,
+      "risk_dkk": 85.3,
+      "position_value_dkk": 2875.11,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "NXPI",
+      "close": 261.48,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 263.34,
+      "stop": 250.15,
+      "target": 289.72,
+      "reward_risk": 2.0,
+      "beta": 1.23,
+      "return_1w_pct": -0.32,
+      "return_1m_pct": 12.7,
+      "return_3m_pct": 8.97,
+      "relative_strength_3m_pct": 15.7,
+      "volume_ratio": 1.79,
+      "score": 55.1,
+      "position_size_shares": 2,
+      "risk_dkk": 176.69,
+      "position_value_dkk": 3527.44,
+      "failed_filters": [
+        "negative_1w"
+      ]
+    },
+    {
+      "ticker": "PEP",
+      "close": 143.65,
+      "pattern": "Morning star",
+      "setup_type": "Reversal",
+      "entry": 143.7,
+      "stop": 140.72,
+      "target": 149.65,
+      "reward_risk": 2.0,
+      "beta": -0.3,
+      "return_1w_pct": 1.04,
+      "return_1m_pct": 12.63,
+      "return_3m_pct": 3.6,
+      "relative_strength_3m_pct": 10.33,
+      "volume_ratio": 1.17,
+      "score": 27.7,
+      "position_size_shares": 4,
+      "risk_dkk": 79.74,
+      "position_value_dkk": 3849.71,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
