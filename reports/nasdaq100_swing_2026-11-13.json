@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-11-13T02:00:05.863504+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "MPWR",
+      "close": 1447.24,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 1449.64,
+      "stop": 1400.2,
+      "target": 1548.53,
+      "reward_risk": 2.0,
+      "beta": 1.91,
+      "return_1w_pct": 17.26,
+      "return_1m_pct": 12.06,
+      "return_3m_pct": 8.68,
+      "relative_strength_3m_pct": 14.53,
+      "volume_ratio": 0.94,
+      "score": 51.9,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    },
+    {
+      "ticker": "NXPI",
+      "close": 267.29,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 267.6,
+      "stop": 262.62,
+      "target": 277.9,
+      "reward_risk": 2.07,
+      "beta": 1.24,
+      "return_1w_pct": 1.7,
+      "return_1m_pct": 19.08,
+      "return_3m_pct": 16.74,
+      "relative_strength_3m_pct": 22.58,
+      "volume_ratio": 0.72,
+      "score": 48.8,
+      "position_size_shares": 2,
+      "risk_dkk": 67.28,
+      "position_value_dkk": 3616.44,
+      "failed_filters": [
+        "volume_not_above_20d"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
