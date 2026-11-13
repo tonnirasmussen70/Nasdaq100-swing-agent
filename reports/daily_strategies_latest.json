@@ -1,57 +1,82 @@
 {
-  "generated_at": "2026-11-12T03:00:02.558202+00:00",
+  "generated_at": "2026-11-13T02:39:00.062512+00:00",
   "mode": "paper_observation",
   "pullback": [
     {
       "ticker": "SNPS",
-      "close": 462.12,
-      "rsi14": 51.4,
-      "atr14": 19.15,
-      "return_3m_pct": 12.2,
-      "rs_vs_ndx_3m_pct": 17.9,
-      "volume_ratio": 0.47,
-      "entry": 462.12,
-      "stop": 428.61,
-      "target_2r": 529.13
+      "close": 462.69,
+      "rsi14": 51.6,
+      "atr14": 19.17,
+      "return_3m_pct": 9.8,
+      "rs_vs_ndx_3m_pct": 15.6,
+      "volume_ratio": 0.83,
+      "entry": 462.69,
+      "stop": 429.14,
+      "target_2r": 529.78
     },
     {
       "ticker": "QCOM",
-      "close": 176.57,
-      "rsi14": 52.0,
-      "atr14": 9.94,
-      "return_3m_pct": 7.7,
-      "rs_vs_ndx_3m_pct": 13.4,
-      "volume_ratio": 1.02,
-      "entry": 176.57,
-      "stop": 159.17,
-      "target_2r": 211.37
-    },
-    {
-      "ticker": "ADI",
-      "close": 409.08,
-      "rsi14": 53.3,
-      "atr14": 21.2,
-      "return_3m_pct": 7.6,
+      "close": 177.14,
+      "rsi14": 52.4,
+      "atr14": 10.15,
+      "return_3m_pct": 7.4,
       "rs_vs_ndx_3m_pct": 13.3,
-      "volume_ratio": 0.77,
-      "entry": 409.08,
-      "stop": 371.99,
-      "target_2r": 483.27
+      "volume_ratio": 0.65,
+      "entry": 177.14,
+      "stop": 159.38,
+      "target_2r": 212.67
     },
     {
       "ticker": "TRI",
-      "close": 108.83,
-      "rsi14": 46.9,
-      "atr14": 5.39,
-      "return_3m_pct": 3.3,
-      "rs_vs_ndx_3m_pct": 9.0,
-      "volume_ratio": 0.62,
-      "entry": 108.83,
-      "stop": 99.4,
-      "target_2r": 127.7
+      "close": 109.25,
+      "rsi14": 47.5,
+      "atr14": 5.4,
+      "return_3m_pct": 6.1,
+      "rs_vs_ndx_3m_pct": 12.0,
+      "volume_ratio": 0.48,
+      "entry": 109.25,
+      "stop": 99.8,
+      "target_2r": 128.15
+    },
+    {
+      "ticker": "MSFT",
+      "close": 523.0,
+      "rsi14": 48.4,
+      "atr14": 17.48,
+      "return_3m_pct": 5.8,
+      "rs_vs_ndx_3m_pct": 11.6,
+      "volume_ratio": 0.71,
+      "entry": 523.0,
+      "stop": 492.41,
+      "target_2r": 584.18
+    },
+    {
+      "ticker": "ADI",
+      "close": 409.29,
+      "rsi14": 53.3,
+      "atr14": 21.34,
+      "return_3m_pct": 5.4,
+      "rs_vs_ndx_3m_pct": 11.3,
+      "volume_ratio": 0.59,
+      "entry": 409.29,
+      "stop": 371.94,
+      "target_2r": 483.99
     }
   ],
-  "breakout": [],
+  "breakout": [
+    {
+      "ticker": "AMD",
+      "close": 585.3,
+      "rsi14": 57.5,
+      "atr14": 44.61,
+      "return_3m_pct": 13.8,
+      "rs_vs_ndx_3m_pct": 19.6,
+      "volume_ratio": 1.65,
+      "entry": 585.3,
+      "stop": 556.13,
+      "target_2r": 643.63
+    }
+  ],
   "data_failures": [
     "EA",
     "HONA",
