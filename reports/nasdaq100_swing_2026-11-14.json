@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-11-14T01:32:27.220270+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "AMD",
+      "close": 534.09,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 539.39,
+      "stop": 518.66,
+      "target": 580.87,
+      "reward_risk": 2.0,
+      "beta": 2.66,
+      "return_1w_pct": 44.73,
+      "return_1m_pct": 2.54,
+      "return_3m_pct": 13.79,
+      "relative_strength_3m_pct": 20.63,
+      "volume_ratio": 1.73,
+      "score": 68.3,
+      "position_size_shares": 1,
+      "risk_dkk": 140.27,
+      "position_value_dkk": 3648.66,
+      "failed_filters": [
+        "ema50_below_ema200"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "ASML",
+    "EA"
+  ]
+}
