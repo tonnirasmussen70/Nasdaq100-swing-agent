@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-17T04:03:35.601010+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "EXC",
+      "close": 46.47,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 46.53,
+      "stop": 45.85,
+      "target": 47.89,
+      "reward_risk": 2.0,
+      "beta": -0.26,
+      "return_1w_pct": 1.77,
+      "return_1m_pct": 6.8,
+      "return_3m_pct": 3.51,
+      "relative_strength_3m_pct": 11.29,
+      "volume_ratio": 1.26,
+      "score": 29.9,
+      "position_size_shares": 12,
+      "risk_dkk": 55.57,
+      "position_value_dkk": 3792.31,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
