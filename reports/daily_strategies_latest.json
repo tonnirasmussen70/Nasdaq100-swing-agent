@@ -1,68 +1,7 @@
 {
-  "generated_at": "2026-11-14T02:27:38.741134+00:00",
+  "generated_at": "2026-11-17T04:29:14.367828+00:00",
   "mode": "paper_observation",
-  "pullback": [
-    {
-      "ticker": "GILD",
-      "close": 168.08,
-      "rsi14": 59.3,
-      "atr14": 5.3,
-      "return_3m_pct": 21.7,
-      "rs_vs_ndx_3m_pct": 28.5,
-      "volume_ratio": 0.55,
-      "entry": 168.08,
-      "stop": 158.8,
-      "target_2r": 186.64
-    },
-    {
-      "ticker": "KDP",
-      "close": 36.34,
-      "rsi14": 55.9,
-      "atr14": 1.38,
-      "return_3m_pct": 20.9,
-      "rs_vs_ndx_3m_pct": 27.7,
-      "volume_ratio": 2.75,
-      "entry": 36.34,
-      "stop": 33.93,
-      "target_2r": 41.15
-    },
-    {
-      "ticker": "TRI",
-      "close": 109.3,
-      "rsi14": 47.6,
-      "atr14": 5.21,
-      "return_3m_pct": 11.1,
-      "rs_vs_ndx_3m_pct": 17.9,
-      "volume_ratio": 0.76,
-      "entry": 109.3,
-      "stop": 100.19,
-      "target_2r": 127.52
-    },
-    {
-      "ticker": "MSFT",
-      "close": 523.88,
-      "rsi14": 48.8,
-      "atr14": 17.55,
-      "return_3m_pct": 9.3,
-      "rs_vs_ndx_3m_pct": 16.1,
-      "volume_ratio": 1.0,
-      "entry": 523.88,
-      "stop": 493.16,
-      "target_2r": 585.32
-    },
-    {
-      "ticker": "MNST",
-      "close": 46.46,
-      "rsi14": 53.4,
-      "atr14": 1.31,
-      "return_3m_pct": 2.1,
-      "rs_vs_ndx_3m_pct": 8.9,
-      "volume_ratio": 0.7,
-      "entry": 46.46,
-      "stop": 44.17,
-      "target_2r": 51.05
-    }
-  ],
+  "pullback": [],
   "breakout": [],
   "data_failures": [
     "EA",
