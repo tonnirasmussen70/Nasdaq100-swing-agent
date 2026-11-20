@@ -1,7 +1,7 @@
 {
   "mode": "pre_cost_execution_feasibility",
   "source_signal": "NQ=F",
-  "usd_dkk": 6.8087,
+  "usd_dkk": 6.805,
   "risk_budget_dkk": 200.0,
   "risk_budget_pct": 1.0,
   "contracts": {
@@ -56,5 +56,5 @@
   },
   "latest_signals": {},
   "warning": "This is a distance-based pre-cost feasibility model. It uses NQ=F signal point distances and does not assume broker availability, margin approval, commissions, slippage, or identical executable prices in MNQ/NNQ. Use an actual target-contract feed and broker cost schedule before live trading.",
-  "generated_at": "2026-11-19T16:28:14.493180+00:00"
+  "generated_at": "2026-11-20T15:59:50.915872+00:00"
 }
