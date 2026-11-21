@@ -1,7 +1,56 @@
 {
-  "generated_at": "2026-11-20T03:15:57.722152+00:00",
+  "generated_at": "2026-11-21T03:14:03.851490+00:00",
   "mode": "paper_observation",
-  "pullback": [],
+  "pullback": [
+    {
+      "ticker": "KDP",
+      "close": 34.84,
+      "rsi14": 48.7,
+      "atr14": 1.46,
+      "return_3m_pct": 7.9,
+      "rs_vs_ndx_3m_pct": 21.7,
+      "volume_ratio": 0.68,
+      "entry": 34.84,
+      "stop": 32.28,
+      "target_2r": 39.96
+    },
+    {
+      "ticker": "ADP",
+      "close": 301.71,
+      "rsi14": 54.2,
+      "atr14": 6.65,
+      "return_3m_pct": 7.3,
+      "rs_vs_ndx_3m_pct": 21.1,
+      "volume_ratio": 1.14,
+      "entry": 301.71,
+      "stop": 290.07,
+      "target_2r": 324.99
+    },
+    {
+      "ticker": "CTAS",
+      "close": 220.01,
+      "rsi14": 51.5,
+      "atr14": 5.22,
+      "return_3m_pct": 6.3,
+      "rs_vs_ndx_3m_pct": 20.1,
+      "volume_ratio": 1.71,
+      "entry": 220.01,
+      "stop": 210.88,
+      "target_2r": 238.28
+    },
+    {
+      "ticker": "ADSK",
+      "close": 244.48,
+      "rsi14": 44.7,
+      "atr14": 9.49,
+      "return_3m_pct": -3.9,
+      "rs_vs_ndx_3m_pct": 9.9,
+      "volume_ratio": 1.31,
+      "entry": 244.48,
+      "stop": 227.87,
+      "target_2r": 277.7
+    }
+  ],
   "breakout": [],
   "data_failures": [
     "EA",
