@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-11-24T05:24:04.412600+00:00",
+  "qualified": [
+    {
+      "ticker": "MPWR",
+      "close": 1333.87,
+      "pattern": "Bull flag breakout",
+      "setup_type": "Continuation",
+      "entry": 1341.69,
+      "stop": 1129.23,
+      "target": 1766.6,
+      "reward_risk": 2.0,
+      "beta": 1.96,
+      "return_1w_pct": 1.51,
+      "return_1m_pct": 16.99,
+      "return_3m_pct": 2.43,
+      "relative_strength_3m_pct": 10.86,
+      "volume_ratio": 1.19,
+      "score": 36.4,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": []
+    }
+  ],
+  "near_miss": [
+    {
+      "ticker": "NXPI",
+      "close": 255.77,
+      "pattern": "None",
+      "setup_type": "None",
+      "entry": 256.77,
+      "stop": 233.19,
+      "target": 303.93,
+      "reward_risk": 2.0,
+      "beta": 1.23,
+      "return_1w_pct": 0.72,
+      "return_1m_pct": 8.99,
+      "return_3m_pct": 14.43,
+      "relative_strength_3m_pct": 22.86,
+      "volume_ratio": 1.06,
+      "score": 45.1,
+      "position_size_shares": 1,
+      "risk_dkk": 161.53,
+      "position_value_dkk": 1759.05,
+      "failed_filters": [
+        "no_confirmed_1h_pattern"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [
+      "MPWR"
+    ],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
