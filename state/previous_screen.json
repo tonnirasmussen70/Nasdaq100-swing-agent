@@ -1,8 +1,8 @@
 {
-  "qualified": [
-    "MPWR"
-  ],
+  "qualified": [],
   "near_miss": [
-    "NXPI"
+    "AMGN",
+    "HON",
+    "REGN"
   ]
 }

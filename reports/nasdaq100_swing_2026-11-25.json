@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-11-25T04:24:52.228598+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "REGN",
+      "close": 987.2,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 988.62,
+      "stop": 933.98,
+      "target": 1097.89,
+      "reward_risk": 2.0,
+      "beta": 0.11,
+      "return_1w_pct": 3.17,
+      "return_1m_pct": 22.34,
+      "return_3m_pct": 21.27,
+      "relative_strength_3m_pct": 31.57,
+      "volume_ratio": 1.06,
+      "score": 57.7,
+      "position_size_shares": 0,
+      "risk_dkk": 0.0,
+      "position_value_dkk": 0.0,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "AMGN",
+      "close": 473.88,
+      "pattern": "Inside bar breakout",
+      "setup_type": "Continuation",
+      "entry": 474.3,
+      "stop": 448.37,
+      "target": 526.16,
+      "reward_risk": 2.0,
+      "beta": 0.13,
+      "return_1w_pct": 4.09,
+      "return_1m_pct": 7.21,
+      "return_3m_pct": 8.25,
+      "relative_strength_3m_pct": 18.55,
+      "volume_ratio": 1.17,
+      "score": 44.5,
+      "position_size_shares": 1,
+      "risk_dkk": 177.04,
+      "position_value_dkk": 3238.14,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    },
+    {
+      "ticker": "HON",
+      "close": 224.82,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 225.03,
+      "stop": 217.79,
+      "target": 239.52,
+      "reward_risk": 2.0,
+      "beta": 0.41,
+      "return_1w_pct": 2.68,
+      "return_1m_pct": 2.85,
+      "return_3m_pct": 2.2,
+      "relative_strength_3m_pct": 12.5,
+      "volume_ratio": 1.31,
+      "score": 32.2,
+      "position_size_shares": 2,
+      "risk_dkk": 98.92,
+      "position_value_dkk": 3072.74,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": [
+      "MPWR"
+    ]
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
