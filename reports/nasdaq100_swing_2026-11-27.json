@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-27T03:42:06.223789+00:00",
+  "qualified": [],
+  "near_miss": [
+    {
+      "ticker": "AAPL",
+      "close": 355.45,
+      "pattern": "Bullish engulfing",
+      "setup_type": "Reversal",
+      "entry": 356.91,
+      "stop": 344.8,
+      "target": 381.13,
+      "reward_risk": 2.0,
+      "beta": 0.25,
+      "return_1w_pct": 0.89,
+      "return_1m_pct": 2.52,
+      "return_3m_pct": 13.12,
+      "relative_strength_3m_pct": 25.25,
+      "volume_ratio": 1.07,
+      "score": 44.1,
+      "position_size_shares": 1,
+      "risk_dkk": 82.42,
+      "position_value_dkk": 2429.32,
+      "failed_filters": [
+        "beta_below_threshold"
+      ]
+    }
+  ],
+  "changes": {
+    "new": [],
+    "removed": []
+  },
+  "data_failures": [
+    "EA"
+  ]
+}
